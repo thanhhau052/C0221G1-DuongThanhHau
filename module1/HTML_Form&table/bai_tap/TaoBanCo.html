@@ -12,35 +12,61 @@
     <!--        }-->
     <!--    </style>-->
      <style>
-        td {
-            width: 20px;
-            height: 20px;
-        }
-        tr:nth-child(odd) td:nth-child(odd){
-            background-color: black;
-        }
-        tr:nth-child(even) td:nth-child(even){
-            background-color: black;
-        }
+        /*td {*/
+        /*    width: 20px;*/
+        /*    height: 20px;*/
+        /*}*/
+        /*tr:nth-child(odd) td:nth-child(odd){*/
+        /*    background-color: black;*/
+        /*}*/
+        /*tr:nth-child(even) td:nth-child(even){*/
+        /*    background-color: black;*/
+        /*}*/
+        /* th:nth-child(odd){*/
+        /*     background-color: yellow;*/
+        /* }*/
+         table{
+             border-collapse: collapse;
+         }
+         .odd td:nth-child(odd){
+             background-color: black;
+             width:30px;
+             height:30px;
+
+         }
+         .even td:nth-child(even)
+         {
+             background-color: black;
+             width: 30px;
+             height: 30px;
+
+         }
+         th{
+             width: 30px;
+             height: 30px;
+             background-color: yellow;
+
+         }
 
     </style>
 
 </head>
 <body>
-<table border="1" style="border-collapse: collapse">
+<table border="1" style="border-collapse: collapse";>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>   b
-    <tr>
-        <td></td>
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+
+    </tr>
+    <tr class="even">
+        <th>A</th>
         <td></td>
         <td></td>
         <td></td>
@@ -50,19 +76,8 @@
         <td></td>
         <td></td>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
+    <tr class="odd">
+       <th>B</th>
         <td></td>
         <td></td>
         <td></td>
@@ -72,19 +87,8 @@
         <td></td>
         <td></td>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
+    <tr class="even">
+        <th>C</th>
         <td></td>
         <td></td>
         <td></td>
@@ -94,19 +98,8 @@
         <td></td>
         <td></td>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
+    <tr class="odd">
+        <th>D</th>>
         <td></td>
         <td></td>
         <td></td>
@@ -116,8 +109,41 @@
         <td></td>
         <td></td>
     </tr>
-    <tr>
+    <tr class="even">
+        <th>E</th>
         <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr class="odd">
+        <th>F</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr class="even">
+        <th>G</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr class="odd">
+        <th>H</th>
         <td></td>
         <td></td>
         <td></td>
