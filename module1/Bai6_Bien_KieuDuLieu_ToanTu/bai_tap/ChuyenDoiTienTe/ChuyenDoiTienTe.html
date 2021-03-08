@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ỨNG DỤNG CHUYỂN ĐỔI TIỀN TỆ</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td>Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input id="text"> </td>
+            <td><select id="fromUSD">
+                <option value = "23000">Vietnam</option>
+                <option value = "1">USD</option>
+            </select></td>
+
+            <td><select id ="fromVND">
+                <option value = "23000">Vietnam</option>
+                <option value = "1">USD</option>
+            </select> </td>
+            <td style="background-color: #e2a000"><input type="button" onclick="tinh()" value="Convert"> </td>
+        </tr>
+    </table>
+</form>
+<p id="ketqua"></p>
+<script>
+    function tinh() {
+        let amonunt=document.getElementById("text").value;
+        // Tìm đến giá trị
+        let fromUSD =document.getElementById("fromUSD").value;
+        let fromVND =document.getElementById("fromVND").value;
+        let ketQua=amonunt*fromVND/fromUSD;
+        document.getElementById("ketqua").innerHTML="Kết quả"+ketQua;
+        //liên kết với kết quả
+    }
+</script>
+</body>
+</html>
