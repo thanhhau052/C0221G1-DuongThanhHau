@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Thực hành sự kiện chuột</title>
 </head>
 <body>
-$END$
+<form>
+    <img style="width: 100px"  id="myImage" src="https://mama.vn/Data/image/2017/02/24/bong-golf-Titleist-Pro-V1-2017-bong.jpg" />
+    <p>Bấm nút sang trái/ sang phải để di chuyển quả bóng</p>
+    <input type="button" value="Sang Phải" onclick="moveRight();" />
+    <input type="button" value="Sang Trái" onclick="moveRight1();" />
+
+</form>
+<script>
+    imgObj = document.getElementById('myImage');
+    function init() {
+        imgObj = document.getElementById('myImage');
+        imgObj.style.position = 'relative';
+        imgObj.style.left = '0px';
+    }
+    function moveRight() {
+        imgObj.style.left = parseInt(imgObj.style.left) + 20 + 'px';
+    }
+    function moveRight1() {
+        imgObj.style.left = parseInt(imgObj.style.left) - 20 + 'px';
+
+    }
+    window.onload = init;
+
+</script>
 </body>
 </html>

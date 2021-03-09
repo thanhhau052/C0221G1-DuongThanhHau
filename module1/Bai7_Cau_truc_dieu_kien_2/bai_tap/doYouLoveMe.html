@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Do you love me</title>
 </head>
 <body>
-$END$
+<h1 id="loveQuestion"> Do you love me ?</h1>
+<input type="button" id="chonYes" value="Có" onclick="yesClick()"/>
+<input type="button" id="chonNo"value="Không" onmouseover="noNo()"style="position: absolute"/>
+<script>
+    function yesClick() {
+        alert("tối nay đi xem phim nhé !");
+    }
+    function noNo() {
+        let x =Math.floor(Math.random() *window.innerWidth);
+        let y=Math.floor(Math.random() *window.innerHeight);
+        document.getElementById("chonYes").style.left=x+ "px";
+        document.getElementById("chonNo").style.top =y+"px";
+    }
+
+
+
+    // #chonNo;{
+    //     position: absolute;
+    // }
+</script>
+
+
 </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính diện tích tam giác khi biết hai cạnh a và b</title>
+</head>
+<body>
+<script>
+    let a=parseInt(prompt("nhập vào cạnh của tam giác"));
+    if(a<0){
+        parseInt(prompt("nhập lại cạnh lớn hơn 0"))
+    }
+    let b=parseInt(prompt(" nhập vao cạnh của tam giác"));
+    if (b<0){
+        parseInt(prompt("nhập vào cạnh lón hơn 0"));
+    }
+    let dienTich=a*b*0.5;
+    document.write("diện tích của tam giác là :"+dienTich);
+</script>
+</body>
+</html>
