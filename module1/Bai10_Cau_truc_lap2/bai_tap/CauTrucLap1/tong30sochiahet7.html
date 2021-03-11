@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>in ra tổng 30 số đầu tiên chia hết cho 7</title>
+</head>
+<body>
+<script>
+    let sum = 0;
+    let i = 1;
+    let n = prompt("nhập vào số n");
+    let dem = 0;
+    while (dem < n) {
+        if (i % 7 == 0) {
+
+            sum = sum + i;
+            dem = dem + 1;
+        }
+        i++;
+    }
+    document.write(sum);
+</script>
+</body>
+</html>

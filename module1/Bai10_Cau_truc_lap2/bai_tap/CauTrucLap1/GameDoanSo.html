@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game đoán số</title>
+</head>
+<body>
+<input type="button" value="Play" onclick="gameDoanSo()">
+<script>
+function gameDoanSo() {
+    let n=prompt("nhập vào một số từ 0 đến 10");
+    let r=Math.round(Math.random());
+    let dem=0;
+   while (dem<3){
+       if(n==r){
+           alert("chúc mừng bạn đã nhập đúng số");
+           break;
+       } else alert("chúc bạn may mắn lần sau");
+       n=prompt("nhập vào một số từ 0 đến 10");
+       dem++;
+   }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm số fibonaci đàu tiên chia hết cho 5</title>
+</head>
+<body>
+<script>
+    let a = 1;
+    let b = 0;
+    let temp = 0;
+    let kq = '';
+    for (i = 0; i < 20; i++) {
+        temp = a;
+        a = a + b;
+        b = temp;
+        kq += temp;
+        if (kq % 5 === 0) {
+            alert(" số đầu tiên chia hết chho 5 trong dãy fibonaci  là :"+b);
+            break;
+        }
+    }
+</script>
+</body>
+</html>

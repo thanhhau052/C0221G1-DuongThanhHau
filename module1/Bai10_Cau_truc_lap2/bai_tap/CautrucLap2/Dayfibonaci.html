@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hiện thị dãy fibonacci</title>
+</head>
+<body>
+<script>
+    let a=1;
+    let b=0;
+    let temp=0;
+    let n=prompt("Nhập vào số phần tử của dãy fibonaci cần in ra :");
+    let kq='';
+    for(i=0;i<n;i++){
+        temp = a;
+        a = a + b;
+        b = temp;
+        kq+=temp+"  <br> ";
+
+    }
+    document.write(kq);
+
+</script>
+
+</body>
+</html>

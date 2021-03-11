@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hình chữ nhật</title>
+</head>
+<body>
+<script>
+    let chieuDai=prompt("Nhập vào chiều dài của hình chữ nhật:");
+    let chieuRong=prompt("Nhập vào chiều rộng của hình chữ nhật:");
+    for(;chieuDai<=0||chieuRong<=0;){
+        if(chieuDai<=0){
+            alert("nhập lại chiều dài lớn hơn 0");
+            chieuDai=prompt("Nhập vào chiều dài của hình chữ nhật:");
+        }if(chieuRong<=0){
+            alert("nhập lại chiều rộng lớn hơn 0");
+            chieuRong=prompt("Nhập vào chiều rộng của hình chữ nhật:");
+        }
+    }
+    for( let i=1;i<=chieuDai;i++){
+        for(let j=1;j<=chieuRong;j++){
+            if(i==1||j==1||i==chieuDai||j==chieuRong){
+                document.write("*");
+            }else {
+                document.write("&nbsp;&nbsp")
+            }
+
+        }
+        document.write("<br>")
+    }
+
+
+</script>
+</body>
+</html>
