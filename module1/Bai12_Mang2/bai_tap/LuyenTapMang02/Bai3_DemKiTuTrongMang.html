@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm số kí tự trong mảng</title>
+</head>
+<body>
+<script>
+    // let mang = [];
+    // let chuoi = "";
+    // mang = prompt("nhập vào mảng :");
+    // chuoi = mang.toString();
+    // let kq = chuoi.length;
+    //
+    // alert(kq);
+    let n = prompt("nhập vào kích thước của mảng :");
+    let mang = [];
+    let mangSo=["0","1","2","3","4","5","6","7","8","9"];
+    let dem = 0;
+    for (let i = 0; i < n; i++) {
+        mang[i] = prompt("nhập vào mảng :");
+        let viTri=mangSo.indexOf((mang[i]))
+        if(viTri>-1){
+       dem++;
+            console.log(dem)
+        }
+    }
+  alert(dem);
+</script>
+</body>
+</html>

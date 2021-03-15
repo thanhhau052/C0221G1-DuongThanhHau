@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nhập vào mảng, sắp xếp theo thứ tự giảm dần rồi in mảng đó ra màn hình</title>
+</head>
+<body>
+<script>
+    let n = prompt("nhập vào số phần tử của mảng :");
+    let arr = [];
+    let arrb=[];
+    for (let i = 0; i < n; i++){
+        arr[i]=prompt("nhập vào các phần tử của mảng :");
+         arrb = arr.sort(function(a, b){return b-a}).toString();
+    }
+    alert(arrb)
+</script>
+</body>
+</html>

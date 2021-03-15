@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đảo ngược chuỗi </title>
+</head>
+<body>
+<script>
+    //bài 4
+    let n = prompt("nhập vào số phần tử của mảng :");
+    let a = [];
+
+    for (let i = 0; i < n; i++) {
+        a[i] = prompt("nhập");
+        document.write(a[i] + ",");
+
+    }
+    document.write("<hr>");
+    let b = a.reverse().join();
+    document.write("Chuỗi ngược lại là :" + b)
+</script>
+</body>
+</html>

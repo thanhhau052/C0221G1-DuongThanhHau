@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thực hành sử dụng hàm map</title>
+</head>
+<body>
+<script>
+    let animals =[
+        {
+            "id" :1,
+            "name": "cat",
+            "size":"small"
+
+        },
+        {
+            "id":2,
+            "name":"dog",
+            "size":"small"
+        }
+    ]
+    let newAnimals=animals.map(function (animals) {
+        if (animals.id==1){
+            animals.name="pythol";
+        }
+        return animals;
+
+    });
+   console.log(newAnimals);
+</script>
+</body>
+</html>

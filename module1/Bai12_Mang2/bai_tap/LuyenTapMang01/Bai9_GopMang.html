@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nhập 2 mảng a và b, sau đó gọp vào mảng c</title>
+</head>
+<body>
+<script>
+    let arrayA = [10];
+    let arrayB = [10];
+    let arrayC = [20];
+    for (let i = 0; i < 10; i++) {
+        arrayA[i] = parseInt(prompt("nhập vào các phần tử mảng A :"));
+
+    }for (let j = 0; j < 10; j++) {
+        arrayB[j] = parseInt(prompt("nhập vào các phần tử mảng B :"));
+    }
+
+    arrayC = arrayA.concat(arrayB);
+    alert("kết quả sau khi gộp là :"+arrayC);
+</script>
+</body>
+</html>

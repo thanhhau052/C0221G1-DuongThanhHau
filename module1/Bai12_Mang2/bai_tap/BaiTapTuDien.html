@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>từ điểm tiếng anh sang tiếng việt</title>
+</head>
+<body>
+<input type="text" value="">
+<input type="button" value="Dịch">
+<!--<h4 id="ketQua">Kết quả là :</h4>-->
+
+<script>
+    let nhap=prompt("nhập vào từ cần tìm kiếm");
+    let tiengAnh=["hello", "goodmorning","bye"];
+    let tiengViet=["Xin chào","Chào buổi sáng","Tạm biệt"];
+    let index;
+    let check=false;
+    for (let i=0;i<tiengAnh.length;i++){
+        if(tiengAnh[i]==nhap){
+            index=i;
+            check=true;
+        }
+    }
+    if (check){
+        document.write(tiengViet[index]);
+    }else{
+        document.write("ko tìm thấy")
+    }
+
+
+
+
+</script>
+</body>
+</html>

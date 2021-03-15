@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm tất cả các kí tự trong mảng là (-) và thay thế thành (_)</title>
+</head>
+<body>
+<script>
+    let n = prompt("nhập vào ");
+    let arr = n.split("");
+    let b=[];
+    // let arr=[];
+    // arr=prompt("nhập vào");
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === "-") {
+            b[i] = "_";
+        }else {
+            b[i]=arr[i];
+        }
+    }
+    alert(b.join(""));
+
+
+</script>
+</body>
+</html>

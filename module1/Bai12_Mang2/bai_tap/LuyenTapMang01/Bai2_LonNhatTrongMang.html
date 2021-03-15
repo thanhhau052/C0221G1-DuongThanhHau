@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm và in ra màn hình phần tử lớn nhất trong mảng</title>
+</head>
+<body>
+<script>
+    let arr=[10,15,0,2,5,56,25,9,22,5,1,-9,9];
+    let max=arr[0];
+    let viTri=0;
+    for (let i=0;i<arr.length;i++){
+        if (arr[i]>max){
+            max=arr[i];
+           viTri=i;
+        }
+    }alert(max +"  "+viTri);
+
+</script>
+</body>
+</html>

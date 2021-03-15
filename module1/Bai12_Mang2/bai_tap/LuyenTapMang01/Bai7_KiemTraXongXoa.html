@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra v có thuộc mảng không? nếu có thì xóa v khỏi mảng và thêm 0 vào cuối mảng</title>
+</head>
+<body>
+<script>
+    let n=prompt("nhập vào số lượng phần tử trong mảng:");
+    let mang=[];
+    let kiemTra=prompt("nhập vào :");
+    for(let i =0; i<n ;i++){
+        mang[i]=prompt("nhập vào phần tử của mảng: ");
+    } for (let i=0;i<n;i++){
+        if (mang[i]==kiemTra){
+            mang.splice(i,1);
+            mang.push("0");
+        }
+    }
+    alert(mang);
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm từ trong chuỗi</title>
+</head>
+<body>
+<script>
+    let a = "";
+    let dem = 0;
+    a = prompt("nhập vào chuỗi không quá 100 kí tự");
+    let mang=a.split(" ");
+    for (i = 0; i < mang.length; i++) {
+        if (mang[i].length>0)
+        dem++;
+    }
+    alert("kq :"+dem);
+</script>
+</body>
+</html>
