@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>nhập vào hai số nguyên bất kì , đổi chổ hai số đó</title>
 </head>
 <body>
-$END$
+<script>
+    function doiCho(num1, num2) {
+        console.log("num1=" + num1);
+        console.log("num2=" + num2);
+        temp = num1;
+        num1 = num2;
+        num2 = temp;
+        alert("num1=" + num1);
+        alert("num2=" + num2);
+    }
+
+    let num1 = prompt("nhập vào số thứ nhất : ");
+    let num2 = prompt("nhập vào số thứ hai : ");
+    doiCho(num1, num2);
+</script>
 </body>
 </html>

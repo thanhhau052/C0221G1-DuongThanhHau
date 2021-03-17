@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>viết hàm truyền hai số nguyên trong mảng , sau đó đảo ngược hai số nguyên đó</title>
 </head>
 <body>
-$END$
+<script>
+    function doiMang(a,b) {
+        mang=[a,b];
+        mang2=mang.reverse();
+return mang2;
+    }
+    let num1=prompt("nhập vào phần tw thứ nhất của mảng :");
+    let num2=prompt("nhập vào phần tử thứ hai của mảng :");
+    let kq =doiMang(num1,num2);
+    alert(kq);
+</script>
 </body>
 </html>

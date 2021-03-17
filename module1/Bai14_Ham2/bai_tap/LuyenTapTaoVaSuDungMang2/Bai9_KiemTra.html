@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>nhâp vao 1 mảng và một kí tự bất kì . Kiểm tra xem kí tự có thuộc mảng hay không</title>
 </head>
 <body>
-$END$
+<script>
+    function kiemTraMang() {
+        let num = prompt("nhập vào số phần tử của mảng :");
+        let kyTu = prompt("nhập vào ký tự cần kiểm tra :");
+        let mang = [];
+        let dem = 0;
+        for (let i = 0; i < num; i++) {
+            mang[i] = prompt("nhập vào các phần tử của mảng :");
+        }
+        for (let i = 0; i < mang.length; i++) {
+            if (mang[i] === kyTu) {
+                dem++;
+            }
+        }
+        return dem;
+    }
+
+    let kq = kiemTraMang();
+    console.log(kq);
+
+</script>
 </body>
 </html>

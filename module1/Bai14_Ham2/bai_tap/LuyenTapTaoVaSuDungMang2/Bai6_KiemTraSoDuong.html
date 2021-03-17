@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>viết hàm kiểm tra số nhập vào có phải số nguyên dương hay không ?</title>
 </head>
 <body>
-$END$
+<script>
+    function kiemTraSoDuong(number) {
+        let kq = "";
+        if (number > 0) {
+            kq = "true";
+        } else {
+            kq = "false";
+        }
+        return kq;
+    }
+
+    let num = prompt("nhập vào số cần kiểm tra  : ");
+    let kq = kiemTraSoDuong(num);
+    alert(kq);
+</script>
 </body>
 </html>

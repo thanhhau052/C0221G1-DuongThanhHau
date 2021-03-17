@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<script>
+    function hamTraVe(a, b) {
+        let kq='';
+        if (a > b) {
+            kq = " số thứ nhất lớn hơn số thứ hai";
+            return kq;
+        } else {
+             kq = a + b;
+            return kq;
+        }
+        
+    }
+
+    let num1 = parseInt(prompt("nhập số thứ nhất"));
+    let num2 = parseInt(prompt("nhập vào số thứ 2"));
+    let kq = hamTraVe(num1, num2);
+    alert(kq)
+</script>
+</body>
+</html>

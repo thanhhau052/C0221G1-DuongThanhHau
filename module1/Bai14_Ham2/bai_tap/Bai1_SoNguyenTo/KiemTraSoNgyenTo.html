@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function kiemTraSoNguyenTo(number) {
+        let check = true;
+
+        if (number < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    check = false;
+                    break;
+                }
+            }
+
+        }
+        if (check) {
+           return true;
+        } else {
+           return false;
+        }
+    }
+    let num = prompt("nhập vào số cần kiểm tra :");
+    kiemTraSoNguyenTo(num);
+    if(kiemTraSoNguyenTo(num)){
+        alert("số bạn cần kiểm tra là số nguyên tố ")
+    }else {
+        alert("só bạn cần kiểm tra ko là phải là số nguyên tố ")
+    }
+
+
+</script>
+</body>
+</html>

@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>viết hàm kiểm tra và in ra màn hình số nhỏ nhất trong 3 số</title>
 </head>
 <body>
-$END$
+<script>
+    function kiemTraGTNN(a, b, c) {
+        let kq = "";
+        if (a < b) {
+            if (a < c) {
+                kq = a;
+            } else {
+                kq = c;
+            }
+        } else if (b < c) {
+            kq = b;
+        }
+        return kq;
+    }
+
+    let num1 = prompt("nhập vào giá trị số thứ nhất :");
+    let num2 = prompt("nhập vào giá trị số thứ hai :");
+    let num3 = prompt("nhập vào giá trị số thứ ba : ");
+    let kq = kiemTraGTNN(num1, num2, num3);
+    alert("giá trị nhỏ nhất trong ba số là  : " + kq);
+</script>
 </body>
 </html>

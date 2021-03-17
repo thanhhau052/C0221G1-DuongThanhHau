@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>xây dựng hàm tính diên tích và chu vi của hình tròn </title>
 </head>
 <body>
-$END$
+<script>
+    function tinhDienTich(r) {
+        let dienTich=r*r*3.14;
+        return dienTich;
+
+    }
+    function tinhChuVi(r) {
+        let chuVi=2*r*3.14;
+        return chuVi;
+
+    }
+    let r=prompt("nhập vào bán kính của hình tròn");
+    let dienTich=tinhDienTich(r);
+    let chuVi=tinhChuVi(r);
+    document.write("diện tích của hình tròn là : "+dienTich+"<br>");
+    document.write("chu vi của hình tròn là :"+chuVi);
+</script>
 </body>
 </html>

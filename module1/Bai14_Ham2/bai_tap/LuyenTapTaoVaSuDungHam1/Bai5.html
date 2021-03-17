@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<script>
+    function kiemTra(nhap){
+        let mangSao1=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
+        let mangSao2=["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" , "Leo"];
+        let kq='';
+        for (let i=0;i<mangSao1.length;i++){
+            if (nhap===mangSao1[i]){
+                 kq=mangSao2[i];
+                break;
+            }else kq="ko tìm thấy";
+            break;
+        }
+        return kq;
+    }
+    let nhap=prompt("nhập vào tên ngôi sao bạn biết : ");
+    kq=kiemTra(nhap);
+    alert(kq);
+</script>
+</body>
+</html>

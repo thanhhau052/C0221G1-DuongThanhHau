@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>viết hàm tính giai thừa của một số </title>
 </head>
 <body>
-$END$
+<script>
+    function giaiThua(n) {
+        let kq=1;
+        for (let i=1;i<=n; i++){
+            kq=kq*i;
+        }return kq;
+    }
+    let n=prompt("nhập vào số n bạn cần tính :")
+    let kq=giaiThua(n);
+    document.write(n+"! có giá trị là :"+kq);
+</script>
 </body>
 </html>
