@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập xây dựng mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="hinhChuNhat" width="200px" height="200px"  style="border: 1px  solid red; background:cornflowerblue"></canvas>
+<script>
+    class HinhChuNhat {
+        constructor(chieuDai, chieuRong) {
+            this.dai = chieuDai;
+            this.rong = chieuRong;
+
+        }
+
+        getChieuDai() {
+            return this.dai;
+        }
+
+        getChieuRong() {
+            return this.rong;
+        }
+
+        setChieuDai(chieuDaiMoi) {
+             this.dai = chieuDaiMoi;
+        }
+
+        setChieuRong(chieuRongMoi) {
+             this.rong = chieuRongMoi;
+        }
+
+        dienTich() {
+            return this.dai * this.rong;
+        }
+
+        chuVi() {
+            return (this.dai + this.rong) * 2;
+        }
+        ve(){
+            let canvas=document.getElementById("hinhChuNhat");
+            let ctx=canvas.getContext("2d");
+            ctx.fillStyle="Red";
+            ctx.fillRect(50,50,this.dai,this.rong);
+        };
+
+        // setDoDai(a, b) {
+        //     this.rong = a;
+        //     this.dai = b;
+        // }
+
+
+    };
+    let nhapDai=prompt("nhap vao chieu dai :");
+    let nhapRong=prompt("nhap vao chieu rong")
+    let kq = new HinhChuNhat(nhapDai, nhapRong);
+    kq.ve();
+    document.write("<br>");
+    document.write(" dien tich la "+kq.dienTich()+"<br>");
+    document.write("<br>");
+
+ ;
+    // kq.setDoDai(20, 10);
+    // document.write(kq.chuVi())
+
+</script>
+</body>
+</html>

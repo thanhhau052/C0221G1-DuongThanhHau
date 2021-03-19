@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature{
+        constructor(doC){
+            this.C=doC;
+        }
+        getDoC(){
+            return this.C;
+        }
+        setDoC(newDoC){
+             this.C=newDoC;
+        }
+        sangF(){
+            return (this.C*9/5+32);
+        }
+        sangKenvin(){
+            return (this.C=273.15);
+        }
+
+    }
+    let nhap=prompt("nhap vao do C :");
+    let kq=new Temperature(nhap);
+    document.write("Do C ban vua nhap la :"+nhap);
+    document.write("<br>");
+    document.write("Do C sang do F la :"+kq.sangF());
+    document.write("<br>");
+
+    document.write("Do C sang Kevin la :"+kq.sangKenvin());
+</script>
+</body>
+</html>
