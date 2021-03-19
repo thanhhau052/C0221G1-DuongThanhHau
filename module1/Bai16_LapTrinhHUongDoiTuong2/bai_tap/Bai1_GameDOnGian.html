@@ -2,9 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Game đơn giản - di chuyển đối tượng</title>
 </head>
 <body>
-$END$
+<div id="game"></div>
+<script>
+    function Hero(image, top, left, size) {
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+        this.getHeroElement = function () {
+            return '<img width="' + this.size + '"' +
+                ' height=" + this.size + "' +
+                ' src="pikachu.png"' + this.image + '"' +
+                ' style="top: ' + this.top + 'px; left:' + this.left + 'px;down: ' + this.down + 'px;right: ' + this.right + 'px;position:absolute;"/>';
+        };
+        this.moveRight = function () {
+            this.left += 20;
+            console.log('ok: ' + this.left);
+        };
+        this.movedown = function () {
+            this.top += 20;
+            console.log('ok: ' + this.up);
+        };
+        this.moveleft = function () {
+            this.left -= 20;
+            console.log('ok: ' + this.right);
+        };
+        this.movetop = function () {
+            this.top -= 20;
+        }
+    }
+
+    let hero = new Hero('pikachu.png', 0, 0, 200);
+
+    function start() {
+        let rong = window.innerWidth - hero.size;
+        let cao = window.innerHeight - hero.size;
+        if (hero.left < rong && hero.top == 0) {
+            hero.moveRight();
+        } else if (hero.left > rong && hero.top < cao) {
+            hero.movedown();
+        } else if (hero.top == cao && hero.left > 0) {
+            hero.moveleft()
+        } else if (hero.left == 0 && hero.top > 0) {
+            hero.movetop()
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 5)
+    }
+
+    start();
+</script>
 </body>
 </html>

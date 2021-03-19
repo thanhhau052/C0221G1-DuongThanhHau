@@ -2,9 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
+    <title>Title</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>[Bài tập] Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+    </head>
 <body>
-$END$
+<input type="button" value="Eat" id="eatBtn">
+<div id="say"></div>
+<script>
+    function Apple(weight = 10) {
+        this.weight = weight;
+        this.check = false;
+        this.decrease = function () {
+            this.weight--;
+        };
+        this.getWeight = function () {
+            console.log("Trọng lượng táo:" + this.weight);
+            return this.weight;
+        }
+    }
+
+    function Human(name, weight) {
+        this.name = name;
+        this.weight = weight;
+
+        this.getWeight = function () {
+            console.log(this.name + "Weight:" + this.weight);
+            return this.weight;
+        };
+        this.setWeight = function (wet) {
+            this.weight = wet;
+        };
+        this.eat = function (apple) {
+            apple.decrease();
+        };
+        this.say = function (string) {
+            document.getElementById("say").innerHTML += (this.name + "  said :" + string + "<br>");
+        };
+        this.checkApple = function (apple) {
+            return apple.getWeight();
+        }
+    }
+
+    let nguoi1 = new Human("Mr.Khanh", 100);
+    let nguoi2 = new Human("Mr.Nam", 50);
+    let apple = new Apple();
+    let isAdamNext = true;
+
+    document.getElementById('eatBtn').addEventListener('click', () => {
+        if (!apple.check) {
+            if (isAdamNext) {
+                nguoi1.eat(apple);
+                nguoi1.setWeight(++nguoi1.weight);
+
+                if (!nguoi1.checkApple(apple)) {
+                    nguoi1.say('Hết  táo rồi!');
+                    apple.check = true;
+                } else {
+                    nguoi1.say('Em ăn một miếng đi không anh ăn hết giờ!');
+                }
+                isAdamNext = false;
+            } else {
+                nguoi2.eat(apple);
+                nguoi2.setWeight(++nguoi2.weight);
+
+                if (!nguoi2.checkApple(apple)) {
+                    nguoi2.say('Hết  táo rồi! Anh ra chợ kiếm quả khác về gặm tiếp đi!');
+                    apple.check = true;
+                } else {
+                    nguoi2.say('Anh ăn một miếng đi nè!');
+                }
+                isAdamNext = true;
+            }
+        }
+    })
+</script>
 </body>
 </html>
