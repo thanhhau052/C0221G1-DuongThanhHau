@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm số lượng kí tự chung giữa hai mảng</title>
+</head>
+<body>
+<script>
+    let a1= "aabcc".split("");
+    let a2="adcaa".split("");
+    let a3=[];
+    for (let i=0; i<a1.length; i++){
+        for(let j=0; j<a2.length; j++){
+            if (a1[i]==a2[j]){
+                a3+= a2.splice(j,1);
+                break;
+            }
+        }
+    }
+    alert(a3+"  Và số kí tự chung   " +a3.length)
+</script>
+
+
+<!--<script>-->
+<!--    let chuoi1 = prompt("nhập vào chuỗi thứ nhất :");-->
+<!--    let chuoi2 = prompt("nhập vào chuỗi thứ hai :");-->
+<!--    let mang1 = chuoi1.split("");-->
+<!--    let mang2 = chuoi2.split("");-->
+<!--    let mangChung = [];-->
+<!--    for (let i = 0; i < mang1.length; i++) {-->
+<!--        for (let j = 0; j < mang2.length; j++) {-->
+<!--            if (mang1[i] == mang2[j]) {-->
+<!--                mangChung.push(mang1[i]);-->
+<!--            }-->
+<!--        }-->
+
+<!--    }-->
+
+
+<!--</script>-->
+</body>
+</html>

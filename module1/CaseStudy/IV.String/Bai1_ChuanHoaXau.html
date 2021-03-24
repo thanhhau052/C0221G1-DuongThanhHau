@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuan hoa xau ki tu</title>
+</head>
+<body>
+<script>
+    // function jsUcfirst(string)
+    // {
+    //     return string.charAt(0).toUpperCase() + string.slice(1);
+    // }
+
+    let nhap = "dUOng            ThanH                         hAu ";
+    let nhap1 = nhap.toLowerCase();
+    let mang = nhap1.split(" ");
+    let newMang = [];
+    for (let i = 0; i < mang.length; i++) {
+        if (mang[i].length>0) {
+            newMang.push(mang[i][0].toUpperCase() + mang[i].slice(1));
+        }
+    }
+    console.log(newMang.join(" "))
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 1:</title>
+</head>
+<body>
+
+<script>
+    let n = prompt("nhập vào số phần tử của mảng A :");
+    let mangA = [];
+    let mangB = [];
+    for (let i = 0; i < n; i++) {
+        mangA[i] = parseInt(prompt("nhập vào thành phần trong mảng :"));
+    }
+    for (let i = 0; i < n; i++){
+        mangB[i]=0;
+        for (let j =0;j<=i;j++){
+            mangB[i]+=parseInt(mangA[j]);
+        }
+    }
+ console.log(mangB.toString());
+
+</script>
+</body>
+</html>

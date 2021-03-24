@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>vẽ tam giác vuông có chiều cao h </title>
 </head>
 <body>
-$END$
+<script>
+    let h = prompt("nhập vào chiều cao của tam giác vuông h:");
+    for (let i = 1; i <= h; i++) {
+        for (let k = 1; k <= i; k++) {
+            if (i==1||k==1||i==h||k==i){
+                document.write("*");
+            }else document.write("&nbsp&nbsp");
+        }
+
+        document.write("<br>")
+
+    }
+</script>
 </body>
 </html>

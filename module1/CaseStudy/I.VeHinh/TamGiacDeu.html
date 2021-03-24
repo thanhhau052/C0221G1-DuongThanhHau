@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>in ra tam giác đều có chiều cao là h</title>
 </head>
 <body>
-$END$
+<script>
+    let h=prompt(prompt(" nhap vao chieu cao h cua tam hiac :"));
+    do {
+        if(h<=0){
+            alert("nhap lai chieu cao lon hon 0 !");
+            h=prompt(prompt(" nhap vao chieu cao h cua tam hiac :"))
+        }
+
+    }while (h<=0);
+    for (let i = 1; i <= h; i++) {
+        for (let j = h; j > i; j--) {
+            document.write("&nbsp&nbsp");
+
+        }
+        for (let j = 1; j <= i * 2 - 1; j++) {
+            document.write("*")
+        }
+        document.write("<br>")
+    }
+
+
+</script>
 </body>
 </html>

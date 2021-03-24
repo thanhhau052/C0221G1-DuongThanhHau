@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>nhập kí tự tiếng anh từ bàn phím , kiểm tra xem là nguyên âm hay phụ âm</title>
 </head>
 <body>
-$END$
+<script>
+
+    let kiTu = prompt("nhập vào kí tự cần kiểm tra :");
+    while (kiTu===""){
+        kiTu = prompt("nhập vào kí tự cần kiểm tra :");
+    }
+    switch (kiTu) {
+        case ("a"):
+        case ("A"):
+        case ("o"):
+        case ("O"):
+        case ("u"):
+        case ("U"):
+        case ("i"):
+        case ("I"):
+        case ("e"):
+        case ("E"):
+            alert("nguyen  âm");
+            break;
+        default:
+            alert("phụ âm");
+    }
+</script>
+
 </body>
 </html>

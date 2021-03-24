@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>tính thuế thu nhập và tiên lương thực tế nhận được</title>
 </head>
 <body>
-$END$
+<script>
+    let loai1 = 0.05;
+    let loai2 = 0.1;
+    let loai3 = 0.2;
+    let thue ;
+    let luongThucTe;
+    let luong = parseInt(prompt("nhập vào số tiền lương của bạn :"));
+    if (luong < 7000000) {
+        thue = luong * loai1;
+    } else if (luong < 15000000) {
+        thue = luong * loai2;
+    } else {
+
+        thue = luong * loai3;
+    }
+
+    luongThucTe = luong - thue;
+   console.log("thuế thu nhập của bạn phải trả là :" + thue);
+    console.log("luong thực tế bạn nhận được là :" + luongThucTe)
+
+</script>
 </body>
 </html>

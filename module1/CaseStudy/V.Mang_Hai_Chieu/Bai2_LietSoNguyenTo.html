@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>liêt kê và in ra số lượng số nguyên tố trong mảng hai chiều</title>
+</head>
+<body>
+<script>
+
+    let mang1=[];
+
+    let m=prompt("nhập vào số lượng phần tử mảng lớn :");
+    let n=prompt("nhập vào số lượng phần tử mảng lớn :");
+    let mang=[];
+
+    for (let i=0;i<m;i++){
+        mang[i]=[];
+        for (let j=0 ; j<n; j++){
+            mang[i][j]=prompt("nhập vào các phần tử mảng con :");
+        }
+    }
+    function kiemTraSoNguyenTo(number) {
+        let check = true;
+
+        if (number < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    check = false;
+                    break;
+                }
+            }
+
+        }
+        if (check) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    for (let i=0;i<mang.length; i++){
+        for (let j=0;j<mang[i].length;j++){
+            if(kiemTraSoNguyenTo(mang[i][j])){
+                 mang1.push(mang[i][j]);
+                document.write(mang[i][j]);
+                document.write("<br>");
+            }
+        }
+    }
+    document.write("số lượng số nguyên tố trong mảng hai chiều  là :"+mang1.length);
+
+</script>
+</body>
+</html>
