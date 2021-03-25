@@ -25,9 +25,13 @@
         let nhap = prompt("Vui lòng chọn món : ");
         do {
             let sl = prompt("Nhập số lượng món " + menu[nhap-1]);
+            if(sl==="ok"){
+                break;
+            }
             document.write("Tên món:" + menu[nhap] +"<br>"+ " Giá : " + gia[nhap] +"<br>"+ " số lượng : " + sl
                 +"<br>");
             tongTien += gia[nhap] * sl;
+
             nhap = prompt("Vui lòng chọn món : ");
         } while (nhap !=="ok");
         document.write("tổng tiền phải trả là :" + tongTien)
