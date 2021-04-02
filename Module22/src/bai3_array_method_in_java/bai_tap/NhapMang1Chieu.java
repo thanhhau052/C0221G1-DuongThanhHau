@@ -1,8 +1,5 @@
-package bai3_array.bai_tap;
+package bai3_array_method_in_java.bai_tap;
 
-import org.w3c.dom.ls.LSOutput;
-
-import javax.crypto.spec.PSource;
 import java.util.Scanner;
 
 public class NhapMang1Chieu {

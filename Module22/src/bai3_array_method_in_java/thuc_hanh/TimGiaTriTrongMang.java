@@ -1,4 +1,4 @@
-package bai3_array.thuc_hanh;
+package bai3_array_method_in_java.thuc_hanh;
 
 import java.util.Scanner;
 

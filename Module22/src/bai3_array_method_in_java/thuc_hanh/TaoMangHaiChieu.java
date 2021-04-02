@@ -1,8 +1,5 @@
-package bai3_array.thuc_hanh;
+package bai3_array_method_in_java.thuc_hanh;
 
-
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class TaoMangHaiChieu {
     public static void main(String[] args) {

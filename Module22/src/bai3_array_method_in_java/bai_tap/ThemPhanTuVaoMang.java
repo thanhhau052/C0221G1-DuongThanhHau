@@ -1,5 +1,6 @@
-package bai3_array.bai_tap;
+package bai3_array_method_in_java.bai_tap;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ThemPhanTuVaoMang {
@@ -44,8 +45,6 @@ public class ThemPhanTuVaoMang {
 //        }
 
 
-        for (i=0;i<arr1.length; i++){
-            System.out.println("arr1["+i+"] = "+arr1[i]);
-        }
+        System.out.println(Arrays.toString(arr1));
     }
 }
