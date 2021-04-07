@@ -7,11 +7,11 @@ public class Triangle extends Shape {
     private  double side2=4;
     private  double side3=5;
 
-//    public Triangle(double side1, double side2, double side3) {
-//        this.side1 = side1;
-//        this.side2 = side2;
-//        this.side3 = side3;
-//    }
+    public Triangle(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
 
     public Triangle(String color, boolean filled, double side1, double side2, double side3) {
         super(color, filled);
@@ -47,10 +47,10 @@ public class Triangle extends Shape {
         this.side3 = side3;
     }
     public double getDienTich(){
-        return  getSide1()*getSide2()*getSide3();
+        return  getSide1()*getSide2()*getSide3()/3;
     }
     public double getChuVi(){
-        return getSide1()+getSide2()/2;
+        return getSide1()*getSide2()/2;
     }
 
     @Override
@@ -59,6 +59,6 @@ public class Triangle extends Shape {
                 "side1=" + side1 +
                 ", side2=" + side2 +
                 ", side3=" + side3 +
-                '}' +" co Dien tich va chu vi lan luot la : "+getDienTich()+getChuVi();
+                '}' +" co Dien tich va chu vi lan luot la : "+getDienTich()+"\t"+getChuVi();
     }
 }
