@@ -1,4 +1,4 @@
-package bai6_inheritance.bai_tap.Bai_tap2_point2d_3d;
+package bai6_inheritance.bai_tap.bai_tap2_point2d_3d;
 
 public class pointMain {
     public static void main(String[] args) {

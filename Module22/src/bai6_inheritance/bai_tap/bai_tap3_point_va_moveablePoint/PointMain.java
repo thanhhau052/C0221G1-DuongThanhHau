@@ -9,19 +9,20 @@ public class PointMain {
         System.out.println("Sau khi set : \n"+point.toString());
 
 
-        //
+
+//set1
          point=new MoveAblePoint(point.getX(), point.getY(),30,30);
         System.out.println("MoveAblePoint :"+point.toString());
 
 
         ((MoveAblePoint) point).move();
         System.out.println("move:"+point.toString());
-
+//set1
 
         MoveAblePoint moveAblePoint=new MoveAblePoint(40,40);
         System.out.println("anotherPoint "+moveAblePoint.toString());
 
-
+//set1
         moveAblePoint.move();
         System.out.println("anotherPoint . move"+ moveAblePoint.toString());
     }

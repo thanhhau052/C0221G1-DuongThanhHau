@@ -37,6 +37,9 @@ public class MoveAblePoint extends Point {
         this.xSpeed = xSpeed;
 
     }
+//    Object object=new Object(){
+//
+//    }
 
     public double getySpeed() {
         return ySpeed;
@@ -53,6 +56,7 @@ public class MoveAblePoint extends Point {
         this.setxSpeed(this.getX() + this.getxSpeed());
         this.setySpeed(this.getY() + this.getySpeed());
         return this;
+//
     }
 
     public void setSpeed(double xSpeed, double ySpeed) {
