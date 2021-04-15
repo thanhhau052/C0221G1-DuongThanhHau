@@ -1,14 +1,14 @@
-package bai_12_java_collection_framwork.bai_tap.quan_li_san_pham2;
+package bai_12_java_collection_framwork.bai_tap.bai1_quan_li_san_pham2;
 
 import java.util.*;
 
 public class ProductManager extends Product {
     public static void main(String[] args) {
         List<Product> productList = new ArrayList<>();
-        Product sp1 = new Product(1,"Iphone 5",5000);
-        Product sp2 = new Product(2,"Iphone 6",6000);
-        Product sp3 = new Product(3,"Iphone 7",7000);
-        Product sp4 = new Product(4,"Iphone 8",8000);
+        Product sp1 = new Product(1, "Iphone 5", 5000);
+        Product sp2 = new Product(2, "Iphone 6", 6000);
+        Product sp3 = new Product(3, "Iphone 7", 7000);
+        Product sp4 = new Product(4, "Iphone 8", 8000);
 
         productList.add(sp1);
         productList.add(sp2);
@@ -34,24 +34,23 @@ public class ProductManager extends Product {
                     break;
                 case 2:
                     System.out.println("DANH SÁCH SẢN PHẨM HIỆN CÓ ");
-                    for (Product item : productList){
+                    for (Product item : productList) {
                         System.out.println(item + " ,");
-//                      System.out.println("Id " + item.getId() + " Tên Sản phẩm " + item.getName() + " Giá " + item.getPrice());
                     }
                     break;
-                case 3 :
+                case 3:
                     System.out.println("Nhập Id sản phẩm bạn muốn sữa ");
                     int num = Integer.parseInt(scanner.nextLine());
                     Product productEdit = null;
-                    for (Product product: productList) {
+                    for (Product product : productList) {
                         if (num == product.getId()) {
                             productEdit = product;
                         }
                     }
                     // System.out.println("Nhập Id mới "+ productEdit.setName(""););
-                    if (productEdit == null ) {
+                    if (productEdit == null) {
                         System.out.println("Không có sản phẩm bạn tìm");
-                    }else {
+                    } else {
                         System.out.println("Nhập ID mới");
                         int newId = Integer.parseInt(scanner.nextLine());
                         productEdit.setId(newId);
@@ -70,33 +69,34 @@ public class ProductManager extends Product {
                 case 4:
                     System.out.println("Chọn ID sản phẩm cần sữa");
                     int number = Integer.parseInt(scanner.nextLine());
-                    boolean check = true ;
-                    for (Product item : productList){
-                        if (number == item.getId()){
+                    boolean check = true;
+                    for (Product item : productList) {
+                        if (number == item.getId()) {
                             productList.remove(item);
                             check = false;
                             break;
                         }
-                    }if (check){
-                    System.out.println("Bạn nhập sai ");
-                }
+                    }
+                    if (check) {
+                        System.out.println("Bạn nhập sai ");
+                    }
 
                     break;
                 case 5:
                     System.out.println("Nhập tên sản phẩm ");
                     String name = scanner.nextLine();
 
-                    for (Product item : productList){
-                        if (name.equals(item.getName())){
+                    for (Product item : productList) {
+                        if (name.equals(item.getName())) {
                             System.out.println(item.toString());
                         }
                     }
                     break;
-                case 6 :
+                case 6:
                     System.out.println("Sắp xếp theo giá tăng dần");
                     productList.sort(Comparator.comparing(Product::getPrice));
                     break;
-                case 7 :
+                case 7:
                     System.out.println("Sắp xếp Giam dần ");
                     Collections.reverse(productList);
                     break;
@@ -119,9 +119,9 @@ public class ProductManager extends Product {
         System.out.println("3. SỮA THÔNG TIN SẢN PHẨM ");
         System.out.println("4. XÓA SẢN PHẨM  ");
         System.out.println("5. TÌM KIẾM SẢN PHẨM THEO TÊN  ");
-        System.out.println("6. TÌM KIẾM SẢN PHẨm theo gái tăng dần  ");
-        System.out.println("7. TÌM KIẾM SẢN PHẨM theo giá giảm dần  ");
-        System.out.println("8. THoát");
+        System.out.println("6. TÌM KIẾM SẢN PHẨM THEO GIÁ TĂNG DẦN  ");
+        System.out.println("7. TÌM KIẾM SẢN PHẨM THEO GIÁ GIẢM DẦN ");
+        System.out.println("8. THOÁT");
     }
 
 

@@ -3,7 +3,7 @@ package bai_11_DSA_stack_queue.bai_tap.bai7_to_chuc_hop_li_demerging;
 import java.util.*;
 
 public class MainTochucHopLi {
-    public static void main(String[] args) {
+    public static void main(String[] args) {    ;
         Person[] persons = new Person[6];
         persons[0] = new Person("Cuong", "Nu", 1999);
         persons[1] = new Person("Thao", "Nam", 1995);

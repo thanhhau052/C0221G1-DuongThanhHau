@@ -1,13 +1,9 @@
-package bai_12_java_collection_framwork.bai_tap.quan_li_san_pham;
+package bai_12_java_collection_framwork.bai_tap.bai1_quan_li_san_pham;
 
-public class SanPham extends QuanLiSanPham {
-    private  String name;
+public class SanPham {
+    private String name;
     private int id;
-    private  double price;
-    SanPham(){
-        super();
-
-    }
+    private double price;
 
     public SanPham(String name, int id, double price) {
         this.name = name;
@@ -41,10 +37,10 @@ public class SanPham extends QuanLiSanPham {
 
     @Override
     public String toString() {
-        return "SanPham{" +
+        return "SanPham| " +
                 "name='" + name + '\'' +
                 ", id=" + id +
                 ", price=" + price +
-                '}';
+                '|';
     }
 }

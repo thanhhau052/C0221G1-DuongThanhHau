@@ -1,12 +1,12 @@
-package bai_12_java_collection_framwork.bai_tap.quan_li_san_pham;
+package bai_12_java_collection_framwork.bai_tap.bai1_quan_li_san_pham;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class QuanLiSanPham {
-    public static List<SanPham> sanPhams = new ArrayList<>();
-    
+     static List<SanPham> sanPhams = new ArrayList<>();
+
     public static void add(SanPham sanPham) {
         sanPhams.add(sanPham);
     }
@@ -40,9 +40,9 @@ public class QuanLiSanPham {
         System.out.println("_____________________________________________");
         for (SanPham sanPham : sanPhams) {
             System.out.println(sanPham);
+            System.out.println("_____________________________________________");
 
         }
-        System.out.println("_____________________________________________");
     }
 
     public static void soft() {

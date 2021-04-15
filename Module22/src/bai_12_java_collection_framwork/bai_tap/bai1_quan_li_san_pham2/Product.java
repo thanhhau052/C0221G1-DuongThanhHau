@@ -1,11 +1,11 @@
-package bai_12_java_collection_framwork.bai_tap.quan_li_san_pham2;
+package bai_12_java_collection_framwork.bai_tap.bai1_quan_li_san_pham2;
 
 import java.util.Scanner;
 
-public  class Product {
-    private int id ;
-    private String name ;
-    private int price ;
+public class Product {
+    private int id;
+    private String name;
+    private int price;
 
     public Product() {
     }
@@ -49,8 +49,8 @@ public  class Product {
                 '}';
     }
 
-    public void inPut(){
-        Scanner scanner =new Scanner(System.in);
+    public void inPut() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập ID");
         id = Integer.parseInt(scanner.nextLine());
 
