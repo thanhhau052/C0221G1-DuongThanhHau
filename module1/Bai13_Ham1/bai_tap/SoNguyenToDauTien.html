@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>hàm sử dụng in ra số nguyên tố đầu tiên</title>
 </head>
 <body>
-$END$
+<script>
+
+    function demSoNguyenTo(soLuong){
+        let count = 0;
+        let n = 0;
+        let kq='';
+        while (count < soLuong) {
+            let kiemTra = true;
+            if (n < 2) {
+                kiemTra = false;
+            } else {
+                for (let i = 2; i < n  ; i++) {
+                    if (n % i === 0) {
+                        kiemTra = false;
+                        break;
+                    }
+                }
+            }
+            if (kiemTra) {
+                count++;
+                kq += n + "<br> ";
+            }
+            n++;
+        }
+        return kq;
+
+    }
+    let soLuong = prompt(" nhập vào số lượng số nguyên tố cần in ra :");
+    let kq=demSoNguyenTo(soLuong);
+    document.write(kq)
+
+</script>
 </body>
 </html>

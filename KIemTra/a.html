@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function demKtHoa(chuoi) {
+        let a = chuoi.toUpperCase();
+        let count = 0;
+        for (let i = 0; i < chuoi.length; i++) {
+            if (chuoi[i] == a[i] && chuoi[i]!==" ") {
+                count++;
+            }
+        }
+        if (count == 0) {
+            alert('the strings is not contain upper char')
+        }else
+        {
+            alert(count);
+        }
+    }
+    let chuoiKiTu=prompt('nhập chuổi kí tự');
+    demKtHoa(chuoiKiTu);
+</script>
 </body>
 </html>

@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> cấu trúc lặp 1</title>
 </head>
 <body>
-$END$
+<h1>BẢNG CỬU CHƯƠNG</h1>
+<script>
+
+    let i;
+    let j;
+
+    document.write("<table border=1 width=100%>")
+    for (i = 1, j = 10; i <= 9, j >= 1; i++, j--) {
+        document.write("<tr>")
+        for (n = 2; n <= 9; n++)
+            document.write("<td>" + n + "x" + i + "=" + (n * i));
+        document.write("</td>");
+        document.write("</tr>")
+    }
+    document.write("</tr></table>")
+
+</script>
 </body>
 </html>

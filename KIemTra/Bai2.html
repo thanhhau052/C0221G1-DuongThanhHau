@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bai 2</title>
 </head>
 <body>
-$END$
+<script>
+    function demKyTuHoa(chuoi) {
+        let chuoiMoi=chuoi.toUpperCase();
+        let dem=0;
+        for (let i=0; i < chuoi.length; i++) {
+            if (chuoi[i] === chuoiMoi[i] && chuoi[i] !== " ") {
+                dem++;
+            }
+        }
+        return dem;
+    }
+
+    let chuoiKiTu=prompt('nhập chuổi kí tự');
+    let kiemTra=demKyTuHoa(chuoiKiTu);
+    if (kiemTra === 0) {
+        alert("the strings is not contain upper char");
+    } else {
+        alert("so ky tu in hoa la : " + kiemTra);
+    }
+</script>
 </body>
 </html>

@@ -2,9 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bai 4</title>
 </head>
 <body>
-$END$
+<p id="ketQua"></p>
+<input type="button" value="Them Dien Thoai" onclick="themDienThoai()">
+
+<script>
+    class DienThoai {
+        constructor(maDt, tenDt, hangDt, giaDt) {
+            this.maDt=maDt;
+            this.tenDt=tenDt;
+            this.hangDt=hangDt;
+            this.giaDt=giaDt;
+        }
+
+        getMaDt() {
+            return this.maDt;
+        }
+
+        setMaDt(maDt) {
+            this.maDt=maDt;
+        }
+
+        getTenDt() {
+            return this.tenDt;
+        }
+
+        setTenDt(tenDt) {
+            this.tenDt=tenDt;
+        }
+
+        getHangDt() {
+            return this.hangDt;
+        }
+
+        setHangDt(hangDt) {
+            this.hangDt=hangDt;
+        }
+
+        getGiaDt() {
+            return this.giaDt;
+        }
+
+        setGiaDt(giaDt) {
+            this.giaDt=giaDt;
+        }
+
+        toString() {
+            return " 1 . ma = " + this.maDt + "\n" +
+                " 2. ten = " + this.tenDt + "\n " +
+                " 3. hang = " + this.hangDt + "\n" +
+                " 4. gia = " + this.giaDt;
+        }
+    }
+
+    let danhSachDienThoai=[];
+    let dienThoai1=new DienThoai(1, "dien thoai 1", "samsung", "5 trieu");
+    let dienThoai2=new DienThoai(2, "dien thoai 2", "nokia", "3 trieu");
+    let dienThoai3=new DienThoai(3, "dien thoai 3", "iphone", "15 trieu");
+    danhSachDienThoai.push(dienThoai1, dienThoai2, dienThoai3);
+    display(danhSachDienThoai);
+
+    function display(danhSach) {
+        let tableString='<table border="1">\n' +
+            '    <tr> \n' +
+            '        <th>STT</th>\n' +
+            '        <th>Ma Dien Thoai</th>\n' +
+            '        <th>Ten Dien Thoai</th>\n' +
+            '        <th>Hang Dien Thoai</th>\n' +
+            '        <th>Gia Dien Thoai</th>\n' +
+            '\n' +
+            '    </tr>';
+        for (let i=0; i < danhSach.length; i++) {
+            tableString+='<tr>\n' +
+                '           <td>' + (i + 1) + '</td>\n' +
+                '           <td>' + danhSach[i].getMaDt() + '</td>\n' +
+                '           <td>' + danhSach[i].getTenDt() + '</td>\n' +
+                '           <td>' + danhSach[i].getHangDt() + '</td>\n' +
+                '           <td>' + danhSach[i].getGiaDt() + '</td>\n' +
+                '         </tr>';
+        }
+        tableString+='</table>';
+        document.getElementById("ketQua").innerHTML=tableString;
+
+    }
+
+    function themDienThoai() {
+        let ma=prompt(" nhap ma dien thoai");
+        let ten=prompt(" nhap ten dien thoai");
+        let hang=prompt(" nhap hang dien thoai");
+        let gia=prompt(" nhap gia dien thoai");
+        let dienThoai=new DienThoai(ma, ten, hang, gia);
+        danhSachDienThoai.push(dienThoai);
+        display(danhSachDienThoai);
+    }
+
+</script>
 </body>
 </html>

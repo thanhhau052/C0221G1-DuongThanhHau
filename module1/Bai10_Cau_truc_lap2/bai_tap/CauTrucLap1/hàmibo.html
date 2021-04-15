@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function dayFibonacci(num) {
+        let dem ='';
+        let c=0;
+        while (c<num) {
+            let a = 0;
+            let b = 1;
+            let temp;
+            temp=a;
+            a=a+b;
+            b=temp;
+            dem+=temp+' '
+            c++;
+        }
+        return dem;
+    }
+    // let nhapDaySoMuonInFibonacci = parseInt(prompt('nhap so de in ra day fibonacci'));
+    // dayFibonacci(nhapDaySoMuonInFibonacci);
+    // document.write(fibonacci(nhapDaySoMuonInFibonacci));
+    document.write(dayFibonacci(5));
+</script>
 </body>
 </html>

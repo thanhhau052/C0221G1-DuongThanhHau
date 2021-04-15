@@ -2,26 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>in ra màn hình 2< số nguyên tố đầu tiên</title>
+    <title>in ra màn hình 20 số nguyên tố đầu tiên</title>
 </head>
 <body>
 
 
 <script>
-    let numBer = prompt(" nhập vào số lượng số nguyên tố cần in ra :");
-    let kiemTrasoLuong = 0;
-    let N = 2;
-    let kiemTra = true;
-    while (kiemTrasoLuong < numBer) {
-        for( let i=2;i<N-1;i++){
-            N++;
-            if(N%i==0){
-                kiemTra=false;
-                break;
+    let soLuong = prompt(" nhập vào số lượng số nguyên tố cần in ra :");
+    let count = 0;
+    let n = 0;
+    let kq='';
+    while (count < soLuong) {
+        let kiemTra = true;
+
+        if (n < 2) {
+            kiemTra = false;
+        } else {
+            for (let i = 2; i < n -1 ; i++) {
+                if (n % i === 0) {
+                    kiemTra = false;
+                    break;
+                }
             }
-           document.write("so nguyen to"+N);
         }
+        if (kiemTra) {
+            count++;
+            kq += n + "<br> ";
+        }
+        n++;
     }
+    document.write(kq);
 </script>
 </body>
 </html>

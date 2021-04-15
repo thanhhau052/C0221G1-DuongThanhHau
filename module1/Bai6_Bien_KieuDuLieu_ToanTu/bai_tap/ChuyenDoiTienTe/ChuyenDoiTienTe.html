@@ -31,11 +31,11 @@
 <p id="ketqua"></p>
 <script>
     function tinh() {
-        let amonunt=document.getElementById("text").value;
+        let amount=document.getElementById("text").value;
         // Tìm đến giá trị
         let fromUSD =document.getElementById("fromUSD").value;
         let fromVND =document.getElementById("fromVND").value;
-        let ketQua=amonunt*fromVND/fromUSD;
+        let ketQua=amount*fromVND/fromUSD;
         document.getElementById("ketqua").innerHTML="Kết quả"+ketQua;
         //liên kết với kết quả
     }

@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Kiểm tra 1 số thuộc dãy FIBONACCI</title>
 </head>
 <body>
-$END$
+<script>
+    let inputCheckNum = prompt("Nhập số cần kiểm tra");
+    let check = checkNumberInFibonacci(inputCheckNum);
+    if(check){
+        alert(inputCheckNum+" thuộc dãy Fibonaci");
+    }else{
+        alert(inputCheckNum+" không thuộc dãy Fibonaci");
+    }
+
+    function checkNumberInFibonacci(number) {
+        let num = 0;
+        let check = false;
+        let a = 1;
+        let b = 0;
+        while (num <= number) {
+            if (num == number) {
+                check = true;
+            }
+            num = a;
+            a += b;
+            b = num;
+        }
+        return check
+    }
+
+</script>
 </body>
 </html>

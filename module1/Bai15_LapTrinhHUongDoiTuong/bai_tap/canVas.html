@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="200px " height="100px" style="border:1px solid #b1bbed"></canvas>
+<script>
+        let canvas=document.getElementById("myCanvas");
+        let cxt=canvas.getContext("2d");
+        cxt.fillStyle="#FF9010";
+        cxt.fillRect(0, 0, 150, 75);
+        cxt.fillText("hello", 50, 100);
+        // let c=document.getElementById("myCanvas");
+        // let cxt1=c.getContext("2d");
+        // cxt1.beginPath();
+        // cxt1.arc(95,50,40,0,2*Math.PI);
+        // cxt1.stroke();
+
+        /* Đây là chú thích */
+        let x = [1,3,5,7];
+        let y = [2,4,6];
+        x[2] = y[x.length-3] + x [ x[0] + y[0] ];
+    alert(x)
+
+</script>
+<!-- Đây là chú thích -->
 </body>
 </html>

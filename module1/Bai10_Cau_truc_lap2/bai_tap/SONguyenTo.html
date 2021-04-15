@@ -13,14 +13,14 @@
         kiemTra = false;
     } else {
         for (let i = 2; i < n - 1; i++) {
-            if (n % i == 0) {
+            if (n % i === 0) {
                 kiemTra = false;
                 break;
             }
         }
     }
-    if (kiemTra == true) {
-        document.write(n+ "  "+ "là số nguyên tố" + "<br/>");
+    if (kiemTra ) {
+        document.write(n+" "+ "là số nguyên tố" + "<br/>");
     }else{
         document.write(n+ "ko phải số nguyên tố")
     }
