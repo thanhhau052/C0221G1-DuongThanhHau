@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập tính lãi suát ngân hàng</title>
+</head>
+<body>
+<script>
+    let tienGui=parseInt(prompt("nhập vào tiền gửi"));
+    let soThang=parseInt(prompt(" nhập vào số tháng gửi"));
+    for (let i = 1; i <= soThang; i++) {
+        let tienlai = tienGui * 0.1;
+        tienGui = tienGui + tienlai;
+    }
+    alert("tiền thu được là "+tienGui);
+</script>
+
+
+</body>
+</html>

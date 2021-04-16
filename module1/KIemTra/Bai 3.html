@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    function kiemTraSoNguyenTo(number) {
+        let check=true;
+
+        if (number < 2) {
+            check=false;
+        } else {
+            for (let i=2; i < number; i++) {
+                if (number % i === 0) {
+                    check=false;
+                    break;
+                }
+            }
+
+        }
+        if (check) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function kiemTraMangNguyenTo(arr) {
+        let mangSoNguyenTo=[];
+        let ketQua;
+        for (let k=0; k < arr.length; k++) {
+            if (kiemTraSoNguyenTo(arr[k])) {
+                mangSoNguyenTo.push(arr[k])
+            }
+        }
+        ketQua=mangSoNguyenTo.sort(function (a, b) {
+            return a - b
+        });
+        return ketQua;
+
+
+    }
+
+    //demo
+    let arr1=[1, 2, 31, 4, 5,11,3,2];
+    alert(kiemTraMangNguyenTo(arr1));
+
+
+</script>
+</body>
+</html>

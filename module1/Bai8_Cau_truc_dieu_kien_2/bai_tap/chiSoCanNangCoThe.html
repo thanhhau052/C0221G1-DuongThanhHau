@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI TẬP TÍNH CHỈ SỐ CÂN NẶNG CƠ THỂ</title>
+</head>
+<body>
+<script>
+    let weight;
+    let height;
+    let BMI;
+    weight=parseInt(prompt("nhập vào cân nặng của bạn"));
+    height=parseInt(prompt("Nhập vào chiều cao của bạn"));
+    BMI=weight/(height^2);
+    if(BMI<18.5){
+        alert("bạn quá gầy");
+    }else if (BMI<25.0){
+        alert(" cân đối");
+    }else  if(BMI<30.0){
+        alert(" bạn nên giảm cân");
+    }else  if(BMI>30){
+        alert("Bạn quá béo, phải giảm cân ngay");
+    }
+
+
+</script>
+</body>
+</html>

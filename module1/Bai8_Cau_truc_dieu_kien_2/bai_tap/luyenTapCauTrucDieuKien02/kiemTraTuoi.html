@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không</title>
+</head>
+<body>
+<script>
+    let age=prompt("nhập vào tuổi");
+    if(age < 120&& age>0){
+        alert("tuổi của bạn là "+age);
+    }else{
+        alert("tuổi không hợp lệ");
+        age=prompt("vui lòng nhập lại tuổi  nhỏ hơn 120 và lớn hơn 0");
+        if(age < 120&& age>0) {
+            document.write("tuổi của bạn là " + age);
+        }
+    }
+</script>
+</body>
+</html>

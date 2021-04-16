@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI TẬP SỬ DỤNG SWITCH-CASE TÍNH SỐ NGÀY TRONG THÁNG</title>
+</head>
+<body>
+<form>
+    <input type="number" placeholder="nhập tháng" id="thang" >
+    <input type="button" onclick="tinhNgay()"value="kiểm tra"> <br>
+    <b id="kq"></b>
+</form>
+<script>
+
+    function tinhNgay() {
+        let thang=document.getElementById("thang").value;
+        let thongBao='';
+        switch (thang) {
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+            thongBao='là tháng có 31 ngày' ;
+         break;
+            case '2':
+            thongBao='là tháng có 28 hoặc 29 ngày' ;
+            break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+            thongBao='tháng có 30 ngày';
+            default:
+                thongBao=' không tồn tại'
+
+    }
+        document.getElementById("kq").innerText='tháng  '+thang+"  "+thongBao;
+
+
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính giá điện sinh hoạt của gia đình</title>
+</head>
+<body>
+<script>
+    let bac1=1.678;
+    let bac2=1.734;
+    let bac3=2.014;
+    let bac4=2.536;
+    let bac5=2.834;
+    let bac6=2.937;
+    let soDien=parseInt(prompt("nhập vào số điện "));
+    let soTien='';
+    let soSau;
+    if(soDien<=50){
+        soTien=bac1*soDien;
+
+    }else if(soDien<=100){
+        soSau=soDien-50;
+        soTien=50*bac1+soSau*bac2;
+    }else if(soDien<=200) {
+        soSau = soDien - 100;
+        soTien = 50 * bac1 + 50 * bac2 + soSau * bac3;
+    }else if(soDien<=300){
+        soSau=soDien-200;
+        soTien=50*bac1+50*bac2+100*bac3+soSau*bac4;
+    }else if(soDien<=400){
+        soSau=soDien-300;
+        soTien=50*bac1+50*bac2+100*bac3+100*bac4+soSau*bac5;
+    }else {
+        soSau=soDien-400;
+        soTien=50*bac1+50*bac2+100*bac3+100*bac4+100*bac5+soSau*bac6;
+    }
+    document.write("số tiền phải trả là :"+soTien);
+
+
+</script>
+</body>
+</html>
