@@ -1,4 +1,4 @@
-package bai_8_clean_code_refactoring.thuc_hanh;
+package bai8_clean_code_refactoring.thuc_hanh;
 
 public class FizzBuzz {
     class FizzBuzzTest {
