@@ -3,7 +3,17 @@ package zoo;
 import java.util.Scanner;
 
 public class Main {
+
+//    static void method1(int a){  }
+
+    static void method1(float a){  }
+
+    static void method1(int c){  }
+
+    static void method1(double d){  }
+
     public static void main(String[] args) {
+
         Zoo zoo = new Zoo();
         Scanner input = new Scanner(System.in);
         int choose;
@@ -24,9 +34,10 @@ public class Main {
                     }
                     break;
                 case 2:
-                    System.out.println("Enter room's name is deleted: ");
+                    System.out.println("nhap room muon xoa: ");
                     int roomCode = Integer.parseInt(input.nextLine());
                     zoo.removeRoom(roomCode);
+                    zoo.display();
                     break;
                 case 3:
                     addAnimal(zoo);
@@ -55,7 +66,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             System.out.println("1. them Tiger");
             System.out.println("2. them  Dog");
-            System.out.println("them  Cat");
+            System.out.println(" con lai : them  Cat");
             choose = Integer.parseInt(input.nextLine());
 
             Animal animal;
@@ -73,7 +84,7 @@ public class Main {
             }
             animal.input();
 
-            System.out.println("==== Room List ====");
+            System.out.println("Danh sach :");
             Room room = null;
             for (int j = 0; j < zoo.getRoomList().size(); j++) {
                 room = zoo.getRoomList().get(j);

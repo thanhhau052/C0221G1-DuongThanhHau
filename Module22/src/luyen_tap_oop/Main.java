@@ -1,5 +1,7 @@
 //package luyen_tap_oop;
 //
+//import zoo.Zoo;
+//
 //import java.util.Scanner;
 //
 //public class Main {
@@ -79,7 +81,7 @@
 //        System.out.println("Rom List : ");
 //        Room room =null;
 //        for (int i=0;i<zoo.getRoomList().size(); i++){
-//            room = zoo.getRoomList().ge
+////            room = zoo.getRoomList().get
 //
 //        }
 //    }

@@ -14,7 +14,7 @@ public class Room {
 
     public void input() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter Room Code: ");
+        System.out.println("so chuong: ");
         roomCode = Integer.parseInt(input.nextLine());
 
         System.out.println("Enter Room Name: ");
