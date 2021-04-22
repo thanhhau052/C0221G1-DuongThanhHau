@@ -1,4 +1,4 @@
-package bai_15_ngoai_le_debug.thuc_hanh.debug_in_jva;
+package bai_15_ngoai_le_debug.thuc_hanh.bai1_debug_in_jva;
 import java.util.Scanner;
 public class LinearEquationResolver {
     public static void main(String[] args) {
@@ -25,3 +25,5 @@ public class LinearEquationResolver {
         }
     }
 }
+// debug phương trình bậc nhất
+// ax + b = 0
