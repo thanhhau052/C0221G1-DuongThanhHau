@@ -1,4 +1,4 @@
-package bai_16_io_text_file.bai_tap.doc_file;
+package bai_16_io_text_file.bai_tap.bai1_doc_file;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,8 +11,8 @@ public class ReadFileCSV {
 //        if (!file.exists()){
 //            file.createNewFile();
 //        }
-//        FileReader fileReader= new FileReader(file);
-        BufferedReader bufferedReader= new BufferedReader(new FileReader(file));
+        FileReader fileReader= new FileReader(file);
+        BufferedReader bufferedReader= new BufferedReader(fileReader);
         String line;
         while ((line=bufferedReader.readLine())!=null){
             String[] strings=line.split(",");

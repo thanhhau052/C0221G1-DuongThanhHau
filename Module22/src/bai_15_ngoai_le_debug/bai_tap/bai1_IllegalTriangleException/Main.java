@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        boolean repeatSidesInput = true;
 
         do {
             System.out.println("Nhap 3 canh cua tam giac :  ");
@@ -14,12 +13,13 @@ public class Main {
 
             try {
                 Triangle triangle = new Triangle(side1, side2, side3);
-                repeatSidesInput = false;
+                triangle.check();
+                break;
             }
             catch (IllegalTriangleException ex) {
-                ex.printStackTrace();
-                System.out.println("Khong phai tam giac " );
+
+                System.err.println(ex);
             }
-        } while (repeatSidesInput);
+        } while (true);
     }
 }

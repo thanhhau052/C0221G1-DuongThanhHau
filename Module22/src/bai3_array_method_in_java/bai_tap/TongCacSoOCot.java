@@ -28,5 +28,6 @@ public class TongCacSoOCot {
                 }
         }
         System.out.println(sum);
+//        System.err.println("loi o day");
     }
 }
