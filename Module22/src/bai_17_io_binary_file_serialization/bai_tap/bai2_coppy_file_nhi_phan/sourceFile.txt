@@ -1,0 +1,8 @@
+1
+4
+3
+3
+3
+3 3 3 3
+ D:\C221G1_DuongThanhHau\Module22\src\bai_17_io_binary_file_serialization\bai_tap\bai2_coppy_file_nhi_phan\sourceFile.txt
+D:\C221G1_DuongThanhHau\Module22\src\bai_17_io_binary_file_serialization\bai_tap\bai2_coppy_file_nhi_phan\target.txt

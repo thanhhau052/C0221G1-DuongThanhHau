@@ -20,7 +20,7 @@ public class ReadFileExample {
 
             // Đọc từng dòng của file và tiến hành cộng tổng lại
             BufferedReader br = new BufferedReader(new FileReader(file));
-            String line = "";
+            String line ;
             int sum = 0;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);

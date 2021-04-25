@@ -13,7 +13,7 @@ public class CoppyFile {
 
 
             FileReader fileReader = new FileReader(path1);
-            FileWriter fileWriter = new FileWriter(path2, true);
+            FileWriter fileWriter = new FileWriter(path2);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             String line;

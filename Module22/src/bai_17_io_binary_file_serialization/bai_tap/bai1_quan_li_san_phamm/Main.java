@@ -33,10 +33,12 @@ public class Main {
                         ProductFile.writeProduct(productManagement.productsList, "product.txt");
                         break;
                     case 3:
-                        ProductFile.readProduct("product.txt");
+                        ProductFile.readProduct("D:\\C221G1_DuongThanhHau\\Module22\\src\\bai_17_io_binary_file_serialization\\bai_tap\\bai1_quan_li_san_phamm\\product.txt");
                         break;
                     case 4:
                         productManagement.findByID();
+                        ProductFile.writeProduct(productManagement.productsList,"timkiem.txt");
+
                         break;
                     case 5:
                         productManagement.removeID();
