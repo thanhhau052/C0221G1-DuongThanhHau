@@ -29,6 +29,8 @@ public class Triangle {
         if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1 && side1 < 0 && side2 < 0 && side3 < 0)
             throw new IllegalTriangleException();
         System.out.println("hello");
+        double chuVi=getSide1()+getSide2()+getSide3();
+        System.out.println("chu vi la :"+chuVi);
 
     }
 
