@@ -53,7 +53,7 @@ public class Product implements Serializable, Comparable<Product> {
 
     public void inputData() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter ID:");
+
         this.iD = scanner.nextLine();
         System.out.println("Enter the name:");
         this.name = scanner.nextLine();
@@ -63,7 +63,7 @@ public class Product implements Serializable, Comparable<Product> {
         this.price = scanner.nextInt();
     }
 
-    public void display() {
+    public void   display() {
         System.out.println("Product{"
                 + " ID = "
                 + getID()

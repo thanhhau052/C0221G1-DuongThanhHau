@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        String source="D:\\C221G1_DuongThanhHau\\Module22\\src\\bai_17_io_binary_file_serialization\\bai_tap\\bai2_coppy_file_nhi_phan\\sourceFile.txt";
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter the source file: ");
@@ -16,7 +17,7 @@ public class Main {
 
         try {
             File file1 = new File(sourceFile);
-            FileInputStream fileInputStream= new FileInputStream(file1);
+            FileInputStream fileInputStream = new FileInputStream(file1);
             BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
 
 
@@ -36,11 +37,14 @@ public class Main {
                 }
 
             }
+            fileInputStream.close();
+            fileOutputStream.close();
             bufferedOutputStream.flush();
+            bufferedInputStream.close();
             bufferedOutputStream.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             System.err.println(e.getMessage());
-            System.out.println("File source not found.");
+            System.out.println("File source not found !");
         }
     }
 }

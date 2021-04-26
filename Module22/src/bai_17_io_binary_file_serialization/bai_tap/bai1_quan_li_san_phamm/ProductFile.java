@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class ProductFile {
 
-    public static void readProduct (String path) throws Exception {
+    public static void readProduct(String path) throws Exception {
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
         try {
@@ -32,6 +32,7 @@ public class ProductFile {
             System.out.println("Successful Writing !"); // ghi file thanh cong!
         } catch (FileNotFoundException e) {
             e.getMessage();
+            e.getLocalizedMessage(); //them moiw
         } finally {
             objectOutputStream.close();
             fileOutputStream.close();
