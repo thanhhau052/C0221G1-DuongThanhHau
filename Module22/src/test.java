@@ -1,16 +1,19 @@
 public class test {
-    public static void sort_ascending (java.util.ArrayList<Integer> arrayList) {
-        //Your code here
-        for (int i=0 ; i<arrayList.size();i++){
-            for (int j=i+1;j<arrayList.size(); j++){
-                if (arrayList.get(i) > arrayList.get(j)){
-                    int temp= arrayList.get(i);
-                    arrayList.set(i,arrayList.get(j));
-                    arrayList.set(j,temp);
-                }
+
+    public static int sum_even_numbers() {
+        int sum = 0;
+        for (int i = 1; i <= 1000; i++) {
+            if (i % 2 == 0) {
+                sum += i;
             }
         }
+        return sum;
     }
 
-
+    public static void main(String[] args) {
+        for (int x = 1; x < 8; x++) {
+            System.out.println(x);
+        }
+    }
 }
+
