@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class XeOTo extends PhuongTien {
     private static Scanner scanner = new Scanner(System.in);
-    private  int soCho;
+    private int soCho;
     private static String kieuXe;
 
     public XeOTo() {
@@ -39,24 +39,24 @@ public class XeOTo extends PhuongTien {
 
     @Override
     public String toString() {
-        return
-                 kieuXe + "," +
-                 bienKiemSoat + "," +
-                 hangSanXuat + "," +
-                 namSanXuat + "," +
-                 chuSoHuu + "," ;
+        return bienKiemSoat + "," +
+                hangSanXuat + "," +
+                namSanXuat + "," +
+                chuSoHuu + "," +
+                soCho + "," +
+                kieuXe ;
 
     }
-    public static void nhapOTo() {
-        System.out.println("Nhap vao kieu xe  : ");
-        kieuXe = scanner.nextLine();
-        System.out.println("Nhap vao bien kiem soat : ");
-        bienKiemSoat = scanner.nextLine();
-        System.out.println("Nhap vao  hang san xuat : ");
-        hangSanXuat = scanner.nextLine();
-        System.out.println("Nhap vao nam san xuat : ");
-        namSanXuat=scanner.nextLine();
-        System.out.println(" Nhap vao chu so huu : ");
-        chuSoHuu = scanner.nextLine();
+
+    @Override
+    public String showInfor() {
+        return "Bien kiem soat : "+ bienKiemSoat+"\n"+
+                "Hang san xuat : " + hangSanXuat+ "\n"+
+                "Nam san xuat : " + namSanXuat +"\n"+
+                "Chu so huu : " +chuSoHuu + "\n"+
+                "So cho  : " + soCho + "\n"+
+                "Kieu xe : " + kieuXe+"\n"+
+                "--------------------------------------------------";
     }
+
 }

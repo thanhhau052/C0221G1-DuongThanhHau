@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class XeMay extends PhuongTien {
     private static Scanner scanner = new Scanner(System.in);
-    private static float congSuat;
+    private static int congSuat;
 
-    public XeMay(float congSuat) {
-        this.congSuat = congSuat;
+    public XeMay() {
+
     }
 
-    public XeMay(String bienKiemSoat, String hangSanXuat, String namSanXuat, String chuSoHuu, float congSuat) {
+    public XeMay(String bienKiemSoat, String hangSanXuat, String namSanXuat, String chuSoHuu, int congSuat) {
         super(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu);
         this.congSuat = congSuat;
     }
@@ -19,28 +19,27 @@ public class XeMay extends PhuongTien {
         return congSuat;
     }
 
-    public void setCongSuat(float congSuat) {
+    public void setCongSuat(int congSuat) {
         this.congSuat = congSuat;
     }
 
     @Override
     public String toString() {
-        return congSuat +
-                bienKiemSoat + "," +
+        return bienKiemSoat + "," +
                 hangSanXuat + "," +
                 namSanXuat + "," +
-                chuSoHuu + ",";
+                chuSoHuu + "," +
+                congSuat;
 
     }
 
-    public static void nhapXeMay() {
-        System.out.println(" Nhap vao cong suat : ");
-        congSuat = Integer.parseInt(scanner.nextLine());
-        System.out.println("Nhap vao bien kiem soat : ");
-        bienKiemSoat = scanner.nextLine();
-        System.out.println("Nhap vao  hang san xuat : ");
-        hangSanXuat = scanner.nextLine();
-        System.out.println(" Nhap vao chu so huu : ");
-        chuSoHuu = scanner.nextLine();
+    @Override
+    public String showInfor() {
+        return "Bien kiem soat : "+ bienKiemSoat+"\n"+
+                "Hang san xuat : " + hangSanXuat+ "\n"+
+                "Nam san xuat : " + namSanXuat +"\n"+
+                "Chu so huu : " +chuSoHuu + "\n"+
+                "Cong suat : " + congSuat + "\n"+
+                "--------------------------------------------------";
     }
 }

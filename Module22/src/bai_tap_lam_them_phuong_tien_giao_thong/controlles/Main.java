@@ -2,12 +2,23 @@ package bai_tap_lam_them_phuong_tien_giao_thong.controlles;
 
 import java.util.Scanner;
 
-import static bai_tap_lam_them_phuong_tien_giao_thong.controlles.MainContrlles.*;
+import static bai_tap_lam_them_phuong_tien_giao_thong.controlles.QuanLiPhuongTien.*;
 
 public class Main {
     public static void main(String[] args) {
+        showMenu();
+    }
+
+    public static void showMenu() {
+
         do {
-            showManu();
+            System.out.println("CHƯƠNG TRÌNH QUẢN LÝ PHƯƠNG TIỆN GIAO THÔNG");
+
+            System.out.println("chọn chức năng : \n" +
+                    "1. Thêm mới phương tiện.\n" +
+                    "2. Hiện thị phương tiện\n" +
+                    "3. Xóa phương tiện\n" +
+                    "4. Thoát\n");
             int choose;
             Scanner scanner = new Scanner(System.in);
             System.out.println("Nhập vào lựa chọn của bạn : ");
@@ -36,15 +47,6 @@ public class Main {
             }
 
         } while (true);
-    }
-    public  static void showManu(){
-        System.out.println("CHƯƠNG TRÌNH QUẢN LÝ PHƯƠNG TIỆN GIAO THÔNG");
-
-        System.out.println("chọn chức năng : \n" +
-                "1. Thêm mới phương tiện.\n" +
-                "2. Hiện thị phương tiện\n" +
-                "3. Xóa phương tiện\n" +
-                "4. Thoát\n");
     }
 
 

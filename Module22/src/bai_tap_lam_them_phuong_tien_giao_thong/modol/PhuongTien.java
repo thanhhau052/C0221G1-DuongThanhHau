@@ -9,6 +9,7 @@ public abstract class PhuongTien {
     public PhuongTien() {
     }
 
+
     public PhuongTien(String bienKiemSoat, String hangSanXuat, String namSanXuat, String chuSoHuu) {
         this.bienKiemSoat = bienKiemSoat;
         this.hangSanXuat = hangSanXuat;
@@ -57,4 +58,7 @@ public abstract class PhuongTien {
                 ;
 
     }
+
+public abstract String showInfor();
+
 }

@@ -15,7 +15,7 @@ public class Menu {
                 "5.\tAdd New Booking\n" +
                 "6.\tShow Information of Employee\n" +
                 "7.\tExit\n");
-        System.out.println("Please enter a number in Menu: ");
+        System.out.println("Enter a number : ");
     }
 
     public static void menuAddNewServices() {
