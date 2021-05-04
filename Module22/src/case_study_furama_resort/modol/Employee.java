@@ -101,8 +101,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "\n*********** Employee ***********" +
-                "\nName: " + name +
+        return "\nName: " + name +
                 "\nBirthday: " + birthday +
                 "\nIdCard: " + idCard +
                 "\nPhoneNumber: " + phoneNumber +

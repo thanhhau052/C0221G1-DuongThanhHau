@@ -12,7 +12,8 @@ public class Validate {
             System.out.println("Nhap vao bien kiem soat");
             String  bienKiemSoat=scanner.nextLine();
            if (!Pattern.matches(regex,bienKiemSoat)){
-               throw new Exception("Ôtô: XXY-XXX.XX (X : 0÷9 , Y=A nếu xe du lịch, Y=B  nếu xe khách)");
+               throw new Exception("Hãy nhập theo nguyên tắc sau : " +
+                       "\nÔtô: XXY-XXX.XX (X : 0÷9 , Y=A nếu xe du lịch, Y=B  nếu xe khách)");
            }
             return bienKiemSoat;
         }catch (Exception e){
@@ -24,10 +25,11 @@ public class Validate {
         String regex="[0-9]{2}-[A-Z][0-9A-Z]-[0-9]{3}.[0-9]{2}";
         do {
             try {
-                System.out.println("Nhap vao bien kiem soat :");
+                System.out.println("Nhập vào biển kiểm soát  :");
                 String bienKiemSoat=scanner.nextLine();
                 if (!Pattern.matches(regex,bienKiemSoat)){
-                    throw  new  Exception("Xe máy: XX-YZ-XXX.XX (X : 0÷9, Y= (Chữ cái in hoa), Z =(0÷9) hoặc (Chữ cái in Hoa)");
+                    throw  new  Exception("Vui lòng nhập theo nguyên tắc sau : \n" +
+                            "Xe máy: XX-YZ-XXX.XX (X : 0÷9, Y= (Chữ cái in hoa), Z =(0÷9) hoặc (Chữ cái in Hoa)");
                 }
                 return bienKiemSoat;
             }catch (Exception e){
@@ -40,10 +42,11 @@ public class Validate {
         String regex="[0-9]{2}C-[0-9]{3}.[0-9]{2}";
         do {
             try {
-                System.out.println("Nhap vao bien kiem soat : ");
+                System.out.println("Nhập vào biển kiểm soát : ");
                 String bienKienSoat= scanner.nextLine();
                 if (!Pattern.matches(regex,bienKienSoat)){
-                    throw  new  Exception("Xe tải: XXC-XXX.XX (X : 0÷9)");
+                    throw  new  Exception("Vui lòng nhập lại theo nguyên tắc sau  : \n" +
+                            "Xe tải: XXC-XXX.XX (X : 0÷9)");
 
                 }
                 return  bienKienSoat;

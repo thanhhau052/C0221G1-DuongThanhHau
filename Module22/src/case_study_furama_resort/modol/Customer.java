@@ -113,7 +113,7 @@ public class Customer{
     }
 
     public String showInfor() {
-        return "***************** CUSTOMER *****************"
+        return "-----------------CUSTOMER----------------"
                 +"\nName: " + name
                 +"\nBirthday: " + birthday
                 +"\nGender: " + gender

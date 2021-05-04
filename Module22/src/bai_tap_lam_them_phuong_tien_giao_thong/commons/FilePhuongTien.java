@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FilePhuongTien {
-    static String path = "D:\\C221G1_DuongThanhHau\\Module22\\src\\bai_tap_lam_them_phuong_tien_giao_thong\\data\\";
+    static String path = "src\\bai_tap_lam_them_phuong_tien_giao_thong\\data\\";
 
     public static List<PhuongTien> docFile(String fileName) {
         List<PhuongTien> phuongTienList = new ArrayList<>();

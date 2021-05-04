@@ -13,8 +13,6 @@ public class ServiceController {
     private static ServiceInterface villaService = new VillaServiceImpl();
     private static ServiceInterface houseService = new HouseServiceImpl();
     private static ServiceInterface roomService = new RoomServiceImpl();
-
-//    =============================== ADD NEW SERVICE ===============================
     public static void addVillaService(){
         Scanner input = new Scanner(System.in);
         System.out.println(">>>>>>>>>>>>>>>> How many villa services do you want to add? ");

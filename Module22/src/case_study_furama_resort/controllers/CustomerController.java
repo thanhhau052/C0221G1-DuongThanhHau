@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class CustomerController {
     public static void addNewCustomer(){
         Scanner input = new Scanner(System.in);
-        System.out.println(">>>>>>>>>>>>>>>> How many rooms customers do you want to add? ");
+        System.out.println("How many rooms customers do you want to add? ");
         int length = Integer.parseInt(input.nextLine());
         ArrayList<Customer> customersList = FuncCustomerFileCSV.readFileCSV();
         for ( int i = 0; i < length; i++){

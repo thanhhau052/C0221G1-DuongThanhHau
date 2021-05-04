@@ -18,8 +18,8 @@ public class Menu {
         System.out.println("Enter a number : ");
     }
 
-    public static void menuAddNewServices() {
-        System.out.println("ADD NEW SERVICE:\n" +
+    public static void addNewServices() {
+        System.out.println("Add New Services\n" +
                 "1.\tAdd New Villa\n" +
                 "2.\tAdd New House\n" +
                 "3.\tAdd New Room\n" +
@@ -43,7 +43,7 @@ public class Menu {
                 System.exit(0);
                 break;
             default:
-                System.out.println("Fail. Please choose number of menu exactly. Enter to continue...");
+                System.err.println("Err !  Enter to continue...");
                 MainController.processMain();
                 break;
         }

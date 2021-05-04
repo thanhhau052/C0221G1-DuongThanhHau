@@ -34,11 +34,11 @@ public class XeTai extends PhuongTien {
 
     @Override
     public String showInfor() {
-        return "Bien kiem soat : "+ bienKiemSoat+"\n"+
+        return   "--------------------------------------------------\n"+
+                "Bien kiem soat : "+ bienKiemSoat+"\n"+
                 "Hang san xuat : " + hangSanXuat+ "\n"+
                 "Nam san xuat : " + namSanXuat +"\n"+
                 "Chu so huu : " +chuSoHuu + "\n"+
-                "Trong tai  : " + trongTai + "\n"+
-                "--------------------------------------------------";
+                "Trong tai  : " + trongTai + "\n";
     }
 }

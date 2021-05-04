@@ -50,13 +50,13 @@ public class XeOTo extends PhuongTien {
 
     @Override
     public String showInfor() {
-        return "Bien kiem soat : "+ bienKiemSoat+"\n"+
+        return "--------------------------------------------------\n"+
+                "Bien kiem soat : "+ bienKiemSoat+"\n"+
                 "Hang san xuat : " + hangSanXuat+ "\n"+
                 "Nam san xuat : " + namSanXuat +"\n"+
                 "Chu so huu : " +chuSoHuu + "\n"+
                 "So cho  : " + soCho + "\n"+
-                "Kieu xe : " + kieuXe+"\n"+
-                "--------------------------------------------------";
+                "Kieu xe : " + kieuXe+"\n";
     }
 
 }

@@ -1,16 +1,15 @@
-package bai_tap_lam_them_phuong_tien_giao_thong.modol;
+package QuanLiPhuongTien.models;
 
 public abstract class PhuongTien {
-    protected static String bienKiemSoat;
-    protected static String hangSanXuat;
-    protected static String namSanXuat;
-    protected static String chuSoHuu;
+    protected  String bienKiemSoat;
+    protected String hangSanXuat;
+    protected int namSanXuat;
+    protected String chuSoHuu;
 
     public PhuongTien() {
     }
 
-
-    public PhuongTien(String bienKiemSoat, String hangSanXuat, String namSanXuat, String chuSoHuu) {
+    public PhuongTien(String bienKiemSoat, String hangSanXuat, int namSanXuat, String chuSoHuu) {
         this.bienKiemSoat = bienKiemSoat;
         this.hangSanXuat = hangSanXuat;
         this.namSanXuat = namSanXuat;
@@ -33,11 +32,11 @@ public abstract class PhuongTien {
         this.hangSanXuat = hangSanXuat;
     }
 
-    public String getNamSanXuat() {
+    public int getNamSanXuat() {
         return namSanXuat;
     }
 
-    public void setNamSanXuat(String namSanXuat) {
+    public void setNamSanXuat(int namSanXuat) {
         this.namSanXuat = namSanXuat;
     }
 
@@ -51,14 +50,13 @@ public abstract class PhuongTien {
 
     @Override
     public String toString() {
-        return bienKiemSoat  + "," +
-                hangSanXuat + "," +
-                namSanXuat + "," +
-                chuSoHuu + ","
-                ;
-
+        return "PhuongTien{" +
+                "bienKiemSoat='" + bienKiemSoat + '\'' +
+                ", hangSanXuat='" + hangSanXuat + '\'' +
+                ", namSanXuat=" + namSanXuat +
+                ", chuSoHuu='" + chuSoHuu + '\'' +
+                '}';
     }
 
-public abstract String showInfor();
-
+    public abstract  String showInfor();
 }

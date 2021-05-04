@@ -10,7 +10,6 @@ public class MainController {
            Menu.displayMainMenu();
             processMainMenu();
         }catch (Exception e){
-            //getBackMainMenu();
             processMain();
             System.out.println("Error");
         }
@@ -20,7 +19,7 @@ public class MainController {
         Scanner input = new Scanner(System.in);
         switch (input.nextLine()){
             case "1":
-                Menu.menuAddNewServices();
+                Menu.addNewServices();
                 break;
             case "2":
                 Menu.menuShowServices();
