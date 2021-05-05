@@ -71,7 +71,7 @@ public class NhapDauVao {
 
                }
                else {
-                   kieuXe="Xe Khách ";
+                   kieuXe="Xe Khách";
                }
                 return new XeOTo(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, soCho, kieuXe);
             } catch (Exception e) {
