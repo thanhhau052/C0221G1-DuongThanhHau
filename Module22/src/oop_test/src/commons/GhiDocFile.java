@@ -1,10 +1,9 @@
-package commons;
+package oop_test.src.commons;
 
-import models.CanBo;
-import models.CongNhan;
-import models.KySu;
-import models.NhanVien;
-
+import oop_test.src.models.CanBo;
+import oop_test.src.models.CongNhan;
+import oop_test.src.models.KySu;
+import oop_test.src.models.NhanVien;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ import java.util.List;
 
 public class GhiDocFile {
     public static final String PATH = "src/data/";
-    public static void ghiFile (String fileName, List<CanBo> canBoList,boolean trangThai){
+    public static void ghiFile (String fileName, List<CanBo> canBoList, boolean trangThai){
         File file = null;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
@@ -41,8 +40,8 @@ public class GhiDocFile {
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
         List<CanBo> canBoList = new ArrayList<>();
-        String line = null;
-        String[] strings = null;
+        String line =null ;
+        String[] strings =null;
         try{
 
             file = new File(PATH+fileName);

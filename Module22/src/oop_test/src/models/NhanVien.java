@@ -1,4 +1,4 @@
-package models;
+package oop_test.src.models;
 
 public class NhanVien extends CanBo {
     //: công việc*

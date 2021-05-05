@@ -1,4 +1,4 @@
-package models;
+package oop_test.src.models;
 
 public class KySu extends CanBo {
     //Các kỹ sư cần quản lý: Ngành đào tạo.(Lưu ý mục 2).
@@ -40,6 +40,7 @@ public class KySu extends CanBo {
     }
     @Override
     public String toString() {
-        return super.toString()+","+ nganhDT ;
+        return super.toString()+
+                ","+ nganhDT ;
     }
 }

@@ -1,4 +1,4 @@
-package commons;
+package oop_test.src.commons;
 
 public class CanBoException extends Exception {
     public CanBoException(String message) {

@@ -1,4 +1,4 @@
-package models;
+package oop_test.src.models;
 
 public abstract class CanBo {
     //:  id(Tự tăng CB-001)  , Họ tên, năm sinh, giới tính, địa chỉ
@@ -69,4 +69,5 @@ public abstract class CanBo {
                 "," + diaChi
                 ;
     }
+
 }

@@ -1,4 +1,4 @@
-package controllers;
+package oop_test.src.controllers;
 
 import java.util.Scanner;
 

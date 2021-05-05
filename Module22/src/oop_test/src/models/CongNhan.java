@@ -1,4 +1,4 @@
-package models;
+package oop_test.src.models;
 
 public class CongNhan extends CanBo {
     //Bậc (công nhân bậc 3/7, bậc 4/7 ...)

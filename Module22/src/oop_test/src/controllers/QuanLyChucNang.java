@@ -1,10 +1,10 @@
-package controllers;
+package oop_test.src.controllers;
 
-import commons.GhiDocFile;
-import models.CanBo;
-import models.CongNhan;
-import models.KySu;
-import models.NhanVien;
+import oop_test.src.commons.GhiDocFile;
+import oop_test.src.models.CanBo;
+import oop_test.src.models.CongNhan;
+import oop_test.src.models.KySu;
+import oop_test.src.models.NhanVien;
 
 import java.util.ArrayList;
 import java.util.Comparator;
