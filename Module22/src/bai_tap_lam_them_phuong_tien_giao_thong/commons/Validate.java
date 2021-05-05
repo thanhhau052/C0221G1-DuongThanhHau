@@ -38,7 +38,7 @@ public class Validate {
         }while (true);
 
     }
-    public static  String biemKiemSoatXeTai(){
+    public static  String biemKiemSoatXeTai() {
         String regex="[0-9]{2}C-[0-9]{3}.[0-9]{2}";
         do {
             try {

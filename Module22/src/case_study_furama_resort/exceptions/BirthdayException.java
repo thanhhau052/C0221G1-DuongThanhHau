@@ -11,10 +11,10 @@ public class BirthdayException extends Exception {
         super(message);
     }
 
-    public static String inputAndCheckBirthday18 () {
+    public static String inputAndCheckBirthday18() {
         String regex = "^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4}$";
 
-        while (true) {
+        do {
             try {
                 System.out.println("Enter Birthday Follow The Format : dd/mm/yyyy ");
                 String birthday = input.nextLine();
@@ -23,9 +23,9 @@ public class BirthdayException extends Exception {
                     int year = Integer.parseInt(birthdayArr[2]);
                     int month = Integer.parseInt(birthdayArr[1]);
                     int day = Integer.parseInt(birthdayArr[0]);
-                    LocalDate birthDay = LocalDate.of(year,month,day); //specify year, month, date directly
+                    LocalDate birthDay = LocalDate.of(year, month, day); //specify year, month, date directly
                     LocalDate now = LocalDate.now(); //gets localDate
-                    Period distance = Period.between(birthDay,now); //difference between the dates is calculated
+                    Period distance = Period.between(birthDay, now); //difference between the dates is calculated
                     int age = distance.getYears();
                     if (age >= 18) {
                         return birthday;
@@ -38,7 +38,7 @@ public class BirthdayException extends Exception {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-        }
+        } while (true);
 
     }
 
