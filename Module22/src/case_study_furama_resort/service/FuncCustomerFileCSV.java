@@ -19,22 +19,22 @@ public class FuncCustomerFileCSV {
             fileWriter = new FileWriter(FILE_PATH_CUSTOMER);
             fileWriter.append(FILE_HEADER_CUSTOMER);
             fileWriter.append(NEW_LINE_SEPARATOR);
-            for(Customer element : list){
-                fileWriter.append(element.getName());
+            for(Customer customer : list){
+                fileWriter.append(customer.getName());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(element.getBirthday());
+                fileWriter.append(customer.getBirthday());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(element.getGender());
+                fileWriter.append(customer.getGender());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(element.getIdCard());
+                fileWriter.append(customer.getIdCard());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(element.getPhoneNumber());
+                fileWriter.append(customer.getPhoneNumber());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(element.getEmail());
+                fileWriter.append(customer.getEmail());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(element.getCustomerType());
+                fileWriter.append(customer.getCustomerType());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(element.getAddress());
+                fileWriter.append(customer.getAddress());
                 fileWriter.append(NEW_LINE_SEPARATOR);
             }
             System.out.println("Saved successfully!");

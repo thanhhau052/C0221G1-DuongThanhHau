@@ -52,7 +52,7 @@ public class NhapDauVao {
 
     }
 
-    //t
+
     public static XeOTo nhapOTo() {
         do {
             try {
