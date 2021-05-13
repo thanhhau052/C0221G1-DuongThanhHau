@@ -19,14 +19,14 @@ import java.util.Scanner;
 
         public static void main(String[] args) {
             Scanner scanner= new Scanner(System.in);
-            System.out.println("In ra man hinh so nguyen to nho hon? = ");
+            System.out.print(" In ra man hinh so nguyen to nho hon?  ");
             int n=scanner.nextInt();
-            System.out.println(" So nguyen to nho hon" + n+" la : ");
+            System.out.println(" So nguyen to nho hon " + n+" la : ");
 
             int i=2;
             while (i<n){
                 if (kiemTraNguyenTo(i)){
-                    System.out.println(i+" ");
+                    System.out.println("~"+i);
                 }
                 i++;
             }

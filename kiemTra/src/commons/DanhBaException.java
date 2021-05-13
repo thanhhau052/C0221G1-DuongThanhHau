@@ -8,9 +8,9 @@ public class DanhBaException extends Exception {
     }
 
     public static void kiemTraEmail(String input) throws DanhBaException {
-        final String REGEX_EMAIL = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,6}$";
+        final String REGEX_EMAIL = "^[A-Za-z0-9_]+@[A-Za-z0-9_]+\\.[A-Za-z0-9_]+$";
         if (input.matches(REGEX_EMAIL) == false) {
-            throw new DanhBaException("Nhập sai định dạng "+"\n  String REGEX_EMAIL = \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\\\\\.[a-zA-Z]{2,6}$\"");
+            throw new DanhBaException("Nhập sai định dạng "+"\n ^[A-Za-z0-9_]+@[A-Za-z0-9_]+\\.[A-Za-z0-9_]+$");
         }
 
     }

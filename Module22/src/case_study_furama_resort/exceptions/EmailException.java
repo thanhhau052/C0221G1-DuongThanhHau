@@ -9,7 +9,7 @@ public class EmailException extends Exception {
         super(message);
     }
 
-    public static String inputAndCheckEmail ()  {
+    public static String inputAndCheckEmail() {
 
         String regex = "^[A-Za-z0-9_]+@[A-Za-z0-9_]+\\.[A-Za-z0-9_]+$";
         while (true) {

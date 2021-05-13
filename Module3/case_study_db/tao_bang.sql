@@ -88,6 +88,7 @@ CREATE TABLE  hop_dong(
     FOREIGN KEY (id_khach_hang) REFERENCES khach_hang(id_khach_hang),
     FOREIGN KEY (id_dich_vu) REFERENCES dich_vu(id_dich_vu)
 );
+
 CREATE TABLE hop_dong_chi_tiet(
 	id_hop_dong_chi_tiet INT AUTO_INCREMENT PRIMARY KEY,
     id_hop_dong INT NOT NULL,
