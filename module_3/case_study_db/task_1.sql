@@ -1,3 +1,5 @@
+-- 1.	Thêm mới thông tin cho tất cả các bảng 
+-- có trong CSDL để có thể thõa mãn các yêu cầu bên dưới.
 use case_study_db;
 
 INSERT INTO vi_tri(ten_vi_tri)
@@ -20,8 +22,8 @@ values ("bảo an"),
     ("quản lí");
 
 insert into nhan_vien(ho_ten,id_vi_tri,id_trinh_do,id_bo_phan,ngay_sinh,so_cmtnd,luong,sdt,email,dia_chi)
-values ("hau",1,1,1,"1234-12-12","123456789",11111111,"11111111","thanhhau026@gmaul.com","quang binh"),
- ("nam",2,2,2,"4567-12-12","123456789",222222222,"2222222","nam11@gmaul.com","quang binh"),
+values ("Duuong Thanh Hau",1,1,1,"1997-02-24","194571756",11111111,"10000000","thanhhau026@gmaul.com","quang binh"),
+ ("Nguyen Phuong Nam",2,2,2,"4567-12-12","123456789",222222222,"2222222","nam11@gmaul.com","Da Nang"),
 ("thao",3,3,3,"789-12-12","123456789",33333333,"333333333","thao22@gmaul.com","quang binh");
 
  
