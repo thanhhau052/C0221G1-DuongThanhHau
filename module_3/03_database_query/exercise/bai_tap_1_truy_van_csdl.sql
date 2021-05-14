@@ -2,7 +2,7 @@ use quan_li_sinh_vien;
 --  hiển thị các sinh viên có tên bắt đầu bằng chữ "h"
 select *
 from student
-where StudentName like "h%";
+where StudentName like "H%" or StudentName like "%H%";
 -- hiển thị thông tin các lớp có thời gian bắt đầu vào tháng 12
 select *
 from class
@@ -24,3 +24,4 @@ select s.StudentName, sub.SubName, m.*
 from student s join mark m on s.StudentId = m.StudentId 
 join subject sub on m.SubId = sub.SubId
 order by m.Mark desc, s.StudentName asc;
+SET SQL_SAFE_UPDATES = 0;
