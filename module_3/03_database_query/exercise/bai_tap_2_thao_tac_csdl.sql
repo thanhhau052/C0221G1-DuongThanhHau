@@ -42,7 +42,6 @@ select o.c_id from orders o where  o.c_id = c.c_id );
 
 
 select o.o_id,  o.o_date, sum(od.od_qty * p.p_price) as o_total_price
-from  orders o 
-join orderdetail od on  o.o_id = od.o_id
-join product p on od.p_id = p.p_id 
-group by o.o_id,  o.o_date;
+from  orders o , orderdetail od , product p
+where o.o_id = od.o_id and od.p_id =p.p_id
+group by o.o_id;
