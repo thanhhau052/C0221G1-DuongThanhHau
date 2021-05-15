@@ -57,11 +57,15 @@ create table ncc_sdt(
 
 create table nha_cc(
 	ma_ncc int primary key,
-    ten_ncc varchar(50),
+    ten_ncc varchar (50),
     dia_chi varchar(45),
     so_dh int,
     id_sdt int,
     foreign key (so_dh) references don_dh(so_dh),
     foreign key (id_sdt) references ncc_sdt(id_sdt)
 );
+read  table  nha_ccc
+(
+foreign  key (sdt )
+)
 
