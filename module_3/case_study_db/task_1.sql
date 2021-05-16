@@ -4,7 +4,7 @@
 -- có trong CSDL để có thể thõa mãn các yêu cầu bên dưới.
 
 
-drop database case_study_db;
+drop database if exists case_study_db;
 create database case_study_db;
 use case_study_db ;
 CREATE TABLE vi_tri (
