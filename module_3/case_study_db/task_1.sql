@@ -4,7 +4,7 @@
 -- có trong CSDL để có thể thõa mãn các yêu cầu bên dưới.
 
 
-drop database if exists case_study_db;
+drop database  case_study_db;
 create database case_study_db;
 use case_study_db ;
 CREATE TABLE vi_tri (
@@ -29,7 +29,8 @@ insert into trinh_do(trinh_do)
 values ("lao động phổ thông "),
 ("trung cấp "),
 ("cao đẳng"),
-("đại học ");
+("đại học "),
+("sau đại học ");
 
 
 CREATE TABLE bo_phan(
@@ -41,7 +42,8 @@ insert into bo_phan(ten_bo_phan)
 values ("bảo an"),
 	("nhân sự"),
     ("hành chính"),
-    ("quản lí"); 
+    ("quản lí"),
+    ("giám đốc");
     
 CREATE TABLE nhan_vien(
 	id_nhan_vien INT AUTO_INCREMENT PRIMARY KEY,
@@ -60,9 +62,11 @@ CREATE TABLE nhan_vien(
     FOREIGN KEY (id_bo_phan) REFERENCES bo_phan(id_bo_phan)
 );
 insert into nhan_vien(ho_ten,id_vi_tri,id_trinh_do,id_bo_phan,ngay_sinh,so_cmtnd,luong,sdt,email,dia_chi)
-values ("Duuong Thanh Hau",1,1,1,"1997-02-24","194571756",11111111,"10000000","thanhhau026@gmaul.com","quang binh"),
- ("Nguyen Phuong Nam",2,2,2,"4567-12-12","123456789",222222222,"2222222","nam11@gmaul.com","Da Nang"),
-("thao",3,3,3,"789-12-12","123456789",33333333,"333333333","thao22@gmaul.com","quang binh");
+values ("Hau",1,1,1,"1997-02-24","194571756",15000000,"0399191054","thanhhau026@gmail.com","quang binh"),
+ ("Nguyen Phuong Nam",2,2,2,"1999-12-12","123456789",10000000,"0333313033","nam11@gmail.com","Da Nang"),
+("Dao Thao",3,3,3,"1993-12-12","123456789",10000000,"03932323223","thao22@gmail.com","quang binh"),
+("Le Phuoc Sy Phu",4,4,4,"1995-12-12","123400789",15000000,"03932323220","phule@gmail.com","Quang Tri"),
+("Nguyen Van cuong",5,5,5,"1997-12-12","10010000100",10000000,"03932323211","thao22@gmail.com","quang binh");
 
     
     
@@ -93,9 +97,11 @@ CREATE TABLE khach_hang(
 
     
 insert into khach_hang(id_loai_khach_hang,ho_ten,ngay_sinh,so_cmtnd,sdt,email,dia_chi)
-values (1,"Tran Van A","1111-11-11","1234","12345678","tranvana@gmail.com","hue"),
-		(2,"Nguyen Thi B","2222-02-02","1235","87654321","khanhnamnguyenthib@gmail.com","danang"),
-		(3,"Nguyen Thi C","2222-02-02","1235","87654321","thic@gmail.com","danang");
+values (1,"Tran Van Nam","1111-11-11","1234","12345678","vannam@gmail.com","hue"),
+		(2,"Nguyen Thi Binh","2222-02-02","1235","87654321","thibinh@gmail.com","da nang"),
+		(3,"Dao Ngoc Anh","1990-02-02","123000005","87654321","ngocanh@gmail.com","da nang"),
+		(4,"Tran Van Long","1991-02-02","123000005","87654321", "vanlong@gmail.com","quang ngai"),
+		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi");
         
 
 CREATE TABLE loai_dich_vu(
@@ -106,7 +112,9 @@ CREATE TABLE loai_dich_vu(
 insert into loai_dich_vu(ten_loai_dich_vu)
 values ("room"),
 	("house"),
-    ("villa");
+    ("villa"),
+    ("room vp"),
+    ("villa vp");
     
 
 CREATE TABLE kieu_thue(
@@ -116,8 +124,11 @@ CREATE TABLE kieu_thue(
 );
 
 insert into kieu_thue(ten_kieu_thue,gia)
-values ("gio",1000),
-	("ngay",50);
+values ("6h",500000),
+	("12h",200000),
+	("24h",400000),
+	("48h",800000),
+	("72h",3000000);
 
 CREATE TABLE dich_vu(
 	id_dich_vu INT AUTO_INCREMENT PRIMARY KEY,
@@ -134,7 +145,10 @@ CREATE TABLE dich_vu(
 );
 insert into dich_vu(ten_dich_vu,dien_tich,so_tang,so_nguoi_toi_da,chi_phi_thue,id_kieu_thue,id_loai_dich_vu,trang_thai)
 values ("house",20,2,3,1,1,1,"close"),
-	   ("villa",25,3,3,2,2,2,"open");
+	   ("villa1",25,3,3,2,2,2,"open"),
+	   ("villa2",26,3,3,2,2,2,"open"),
+	   ("villa3",27,3,3,2,2,2,"open"),
+	   ("villa5",28,3,3,2,2,2,"open");
 
 
 
@@ -150,7 +164,8 @@ values ("house",20,2,3,1,1,1,"close"),
 values ("taxi",1000,5,"hop li"),
 	("karaoke",1500,7,"hop li"),
     ("cafe",2000,10,"dep"),
-    ("pizza",1200,10,"ngon");
+    ("pizza",1200,10,"ngon"),
+    ("pizza vp",1700,10,"ngon");
     
     
     
@@ -170,8 +185,11 @@ CREATE TABLE  hop_dong(
 
 
 insert into hop_dong (id_nhan_vien,id_khach_hang,id_dich_vu,ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,tong_tien)
-values (1,1,1,"1111-11-11","1112-10-10",5000,10000),
-(2,2,2,"2222-11-11","2223-11-11",3000,7000);
+values (1,1,1,"2020-08-11","2020-10-10",5000,10000),
+(2,2,2,"2021-11-11","2020-11-11",3000,2000),
+(3,3,3,"2021-10-11","2021-11-11",5000,1000),
+(4,4,4,"2020-11-11","2022-11-11",15000,5000),
+(5,5,5,"2020-11-11","2021-11-11",6000,3000);
 
 
 
@@ -188,7 +206,10 @@ CREATE TABLE hop_dong_chi_tiet(
     
  insert into hop_dong_chi_tiet(id_hop_dong,id_dich_vu_di_kem,so_luong)
  values (1,1,5),
- 	(2,2,7);
+ 	(2,2,3),
+ 	(3,3,7),
+ 	(4,4,5),
+ 	(5,5,9);
 
 
 
