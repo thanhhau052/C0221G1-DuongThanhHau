@@ -3,15 +3,15 @@
 --   Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên
 
 use case_study_db;
-select *
-from khach_hang
+select kh.ho_ten
+from khach_hang kh
 group by ho_ten;
 
 select  distinct ho_ten
 from khach_hang;
 
 
-select *
+select kh1.ho_ten
 from khach_hang kh1
 where not exists(
 	select ho_ten

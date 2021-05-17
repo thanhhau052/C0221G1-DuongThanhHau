@@ -8,8 +8,7 @@ select   dv.id_dich_vu,
 		 dv.dien_tich,
 		 dv.so_nguoi_toi_da ,
 		 dv.chi_phi_thue,
-		 ldv.ten_loai_dich_vu,
-		 hd.id_hop_dong
+		 ldv.ten_loai_dich_vu
 from dich_vu dv
 inner join loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id_loai_dich_vu
 inner join hop_dong hd on dv.id_dich_vu = hd.id_dich_vu
