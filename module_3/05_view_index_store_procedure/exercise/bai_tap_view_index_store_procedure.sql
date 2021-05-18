@@ -80,6 +80,7 @@ drop view view_thong_tin;
 	Bước 5:
     Tạo store procedure lấy tất cả thông tin của tất cả các sản phẩm trong bảng product
 	Tạo store procedure thêm một sản phẩm mới
+    Tạo store procedure sửa thông tin sản phẩm theo id
     Tạo store procedure xoá sản phẩm theo id
 */
 
@@ -119,6 +120,34 @@ end; //
 delimiter ;
 call them_sp(7,"h2","xe dap", 100,200,"yamaha","hang con");
 
+
+
+-- Tạo store procedure sửa thông tin sản phẩm theo id
+
+delimiter //
+create procedure sua_sp_theo_id( in
+    product_id1 int , 
+    product_code1 varchar(50), 
+    product_name1 varchar(50),  
+    product_price1 int,  
+    product_amount1  int, 
+    produc_description1 varchar(50), 
+    product_status1 varchar(50))
+
+begin 
+update products 
+set product_id= product_id1,
+	product_code=product_code1,
+    product_name=product_name1,
+    product_price=product_price1,
+    product_amount=product_amount1,
+    produc_description=produc_description1,
+	product_status=product_status1
+    where product_id=product_id1;
+end; //
+delimiter ;
+
+call   sua_sp_theo_id(1,"s1", "xe 3 may", 20,50,"usa","het hang");
 
 -- Tạo sp xóa sản phẩm theo id
 delimiter //
