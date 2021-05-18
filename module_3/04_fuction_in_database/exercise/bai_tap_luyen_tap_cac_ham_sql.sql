@@ -20,6 +20,6 @@ where SubId in ( select SubId from mark
 select *,avg(m.Mark) as diem_trung_binh
 from student  s
 left join mark m on m.StudentId = s.StudentId
-group by s.StudentName;
+group by s.StudentName ;
 
--- --------
+-- fix comment --------

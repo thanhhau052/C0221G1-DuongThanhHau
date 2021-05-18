@@ -97,8 +97,8 @@ CREATE TABLE khach_hang(
 
     
 insert into khach_hang(id_loai_khach_hang,ho_ten,ngay_sinh,so_cmtnd,sdt,email,dia_chi)
-values (1,"Tran Van Nam","1111-11-11","1234","12345678","vannam@gmail.com","hue"),
-		(2,"Nguyen Thi Binh","2222-02-02","1235","87654321","thibinh@gmail.com","da nang"),
+values (1,"Tran Van Nam","1999-11-11","1234","12345678","vannam@gmail.com","hue"),
+		(2,"Nguyen Thi Binh","1990-02-02","1235","87654321","thibinh@gmail.com","da nang"),
 		(3,"Dao Ngoc Anh","1990-02-02","123000005","87654321","ngocanh@gmail.com","da nang"),
 		(4,"Tran Van Long","1991-02-02","123000005","87654321", "vanlong@gmail.com","quang ngai"),
 		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi");
@@ -185,8 +185,8 @@ CREATE TABLE  hop_dong(
 
 
 insert into hop_dong (id_nhan_vien,id_khach_hang,id_dich_vu,ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,tong_tien)
-values (1,1,1,"2020-08-11","2020-10-10",5000,10000),
-(2,2,2,"2021-11-11","2020-11-11",3000,2000),
+values (1,1,1,"2018-08-11","2019-10-10",5000,10000),
+(2,2,2,"2016-11-11","2017-11-11",3000,2000),
 (3,3,3,"2021-10-11","2021-11-11",5000,1000),
 (4,4,4,"2020-11-11","2022-11-11",15000,5000),
 (5,5,5,"2020-11-11","2021-11-11",6000,3000);

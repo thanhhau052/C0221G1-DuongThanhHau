@@ -9,6 +9,6 @@ delete nv
 	where nv.id_nhan_vien not in
 	(select id_nhan_vien
 	from  hop_dong hd  
-	-- Em sửa dữ kiện bài toán thanh  2017->2021  để test ah
-	where year(hd.ngay_lam_hop_dong) between 2017 and 2021
+
+	where year(hd.ngay_lam_hop_dong) between 2017 and 2019
 	group by hd.id_nhan_vien);
