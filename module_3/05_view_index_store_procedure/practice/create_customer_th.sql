@@ -7928,15 +7928,3 @@ insert  into `products`(`productCode`,`productName`,`productLine`,`productScale`
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
-
-SELECT * FROM customers WHERE customerName = 'Land of Toys Inc.'; 
-
-EXPLAIN SELECT * FROM customers WHERE customerName = 'Land of Toys Inc.'; 
-
-ALTER TABLE customers ADD INDEX idx_customerName(customerName);
-EXPLAIN SELECT * FROM customers WHERE customerName = 'Land of Toys Inc.'; 
-
-ALTER TABLE customers ADD INDEX idx_full_name(contactFirstName, contactLastName);
-EXPLAIN SELECT * FROM customers WHERE contactFirstName = 'Jean' or contactFirstName = 'King';
-ALTER TABLE customers DROP INDEX idx_full_name;
