@@ -11,7 +11,7 @@ join khach_hang kh on hd.id_khach_hang = kh.id_khach_hang
 join loai_khach_hang lkh on kh.id_loai_khach_hang = lkh.id_loai_khach_hang
 where lkh.ten_loai_khach_hang="Diamond"  and kh.dia_chi in ("Vinh","Quang Ngai");
 
-
+-- select* from loai_khach_hang
 
 -- select * 
 -- from dich_vu dv

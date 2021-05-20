@@ -101,7 +101,8 @@ values (1,"Tran Van Nam","1999-11-11","1234","12345678","vannam@gmail.com","hue"
 		(2,"Nguyen Thi Binh","1990-02-02","1235","87654321","thibinh@gmail.com","da nang"),
 		(3,"Dao Ngoc Anh","1990-02-02","123000005","87654321","ngocanh@gmail.com","da nang"),
 		(4,"Tran Van Long","1991-02-02","123000005","87654321", "vanlong@gmail.com","quang ngai"),
-		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi");
+		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi"),
+		(6,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi");
         
 
 CREATE TABLE loai_dich_vu(
@@ -190,6 +191,7 @@ values (1,1,1,"2018-08-11","2019-10-10",5000,10000),
 (3,3,3,"2021-10-11","2021-11-11",5000,1000),
 (4,4,4,"2020-11-11","2022-11-11",15000,5000),
 (5,5,5,"2020-11-11","2021-11-11",6000,3000);
+
 
 
 

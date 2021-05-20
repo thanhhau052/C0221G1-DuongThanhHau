@@ -18,4 +18,4 @@ join hop_dong  hd on nv.id_nhan_vien = hd.id_nhan_vien
 where (year(hd.ngay_lam_hop_dong)in (2018,2019))
 group by hd.id_nhan_vien
 having dem_hd   <= 3 
-order by dem_hd desc;
+order by dem_hd ;
