@@ -3,6 +3,7 @@
 -- 1.	Thêm mới thông tin cho tất cả các bảng 
 -- có trong CSDL để có thể thõa mãn các yêu cầu bên dưới.
 
+-- SET SQL_SAFE_UPDATES = 0;
 
 drop database  case_study_db;
 create database case_study_db;
@@ -102,9 +103,9 @@ values (1,"Tran Van Nam","1999-11-11","1234","12345678","vannam@gmail.com","hue"
 		(3,"Dao Ngoc Anh","1990-02-02","123000005","87654321","ngocanh@gmail.com","da nang"),
 		(4,"Tran Van Long","1991-02-02","123000005","87654321", "vanlong@gmail.com","quang ngai"),
 		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi"),
-		(6,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi");
-        
-
+		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi"),
+		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi"),
+		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi");
 CREATE TABLE loai_dich_vu(
 	id_loai_dich_vu INT AUTO_INCREMENT PRIMARY KEY,
     ten_loai_dich_vu VARCHAR(45)

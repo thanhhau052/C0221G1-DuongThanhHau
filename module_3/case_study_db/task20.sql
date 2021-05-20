@@ -7,14 +7,8 @@
   
 use case_study_db;
 
-select  id_nhan_vien, 
-ho_ten,
- email, 
- sdt, 
- ngay_sinh, 
- dia_chi
-from nhan_vien 
+select  nv.id_nhan_vien, nv.ho_ten  , nv.email, nv.sdt, nv.ngay_sinh, nv.dia_chi
+from nhan_vien  nv
 union all
-select id_khach_hang,
- ho_ten, email, sdt, ngay_sinh, dia_chi
-from khach_hang
+select kh.id_khach_hang,kh.ho_ten,  kh.email, kh.ngay_sinh, kh.dia_chi
+from khach_hang kh;
