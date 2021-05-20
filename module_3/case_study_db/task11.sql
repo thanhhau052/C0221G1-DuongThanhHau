@@ -9,7 +9,7 @@ join hop_dong hd on kh.id_khach_hang=hd.id_khach_hang
 join hop_dong_chi_tiet hdct on hd.id_hop_dong=hdct.id_hop_dong
 join dich_vu_di_kem dvdk on hdct.id_dich_vu_di_kem=dvdk.id_dich_vu_di_kem
 join loai_khach_hang lkh on lkh.id_loai_khach_hang=kh.id_loai_khach_hang
-where lkh.ten_loai_khach_hang="Diamond" and (kh.dia_chi='Vinh' or kh.dia_chi= 'Quảng Ngãi');
+where lkh.ten_loai_khach_hang="Diamond" and (kh.dia_chi='Vinh' or kh.dia_chi= 'Quang Ngai');
 
 
 -- select* from loai_khach_hang

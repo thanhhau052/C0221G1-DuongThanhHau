@@ -2,7 +2,8 @@
 18.	Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràngbuộc giữa các bảng).
 */
 use case_study_db;
-
+SET SQL_SAFE_UPDATES = 0;
+set forenign_key_check=0;
 alter table hop_dong
 drop constraint hop_dong_ibfk_2;
 
