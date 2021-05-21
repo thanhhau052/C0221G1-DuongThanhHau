@@ -1,0 +1,15 @@
+.contentText{
+    width: 1000px;
+    font-size: 20px;
+}
+.textIndent{
+    text-indent: 50px;
+}
+a {
+    color: #1e1e8d;
+    text-decoration: none;
+}
+body{
+     text-align: justify;
+    /*sắp xếp nội dung cho các dòng chiều rộng bằng nhau */
+ }
