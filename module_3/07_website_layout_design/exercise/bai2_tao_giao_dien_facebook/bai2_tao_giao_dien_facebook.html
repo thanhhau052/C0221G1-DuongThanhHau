@@ -4,49 +4,7 @@
     <meta charset="UTF-8">
     <title>[Bài tập] Tạo giao diện giản lược của trang chủ Facebook</title>
 
-    <style>
-        body {
-            height: 800px;
-            background-color: #5d9aff;
-        }
-
-        header {
-            padding: 5px;
-            background-color: white;
-            color: black;
-            height: 40px;
-            font-size: 25px;
-            text-align: left;
-            word-spacing: 5px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-        }
-
-        header #notification {
-            margin-left: 80%;
-            color: white;
-        }
-
-        nav {
-            margin-top: 40px;
-            width: 15%;
-            height: 500px;
-            background-color: #5d9aff;
-            color: white;
-            float: left;
-            text-align: left;
-        }
-
-        #content article {
-            margin-top: 60px;
-            width: 60%;
-            height: 300px;
-            background-color: white;
-            color: black;
-            float: left;
-        }
-    </style>
+    <link rel="stylesheet" href="bai2.css">
 </head>
 <body>
 <header>
@@ -55,16 +13,21 @@
 </header>
 
 <nav>
-    <h3>Bảng tin</h3>
-    <h3>Message</h3>
-    <h3>Watch</h3>
-    <h3>Marketplace</h3>
-    <h3>Khám phá nhóm, sự kiện..</h3>
+    <h3><a href="#">Bảng tin</a></h3>
+    <h3><a href="#"> Tin nhắn</a></h3>
+    <h3><a href="#">Nhóm</a></h3>
+    <h3><a href="#">Trang cá nhân</a></h3>
+    <h3><a href="#">Khám phá</a> </h3>
+    <h3><a href="#">Quản lí tài khoản</a> </h3>
 </nav>
 
 <div id="content">
     <article>
+
         <p>
+
+           <h3> <a href="#" >Nguyễn Phương Nam</a></h3>  <br>
+            5 phút trước <br> <br>
             Cuối tuần này, cuộc đua vô địch La Liga sẽ chính thức hạ màn và hiện tại, Atletico Madrid
             đang nắm quyền tự quyết. Thầy trò Simeone hơn Real Madrid 2 điểm, chỉ phải gặp đội xếp áp
             chót Valladolid, còn Real chạm trán Villarrreal. Đội bóng Hoàng gia phải thắng và chờ đợi
@@ -95,6 +58,35 @@
     </article>
 
     <article>
+        <p><h3> <a href="#" >Phan Gia Khánh</a></h3>  <br>
+        vừa xong <br> <br>
+            Liverpool vừa có chiến thắng nghẹt thở trước West Brom khi thủ môn Alisson trở thành người hùng với cú đánh
+            đầu xuất thần ở phút bù giờ cuối cùng. Màn ngược dòng khó tin của Liverpool giúp họ gây áp lực cực lớn lên
+            top 4. Cách biệt chỉ vỏn vẹn 1 điểm trong khi Ngoại hạng Anh vẫn còn 2 vòng đấu nữa mới khép lại hứa hẹn sẽ
+            mang đến một cuộc đua hết sức kịch tính.
+
+            Còn tại TBN, Barcelona vừa nhận thất bại cay đắng 1-2 trước Celta Vigo ở vòng áp chót La Liga. Trận thua bạc
+            nhược trên sân nhà khiến giấc mơ vô địch của thầy trò Koeman tan vỡ. Theo nhiều nguồn tin, đội chủ sân Nou
+            Camp đang có “sóng ngầm” nội bộ, mà cụ thể là mối quan hệ không mấy tốt đẹp giữa HLV Koeman và siêu sao
+            Lionel Messi.
+
+            Chi tiết những thông tin trên sẽ có trong Clip 1 phút Bóng đá 24H ngày 17/5/2021. Mời các bạn chú ý đón xem
+        </p>
+        <p>
+            Cuối tuần này, cuộc đua vô địch La Liga sẽ chính thức hạ màn và hiện tại, Atletico Madrid
+            đang nắm quyền tự quyết. Thầy trò Simeone hơn Real Madrid 2 điểm, chỉ phải gặp đội xếp áp
+            chót Valladolid, còn Real chạm trán Villarrreal. Đội bóng Hoàng gia phải thắng và chờ đợi
+            đối thủ hoà hoặc thua mới có thể bảo vệ ngôi vương.
+
+            Bên cạnh đó, lịch sử cũng đứng về phía Atletico. Trong 10 lần đăng quang La Liga, có tới 9
+            lần họ giành chức vô địch ở vòng đấu cuối, bao gồm cả mùa giải 2013/14, lần gần
+            nhất thầy trò Simeone đăng Quang.
+
+            Trong khi đó ở Anh, tờ Liverpool Echo tiết lộ Liverpool đã bất ngờ nhảy vào cuộc đua giành chữ
+            kí của Harry Kane. Tiền đạo người Anh đã úp mở khả năng chia tay Tottenham và được MU,
+            Manchester City, Real Madrid hay PSG quan tâm.
+        </p>
+
         <p>
             Liverpool vừa có chiến thắng nghẹt thở trước West Brom khi thủ môn Alisson trở thành người hùng với cú đánh
             đầu xuất thần ở phút bù giờ cuối cùng. Màn ngược dòng khó tin của Liverpool giúp họ gây áp lực cực lớn lên
@@ -123,6 +115,7 @@
             Manchester City, Real Madrid hay PSG quan tâm.
         </p>
     </article>
+
 </div>
 </body>
 </html>

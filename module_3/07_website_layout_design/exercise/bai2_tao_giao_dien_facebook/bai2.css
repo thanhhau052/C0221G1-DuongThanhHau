@@ -1,0 +1,41 @@
+body {
+    height: 800px;
+    width: 2000px;
+    background-color: #5d9aff;
+}
+
+header {
+    padding: 5px;
+    background-color: white;
+    color: black;
+    height: 40px;
+    font-size: 25px;
+    text-align: left;
+    word-spacing: 5px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+header #notification {
+    margin-left: 80%;
+    color: black;
+}
+
+nav {
+    margin-top: 40px;
+    width: 15%;
+    height: 500px;
+    background-color: #5d9aff;
+    color: black;
+    float: left;
+    text-align: left;
+}
+
+#content article {
+    margin-top: 60px;
+    width: 60%;
+    background-color: white;
+    color: black;
+    float: left;
+}
