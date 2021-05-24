@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>bài luyện tập tạo layout bằng css đon giản </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /*đưa các định dạng margin và padding về bằng 0*/
+        }
+
+        #wrapper {
+            width: 800px;
+            margin: auto;
+            background-color: #4267b2;
+            /*  định dạng cho selector id="wrapper"
+                #wrapper : là định dạng cho selector có id là wrapper.
+                width : chiều rộng của trang web.
+                margin : auto để đưa trang web ra giữa trình duyệt.
+                color : màu chữ toàn bộ trang web.
+            */
+        }
+
+        #header {
+            width: 800px;
+            height: 80px;
+            background-color: #2dff44;
+
+        }
+
+        #menu {
+            width: 800px;
+            height: 50px;
+            background-color: #2040dd;
+
+        }
+
+        #left {
+            width: 200px;
+            height: 400px;
+            background-color: #edce26;
+            float: left;
+            /*
+            Trong đó : bạn chú ý thuộc tính float :
+             left. Đây là thuộc tính rất quan trọng
+             trong thiết kế layout web bằng css và
+             chắc chắn phải có để dồn nội dung phần
+             left qua trái trang web. Bạn cần nhớ
+             thuộc tính này.
+             */
+        }
+        #content {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            float: left;
+            /*
+            Tương tự selector left.
+             Khi định dạng selector content bạn
+             cũng cần phải có thuộc tính float :
+            left để dồn nội dung qua trái.
+             */
+        }
+        #right{
+            width: 200px;
+            height: 400px;
+            background-color: coral;
+            float: left;
+            /*
+            Ở selector này bạn vẫn phải sử dụng thuộc tính
+             float. Nhưng có thể float :
+            left hoặc float : right đều được.
+             */
+        }
+        #footer{
+            width: 800px;
+            height: 60px;
+            background-color: #2966af;
+            clear: both;
+            /*
+              Chú ý : Ở selector này có một thuộc tính
+              đặc biệt và rất quan trọng là clear :
+              both. Đây là thuộc tính bắt buộc phải
+              có khi bạn sử dụng thuộc tính float phía
+              trên. Nếu thiếu sẽ không thấy được footer
+              trong layout của bạn.
+             */
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header"> header</div>
+    <div id="menu">Menu</div>
+    <div id="left">Left</div>
+    <div id="content" > Content</div>
+    <div id="right"> Right</div>
+    <div id="footer">Footer</div>
+
+</div>
+
+</body>
+</html>
