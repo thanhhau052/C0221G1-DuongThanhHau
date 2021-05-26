@@ -1,3 +1,4 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,16 +21,11 @@ public class CalculatorServlet extends HttpServlet {
         double discountamount  = price * percent * 0.1;
         double discountprice = discountamount + price;
 
-        PrintWriter writer = response.getWriter();
-
-        writer.println("<html>");
-        writer.println("<h3> Product Description " + description + "</h3>");
-        writer.println("<h3> List Price " + price + "</h3>");
-        writer.println("<h3> Discount Percent " + percent + "</h3>");
-        writer.println("-------------------------------------------");
-        writer.println("<h3> Discount Amount " + discountamount + "</h3>");
-        writer.println("<h3> Discount Price " + discountprice + "</h3>");
-        writer.println("</html>");
+        request.setAttribute("description",description);
+        request.setAttribute("discountamount",discountamount);
+        request.setAttribute("discountprice",discountprice);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/display.jsp");
+        dispatcher.forward(request,response);
 
     }
 
