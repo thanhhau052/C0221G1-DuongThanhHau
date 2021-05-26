@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cba3ebef-cc19-4020-b408-82bc096f5ea9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/J2EE_1_4_J2EE_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01_database_introduction/.idea/01_database_introduction.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/commons/NhapDauVao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/commons/NhapDauVao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/commons/Validate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/commons/Validate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/controlles/QuanLiPhuongTien.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/controlles/QuanLiPhuongTien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/modol/PhuongTien.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/modol/PhuongTien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/modol/XeMay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/modol/XeMay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/modol/XeOTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/modol/XeOTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/modol/XeTai.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/bai_tap_lam_them_phuong_tien_giao_thong/modol/XeTai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/commons/CanBoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/commons/CanBoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/commons/DocGhiFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/commons/DocGhiFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/controlles/QuanLyChucNang.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/controlles/QuanLyChucNang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/controlles/QuanLyNhapLieu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/controlles/QuanLyNhapLieu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/models/CanBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/models/CanBo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/models/CongNhan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/models/CongNhan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/models/KySu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../data/LuyenTapOOP/src/quan_li_can_bo/models/KySu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module_1/Bai2_git_html/bai_tap/bai_tap_1" beforeDir="false" afterPath="$PROJECT_DIR$/../../module_1/Bai2_git_html/bai_tap/bai_tap_1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_bootstrap/exercise/bai2_xd_langding_page/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../08_bootstrap/exercise/bai2_xd_langding_page/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jquery-3.6.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../jquery-3.6.0.min.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\C221G1_DuongThanhHau\module_3\09_web_application_overview\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1t3ibztXZdDsUWBu2yxrDEcBsCj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.46" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.46" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="thuc_hanh_1:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/thuc_hanh_1_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="thuc_hanh_1:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cba3ebef-cc19-4020-b408-82bc096f5ea9" name="Default Changelist" comment="" />
+      <created>1622004248664</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622004248664</updated>
+      <workItem from="1622004252908" duration="152000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="739" y="267" key="FileChooserDialogImpl" timestamp="1622004390818">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="739" y="267" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1622004390818" />
+    <state x="342" y="109" key="new project wizard" timestamp="1622004401838">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="342" y="109" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1622004401838" />
+  </component>
+</project>
