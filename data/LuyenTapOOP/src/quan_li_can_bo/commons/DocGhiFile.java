@@ -59,7 +59,7 @@ public class DocGhiFile {
 
             bufferedReader = new BufferedReader(fileReader);
             while ((line = bufferedReader.readLine()) != null) {
-                if(line.length() == 0){
+                if (line.length() == 0) {
                     continue;
                 }
                 strings = line.split(",");
@@ -67,7 +67,7 @@ public class DocGhiFile {
                 int loai = Integer.parseInt(strings[5]);
                 if (loai == 1) {
 
-                    CanBo congNhan = new CongNhan(strings[0],strings[1], strings[2], strings[3], strings[4], strings[6]);
+                    CanBo congNhan = new CongNhan(strings[0], strings[1], strings[2], strings[3], strings[4], strings[6]);
                     canBoList.add(congNhan);
                 } else if (loai == 2) {
                     CanBo kySu = new KySu(strings[0], strings[1], strings[2], strings[3], strings[4], strings[6]);

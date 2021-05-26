@@ -31,7 +31,7 @@ public class CongNhan extends CanBo {
                 ", namSinh='" + namSinh + '\'' +
                 ", gioiTinh='" + gioiTinh + '\'' +
                 ", diaChi='" + diaChi + '\'' +
-                '}' +"\n");
+                '}' + "\n");
     }
 
 

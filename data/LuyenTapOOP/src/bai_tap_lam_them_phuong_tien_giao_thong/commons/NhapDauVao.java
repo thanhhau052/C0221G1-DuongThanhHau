@@ -56,7 +56,7 @@ public class NhapDauVao {
     public static XeOTo nhapOTo() {
         do {
             try {
-                String bienKiemSoat =Validate.biemKiemSoatOto();
+                String bienKiemSoat = Validate.biemKiemSoatOto();
                 System.out.println("Nhập vào hãng sản xuất  : ");
                 String hangSanXuat = scanner.nextLine();
                 System.out.println("Nhập vào năm sản xuất : ");
@@ -66,13 +66,12 @@ public class NhapDauVao {
                 System.out.println(" Nhập vào số lượng chổ ngồi cảu phuong tiện: ");
                 int soCho = Integer.parseInt(scanner.nextLine());
                 String kieuXe;
-               if (bienKiemSoat.contains("A")){
-                   kieuXe="Du Lịch";
+                if (bienKiemSoat.contains("A")) {
+                    kieuXe = "Du Lịch";
 
-               }
-               else {
-                   kieuXe="Xe Khách";
-               }
+                } else {
+                    kieuXe = "Xe Khách";
+                }
                 return new XeOTo(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, soCho, kieuXe);
             } catch (Exception e) {
                 System.err.println(e.getCause());

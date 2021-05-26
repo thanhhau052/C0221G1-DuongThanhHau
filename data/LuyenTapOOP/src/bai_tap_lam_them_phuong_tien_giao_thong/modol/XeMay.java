@@ -35,11 +35,11 @@ public class XeMay extends PhuongTien {
 
     @Override
     public String showInfor() {
-        return "--------------------------------------------------\n"+
-                "Bien kiem soat : "+ bienKiemSoat+"\n"+
-                "Hang san xuat : " + hangSanXuat+ "\n"+
-                "Nam san xuat : " + namSanXuat +"\n"+
-                "Chu so huu : " +chuSoHuu + "\n"+
+        return "--------------------------------------------------\n" +
+                "Bien kiem soat : " + bienKiemSoat + "\n" +
+                "Hang san xuat : " + hangSanXuat + "\n" +
+                "Nam san xuat : " + namSanXuat + "\n" +
+                "Chu so huu : " + chuSoHuu + "\n" +
                 "Cong suat : " + congSuat + "\n";
     }
 }

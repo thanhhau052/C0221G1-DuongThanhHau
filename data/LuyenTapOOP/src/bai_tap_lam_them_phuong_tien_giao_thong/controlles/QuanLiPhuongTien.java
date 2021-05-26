@@ -94,7 +94,7 @@ public class QuanLiPhuongTien {
                 System.out.println("1. Hiển thị xe Ô tô \n" +
                         "2. Hiển thị xe tải . \n" +
                         "3. Hiển  xe máy.\n" +
-                        "4. Hiển thị tất cả phương tiện \n"+
+                        "4. Hiển thị tất cả phương tiện \n" +
                         "5. Thoát !");
                 System.out.println("Nhập vào sự lựa chọn của bạn ! ");
                 int choose = Integer.parseInt(scanner.nextLine());
@@ -125,7 +125,7 @@ public class QuanLiPhuongTien {
                         }
                         break;
                     case 4:
-                        for (PhuongTien phuongTien:phuongTienList){
+                        for (PhuongTien phuongTien : phuongTienList) {
                             System.out.println(phuongTien.showInfor());
                         }
 

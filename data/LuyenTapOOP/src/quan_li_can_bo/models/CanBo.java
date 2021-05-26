@@ -67,5 +67,6 @@ public abstract class CanBo {
     public String toString() {
         return String.format("%s,%s,%s,%s,%s", id, hoTen, namSinh, gioiTinh, diaChi);
     }
+
     public abstract void showInfo();
 }

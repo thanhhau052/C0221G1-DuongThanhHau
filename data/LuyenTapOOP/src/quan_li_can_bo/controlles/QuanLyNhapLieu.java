@@ -4,7 +4,6 @@ import quan_li_can_bo.commons.CanBoException;
 import quan_li_can_bo.commons.DocGhiFile;
 import quan_li_can_bo.models.CanBo;
 
-import javax.sound.midi.Soundbank;
 import java.util.List;
 import java.util.Scanner;
 
@@ -58,7 +57,7 @@ public class QuanLyNhapLieu {
         String chon = null;
         String gioiTinh = null;
         while (true) {
-            System.out.println("Chọn giới tính "+
+            System.out.println("Chọn giới tính " +
                     "\n 1. Nam" + "\n2. Nữ");
             chon = scanner.nextLine();
             switch (chon) {
@@ -122,11 +121,11 @@ public class QuanLyNhapLieu {
 
             }
             System.out.println("Chọn theo danh sách");
-            while (true){
-                try{
+            while (true) {
+                try {
                     chon = Integer.parseInt(scanner.nextLine());
                     break;
-                }catch (NumberFormatException e){
+                } catch (NumberFormatException e) {
                     e.printStackTrace();
                 }
             }

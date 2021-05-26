@@ -1,4 +1,5 @@
 package quan_li_can_bo.controlles;
+
 import quan_li_can_bo.commons.DocGhiFile;
 import quan_li_can_bo.models.CanBo;
 import quan_li_can_bo.models.CongNhan;
@@ -58,13 +59,13 @@ public class QuanLyChucNang {
         String bac = QuanLyNhapLieu.nhapCapBac();
 
         List<CanBo> canBoList = new ArrayList<>();
-        CanBo congNhan = new CongNhan(id, hoTen,namSinh,gioiTinh,diaChi,bac);
+        CanBo congNhan = new CongNhan(id, hoTen, namSinh, gioiTinh, diaChi, bac);
         canBoList.add(congNhan);
         DocGhiFile.ghiFile("CanBo.csv", canBoList, true);
 
     }
 
-    public static void themKySu(){
+    public static void themKySu() {
         String id = QuanLyNhapLieu.nhapId();
         String hoTen = QuanLyNhapLieu.nhapHoTen();
         String namSinh = QuanLyNhapLieu.nhapNamSinh();
@@ -73,9 +74,9 @@ public class QuanLyChucNang {
         String nganh = QuanLyNhapLieu.nganhDaoTao();
 
         List<CanBo> canBoList = new ArrayList<>();
-        CanBo kySu = new KySu(id,hoTen,namSinh,gioiTinh,diaChi,nganh);
+        CanBo kySu = new KySu(id, hoTen, namSinh, gioiTinh, diaChi, nganh);
         canBoList.add(kySu);
-        DocGhiFile.ghiFile("CanBo.csv",canBoList,true);
+        DocGhiFile.ghiFile("CanBo.csv", canBoList, true);
     }
 
     public static void themNhanVien() {
@@ -87,51 +88,53 @@ public class QuanLyChucNang {
         String congViec = QuanLyNhapLieu.congViec();
 
         List<CanBo> canBoList = new ArrayList<>();
-        CanBo nhanVien = new NhanVien(id,hoTen,namSinh,gioiTinh,diaChi,congViec);
+        CanBo nhanVien = new NhanVien(id, hoTen, namSinh, gioiTinh, diaChi, congViec);
         canBoList.add(nhanVien);
-        DocGhiFile.ghiFile("CanBo.csv",canBoList,true);
+        DocGhiFile.ghiFile("CanBo.csv", canBoList, true);
     }
 
-    public static void timKiemTheoTen(){
+    public static void timKiemTheoTen() {
         String ten = null;
         List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv");
         System.out.println("nhap vao ten can tim kiem");
         ten = scanner.nextLine();
-        for (CanBo canBo : canBoList){
-            if (canBo.getHoTen().contains(ten)){
+        for (CanBo canBo : canBoList) {
+            if (canBo.getHoTen().contains(ten)) {
                 System.out.println(canBo);
 
             }
         }
     }
-    public static void sapXepTheoNamSinh(){
+
+    public static void sapXepTheoNamSinh() {
         List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv");
         canBoList.sort(Comparator.comparing(CanBo::getNamSinh));
-        for (CanBo canBo : canBoList){
+        for (CanBo canBo : canBoList) {
             canBo.showInfo();
         }
     }
-    public static void xoaTheoDanhSach(){
+
+    public static void xoaTheoDanhSach() {
         boolean kiemTra = false;
         int chon = 0;
         List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv");
 
-        while (true){
-            for (int i=0 ;i< canBoList.size();i++){
-                System.out.println((i+1)+" : "+canBoList.get(i));
+        while (true) {
+            for (int i = 0; i < canBoList.size(); i++) {
+                System.out.println((i + 1) + " : " + canBoList.get(i));
             }
             System.out.println("Nhập cán bộ cần xóa");
-            while (true){
-                try{
+            while (true) {
+                try {
                     chon = Integer.parseInt(scanner.nextLine());
                     break;
-                }catch (NumberFormatException e){
+                } catch (NumberFormatException e) {
                     System.err.println("vui lòng nhập số");
                     e.printStackTrace();
                 }
             }
-            for (int i = 0; i < canBoList.size(); i++){
-                if(chon == i + 1){
+            for (int i = 0; i < canBoList.size(); i++) {
+                if (chon == i + 1) {
                     canBoList.remove(i);
                     DocGhiFile.ghiFile("CanBo.csv", canBoList, false);
                     kiemTra = true;
@@ -140,16 +143,17 @@ public class QuanLyChucNang {
                 }
 
             }
-            if (kiemTra){
+            if (kiemTra) {
                 break;
-            }else {
+            } else {
                 System.out.printf("Vui lòng xóa trong danh sách");
             }
         }
     }
-    public static void hienThiCanBo(){
+
+    public static void hienThiCanBo() {
         String chon;
-        while (true){
+        while (true) {
             System.out.println("Danh Muc:\n" +
                     "1 Hien Thi Cong Nhan\n" +
                     "2 Hien thi Ky Su\n" +
@@ -158,7 +162,7 @@ public class QuanLyChucNang {
                     "5. Tro ve Danh Muc \n" +
                     "6. Thoát khỏi chương trình.\n");
             chon = scanner.nextLine();
-            switch (chon){
+            switch (chon) {
                 case "1":
                     hienThiCongNhan();
                     break;
@@ -180,33 +184,37 @@ public class QuanLyChucNang {
             }
         }
     }
-    public static void hienThiCongNhan(){
+
+    public static void hienThiCongNhan() {
         List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv"); // ghi 3 file , "CongNhan.csv"
-        for (CanBo canBo : canBoList){
-            if (canBo instanceof  CongNhan){
+        for (CanBo canBo : canBoList) {
+            if (canBo instanceof CongNhan) {
                 canBo.showInfo();
             }
         }
     }
-    public static void hienThiKySu(){
+
+    public static void hienThiKySu() {
         List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv");
-        for (CanBo canBo : canBoList){
-            if (canBo instanceof  KySu){
+        for (CanBo canBo : canBoList) {
+            if (canBo instanceof KySu) {
                 canBo.showInfo();
             }
         }
     }
-    public static void hienThiNhanVien(){
+
+    public static void hienThiNhanVien() {
         List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv");
-        for (CanBo canBo : canBoList){
-            if (canBo instanceof  NhanVien){
+        for (CanBo canBo : canBoList) {
+            if (canBo instanceof NhanVien) {
                 canBo.showInfo();
             }
         }
     }
-    public static void hienThiTatCa(){
+
+    public static void hienThiTatCa() {
         List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv");
-        for (CanBo canBo : canBoList){
+        for (CanBo canBo : canBoList) {
             canBo.showInfo();
         }
     }

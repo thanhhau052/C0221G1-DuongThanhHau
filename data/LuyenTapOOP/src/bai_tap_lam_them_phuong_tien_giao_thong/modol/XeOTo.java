@@ -44,19 +44,19 @@ public class XeOTo extends PhuongTien {
                 namSanXuat + "," +
                 chuSoHuu + "," +
                 soCho + "," +
-                kieuXe ;
+                kieuXe;
 
     }
 
     @Override
     public String showInfor() {
-        return "--------------------------------------------------\n"+
-                "Bien kiem soat : "+ bienKiemSoat+"\n"+
-                "Hang san xuat : " + hangSanXuat+ "\n"+
-                "Nam san xuat : " + namSanXuat +"\n"+
-                "Chu so huu : " +chuSoHuu + "\n"+
-                "So cho  : " + soCho + "\n"+
-                "Kieu xe : " + kieuXe+"\n";
+        return "--------------------------------------------------\n" +
+                "Bien kiem soat : " + bienKiemSoat + "\n" +
+                "Hang san xuat : " + hangSanXuat + "\n" +
+                "Nam san xuat : " + namSanXuat + "\n" +
+                "Chu so huu : " + chuSoHuu + "\n" +
+                "So cho  : " + soCho + "\n" +
+                "Kieu xe : " + kieuXe + "\n";
     }
 
 }

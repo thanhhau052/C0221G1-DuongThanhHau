@@ -51,7 +51,7 @@ public abstract class PhuongTien {
 
     @Override
     public String toString() {
-        return bienKiemSoat  + "," +
+        return bienKiemSoat + "," +
                 hangSanXuat + "," +
                 namSanXuat + "," +
                 chuSoHuu + ","
@@ -59,6 +59,6 @@ public abstract class PhuongTien {
 
     }
 
-public abstract String showInfor();
+    public abstract String showInfor();
 
 }
