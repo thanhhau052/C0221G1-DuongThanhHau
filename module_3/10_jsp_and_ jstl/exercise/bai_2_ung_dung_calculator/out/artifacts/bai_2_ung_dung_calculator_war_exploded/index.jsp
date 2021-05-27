@@ -10,24 +10,26 @@
 <head>
   <meta charset="UTF-8" />
   <title>Calculator</title>
+
 </head>
 <body>
-<form action="/result" method="POST">
-  <lable for="first">First operand</lable>
-  <input id="first" type="text" name="first" /><br />
 
-  <lable for="operand">Operand</lable>
-  <select name="operand" id="operand">
-    <option value="+">Addition</option>
-    <option value="-">Subtraction</option>
-    <option value="*">Multiplication</option>
-    <option value="/">Division</option>
-  </select><br/>
+    <form action="/result" method="POST">
+          <lable for="first">First operand</lable>
+          <input id="first" type="text" name="first" /><br />
 
-  <lable for="second">Second operand</lable>
-  <input id="second" type="text" name="second" />
+          <lable for="operand">Operand</lable>
+          <select name="operand" id="operand">
+            <option value="+">Addition</option>
+            <option value="-">Subtraction</option>
+            <option value="*">Multiplication</option>
+            <option value="/">Division</option>
+          </select><br/>
 
-  <button type="submit">Calculate</button>
-</form>
+          <lable for="second">Second operand</lable>
+          <input id="second" type="text" name="second" />
+
+          <button type="submit">Calculate</button>
+    </form>
 </body>
 </html>

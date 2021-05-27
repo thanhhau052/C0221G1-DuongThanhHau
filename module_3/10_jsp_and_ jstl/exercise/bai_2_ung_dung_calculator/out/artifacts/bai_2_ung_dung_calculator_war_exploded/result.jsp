@@ -15,7 +15,7 @@
 <h3>Calculator</h3>
 <h4>Result:</h4>
 <p>
-    ket qua la : ${result}
+    ket qua : ${result}
 </p>
 </body>
 </html>

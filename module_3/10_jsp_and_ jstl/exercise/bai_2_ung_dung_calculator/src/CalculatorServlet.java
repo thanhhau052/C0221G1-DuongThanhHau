@@ -13,37 +13,51 @@ public class CalculatorServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Double firstOperand = Double.parseDouble(request.getParameter("first"));
-        String operand = request.getParameter("operand");
+        try {
+
+            Double firstOperand = Double.parseDouble(request.getParameter("first"));
+            String operand = request.getParameter("operand");
 //        toán hạng
-        Double secondOperand = Double.parseDouble(request.getParameter("second"));
+            Double secondOperand = Double.parseDouble(request.getParameter("second"));
 
-        Double result=0d;
+            Double result = 0d;
 
-        switch (operand) {
-            case "+":
-                result = firstOperand + secondOperand;
-                break;
+            switch (operand) {
+                case "+":
+                    result = firstOperand + secondOperand;
+                    break;
 
-            case "-":
-                result = firstOperand - secondOperand;
-                break;
+                case "-":
+                    result = firstOperand - secondOperand;
+                    break;
 
-            case "*":
-                result = firstOperand * secondOperand;
-                break;
+                case "*":
+                    result = firstOperand * secondOperand;
+                    break;
 
-            case "/":
-                result = firstOperand / secondOperand;
-                break;
+                case "/":
+                    try {
+                        if (secondOperand == 0) {
+                            throw new Exception("Khong the chia cho 0");
+                        }
+                        result = firstOperand / secondOperand;
 
-            default:
-                throw new IllegalStateException("Unexpected value: " + operand);
+                    } catch (Exception e) {
+                        request.setAttribute("result", e.getMessage());
+                        request.getRequestDispatcher("result.jsp").forward(request, response);
+                    }
+                    break;
+
+                default:
+                    throw new IllegalStateException("Unexpected value: " + operand);
+            }
+
+            request.setAttribute("result", result);
+            request.getRequestDispatcher("result.jsp").forward(request, response);
+        } catch (Exception e) {
+            request.setAttribute("result", e.getMessage());
+            request.getRequestDispatcher("result.jsp").forward(request, response);
         }
-        request.setAttribute("result", result);
-        RequestDispatcher requestDispatcher=request.getRequestDispatcher("result.jsp");
-        requestDispatcher.forward(request,response);
-
     }
 
     @Override
