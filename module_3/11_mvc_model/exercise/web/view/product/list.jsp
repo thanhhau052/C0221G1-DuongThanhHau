@@ -31,6 +31,9 @@
         <a href="/products?action=create">Creat new Product</a>
     </p>
     <form  method="post" action="/products?action=search"><input type="text" name="key"  ><input type="submit"value="Search"></form><br>
+
+
+
     <tr>
         <td>Name</td>
         <td>Price</td>
@@ -49,7 +52,6 @@
             <td><a href="/products?action=delete&id=${product.getId()}">delete</a></td>
         </tr>
     </c:forEach>
-
 </table>
 </body>
 </html>
