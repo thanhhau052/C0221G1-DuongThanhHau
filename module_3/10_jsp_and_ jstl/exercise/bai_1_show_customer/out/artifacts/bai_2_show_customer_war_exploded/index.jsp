@@ -26,7 +26,9 @@
 <body>
 <div>
     <h1>Danh sach khach hang</h1>
-    <table border="1" class="table table-dark table-striped">
+    <br>
+
+    <table class="table table-dark table-striped">
         <tr>
             <th>ID</th>
             <th>Name</th>
