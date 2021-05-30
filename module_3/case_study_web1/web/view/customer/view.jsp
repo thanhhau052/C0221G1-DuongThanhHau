@@ -12,7 +12,12 @@
     <title>Customer List</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <style>
+        img {
+            width: 150px;
+            height: 60px;
+        }
+    </style>
 </head>
 <body>
 
@@ -27,7 +32,7 @@
             <h2 class=" align-items-center">WelCome to Furama Resorf Đà Nẵng</h2>
         </div>
         <div class="col-md-2 h3">
-            <p>Duong Thanh Hau</p>
+            <p>Dương Thanh Hậu</p>
         </div>
     </div>
 </div>

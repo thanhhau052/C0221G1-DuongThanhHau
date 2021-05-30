@@ -68,7 +68,7 @@
             <h2 class=" align-items-center">WelCome to Furama Resorf Đà Nẵng</h2>
         </div>
         <div class="col-md-2 h3">
-            <p>Duong Thanh Hau</p>
+            <p>Dương Thanh Hậu</p>
         </div>
     </div>
 </div>
