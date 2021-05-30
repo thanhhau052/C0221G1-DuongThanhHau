@@ -21,13 +21,13 @@
 <div class="row">
     <div class="container-fluid d-flex justify-content-between  align-items-center py-3 bg-info text-light">
         <div class="  d-flex align-items-center">
-            <a class="navbar-brand" href="#"><img src="img/logo_furama.png" height=200px width=425px/>
+            <a class="navbar-brand" href="#"><img src="https://lh3.googleusercontent.com/proxy/94-AB_Nj57VJmxN2rqrOo3SYQdVPqKKN4fFcBtllyobuIWUJ3JG0QRcd0p-WqDAS4podvG2RsyoTDBbNesZqGsI1JREMl-nhRaebWWlRLQ5K8eqUuomAONab0yA" height=200px width=425px/>
             </a>
 
             <h2 class=" align-items-center">WelCome to Furama Resorf Đà Nẵng</h2>
         </div>
         <div class="col-md-2 h3">
-            <p>Duong Thanh Hau</p>
+            <p>Dương Thanh Hậu</p>
         </div>
     </div>
 </div>
