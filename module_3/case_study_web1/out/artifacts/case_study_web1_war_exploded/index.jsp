@@ -38,13 +38,13 @@
 <div class="row">
   <div class="container-fluid d-flex justify-content-between  align-items-center py-3 bg-info text-light">
     <div class="  d-flex align-items-center">
-      <a class="navbar-brand" href="#"><img src="https://lh3.googleusercontent.com/proxy/94-AB_Nj57VJmxN2rqrOo3SYQdVPqKKN4fFcBtllyobuIWUJ3JG0QRcd0p-WqDAS4podvG2RsyoTDBbNesZqGsI1JREMl-nhRaebWWlRLQ5K8eqUuomAONab0yA" height=200px width=425px/>
+      <a class="navbar-brand" href="#"><img src="img/logo_furama.png" height=200px width=425px/>
       </a>
 
       <h2 class=" align-items-center">WelCome to Furama Resorf Đà Nẵng</h2>
     </div>
     <div class="col-md-2 h3">
-      <p>Dương Thanh Hậu</p>
+      <p>Duong Thanh Hau</p>
     </div>
   </div>
 </div>
@@ -72,10 +72,7 @@
           <a class="nav-link" href="#">Contract</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0 mr-3">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <form  method="post" action="/customers?action=search"><input type="text" name="key"  ><input type="submit"value="Search"></form>
     </div>
   </nav>
 </div>

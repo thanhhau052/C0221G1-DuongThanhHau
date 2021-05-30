@@ -37,6 +37,8 @@ public class CustomerServlet extends HttpServlet {
             case "delete":
                 deleteCustomer(request,response);
                 break;
+            case "search":
+                searchCustomer(request,response);
             default:
                 break;
         }
@@ -60,6 +62,7 @@ public class CustomerServlet extends HttpServlet {
             case "view":
                 viewCustomer(request,response);
                 break;
+
             default:
                 listCustomers(request, response);
                 break;
@@ -206,5 +209,16 @@ public class CustomerServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    private void searchCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/list.jsp");
+        String name = request.getParameter("key");
+        List<Customer> products =customerService.findByName(name);
+        request.setAttribute("customers",products);
+        dispatcher.forward(request, response);
+
     }
 }

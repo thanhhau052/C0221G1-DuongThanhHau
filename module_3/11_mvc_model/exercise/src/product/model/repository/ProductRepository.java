@@ -21,25 +21,25 @@ public class ProductRepository {
         return new ArrayList<>(list.values());
     }
 
+    public void save(Product product) {
+        list.put(product.getId(),product);
+    }
 
     public Product findById(int id) {
         return list.get(id);
     }
-
+    public void update (int id, Product product){
+        list.put(id,product);
+    }
 
     public void remove (int id){
         list.remove(id);
     }
 
 
-    public void update (int id, Product product){
-        list.put(id,product);
-    }
 
 
-    public void save(Product product) {
-        list.put(product.getId(),product);
-    }
+
 
     // tim theo ten
     public List<Product> findByName(String name){

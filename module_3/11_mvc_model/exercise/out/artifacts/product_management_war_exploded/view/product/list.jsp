@@ -28,7 +28,7 @@
 <table class="table table-striped">
     <h1>List product</h1>
     <p>
-        <a href="/products?action=create">Creat new <Pr></Pr>oduct</a>
+        <a href="/products?action=create">Creat new <Pr></Pr>poduct</a>
     </p>
     <form  method="post" action="/products?action=search"><input type="text" name="key"  ><input type="submit"value="Search"></form><br>
 

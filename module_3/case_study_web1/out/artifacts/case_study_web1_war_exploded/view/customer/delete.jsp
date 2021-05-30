@@ -27,7 +27,7 @@
             <h2 class=" align-items-center">WelCome to Furama Resorf Đà Nẵng</h2>
         </div>
         <div class="col-md-2 h3">
-            <p>Dương Thanh Hậu</p>
+            <p>Duong Thanh Hau</p>
         </div>
     </div>
 </div>
@@ -55,10 +55,7 @@
                     <a class="nav-link" href="#">Contract</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0 mr-3">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            <form  method="post" action="/customers?action=search"><input type="text" name="key"  ><input type="submit"value="Search"></form>
         </div>
     </nav>
 </div>
