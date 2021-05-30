@@ -32,16 +32,18 @@
 </p>
 <form method="post">
     <label>Name</label>
-    <input type="text" name="name" id="name" value="${products.getName()}">
+    <input type="text" name="name" id="name" value="${products.name}">
 
     <label>Price</label>
-    <input type="text" name="price" id="price" value="${products.getPrice()}">
+    <input type="text" name="price" id="price" value="${products.price}">
 
     <label>Discriptsion</label>
-    <input type="text" name="discription" id="discription" value="${products.getDesription()}">
+    <input type="text" name="discription" id="discription" value="${products.desription}">
 
     <label>Produrce</label>
-    <input type="text" name="produrce" id="produrce" value="${products.getProducer()}">
+    <input type="text" name="produrce" id="produrce" value="${products.producer}">
+
+
     <button type="submit">update</button>
 </form>
 

@@ -89,15 +89,15 @@
                 <table class="table table-striped table-hover">
                     <tr>
                         <td>Name:</td>
-                        <td>${requestScope["customer"].getName()}</td>
+                        <td>${customer.name}</td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td>${requestScope["customer"].getEmail()}</td>
+                        <td>${customer.email}</td>
                     </tr>
                     <tr>
                         <td>Address:</td>
-                        <td>${requestScope["customer"].getAddress()}</td>
+                        <td>${customer.address}</td>
                     </tr>
                     <tr>
                         <td><input type="submit" value="Delete customer"></td>
