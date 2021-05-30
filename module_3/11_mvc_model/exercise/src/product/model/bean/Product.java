@@ -1,4 +1,4 @@
-package product.model;
+package product.model.bean;
 
 public class Product {
     private int id;
