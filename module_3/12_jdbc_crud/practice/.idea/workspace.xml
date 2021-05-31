@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9bd7afb8-5a2e-4406-8597-c90fa48820c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../exercise/bai_tap_user_manager/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/bai_tap_user_manager/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/bai_tap_user_manager/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/bai_tap_user_manager/.idea/libraries/jstl_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/bai_tap_user_manager/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/bai_tap_user_manager/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thuc_hanh_user_manager/src/main/java/com/codegym/controler/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thuc_hanh_user_manager/src/main/java/com/codegym/dao/IUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thuc_hanh_user_manager/src/main/java/com/codegym/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thuc_hanh_user_manager/src/main/java/com/codegym/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thuc_hanh_user_manager/src/main/webapp/user/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thuc_hanh_user_manager/src/main/webapp/user/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thuc_hanh_user_manager/src/main/webapp/user/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-manager/src/main/java/com/codegym/controller/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-manager/src/main/java/com/codegym/dao/IUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-manager/src/main/java/com/codegym/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-manager/src/main/java/com/codegym/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-manager/src/main/webapp/user/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-manager/src/main/webapp/user/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-manager/src/main/webapp/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module_1/Bai2_git_html/bai_tap/bai_tap_1" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module_1/Bai2_git_html/bai_tap/bai_tap_1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/RELEASE-NOTES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/asf-logo-wide.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/bg-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/bg-middle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/bg-nav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/bg-upper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/tomcat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tomcat/apache-tomcat-9.0.46/apache-tomcat-9.0.46/webapps/ROOT/tomcat.svg" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1tI8Yr3oDlmyTFMWLKtynbPgfpf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/thuc_hanh_user_manager" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9bd7afb8-5a2e-4406-8597-c90fa48820c9" name="Default Changelist" comment="" />
+      <created>1622445293673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622445293673</updated>
+      <workItem from="1622445294918" duration="25000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1622445317119">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1622445317119" />
+  </component>
+</project>
