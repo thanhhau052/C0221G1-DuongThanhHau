@@ -1,12 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: Thanh Hậu
-  Date: 5/30/2021
-  Time: 10:50 PM
+  Date: 5/31/2021
+  Time: 11:43 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
