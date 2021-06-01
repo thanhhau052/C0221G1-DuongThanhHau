@@ -90,11 +90,37 @@
                     <td>${customer.address}</td>
                     <td><a href="/customers?action=edit&id=${customer.id}">edit</a></td>
                     <td><a href="/customers?action=delete&id=${customer.id}">delete</a></td>
+                    <td>
+                        <a href="edit.jsp" class="edit" ><i class="far fa-edit" style="font-size: 30px;color: red" ></i></a>
+                        <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i data-toggle="tooltip" class="fas fa-trash-alt mb-1 style=" style="font-size: 30px; color: red" title="Delete">&#xE872;</i></a>
+                    </td>
                 </tr>
+
             </c:forEach>
         </table>
 
 
+    </div>
+</div>
+</div>
+<div id="deleteEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete these Records?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
