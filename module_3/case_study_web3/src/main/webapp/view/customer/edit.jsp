@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Edit customer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css  /bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
@@ -49,11 +49,11 @@
                 <div class="form-group">
                     <label>Gender: </label>
                     <select class="form-select form-control " name="customer_gender" >
-                        <c:if test="${customer.customerGender == 'Male'}">
-                            <option value="Male" selected>Male</option>
-                            <option value="Female">Female</option>
+                        <c:if test="${customer.customerGender == '1'}">
+                            <option value="1" selected>Male</option>
+                            <option value="0">Female</option>
                         </c:if>
-                        <c:if test="${customer.customerGender == 'Female'}">
+                        <c:if test="${customer.customerGender == '0'}">
                             <option value="0">Male</option>
                             <option value="1" selected>Female</option>
                         </c:if>

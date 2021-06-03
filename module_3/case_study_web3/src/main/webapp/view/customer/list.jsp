@@ -68,7 +68,8 @@
                 </a>
                 </td>
                 <td>
-                    <button class="btn btn-primary"data-toggle="modal" data-target="#myModal" onclick="myFunction(${customer.customerId})">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+                            onclick="myFunction(${customer.customerId})">
                         Delete
                     </button>
                 </td>
@@ -78,7 +79,7 @@
     </table>
 </div>
 
-
+<%--modal--%>
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <form action="/customers?action=delete" method="post">
@@ -90,7 +91,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Do you want to delete this customer???
+                    Do you want to delete this customer?
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancel">
@@ -117,21 +118,19 @@
 <script src="../../dataweb/popper.min.js"></script>
 <script src="../../dataweb/bootstrap.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $('#tableCustomer').dataTable( {
+    $(document).ready(function () {
+        $('#tableCustomer').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
             "pageLength": 5
-        } );
-    } );
+        });
+    });
 </script>
 <script type="text/javascript">
-    function myFunction(id){
-        document.getElementById("customer_id").value=id;
+    function myFunction(id) {
+        document.getElementById("customer_id").value = id;
     }
 </script>
-
-
 
 
 </body>
