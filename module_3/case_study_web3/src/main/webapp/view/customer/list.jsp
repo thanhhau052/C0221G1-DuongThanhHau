@@ -56,7 +56,7 @@
                         <td>${type.customerTypeName}</td>
                     </c:if>
                 </c:forEach>
-                <td>${customer.customername}</td>
+                <td>${customer.customerName}</td>
                 <td>${customer.customerBirthday}</td>
                 <td>${customer.customerGender}</td>
                 <td>${customer.customerIdCard}</td>

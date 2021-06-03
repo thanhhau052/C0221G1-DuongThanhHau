@@ -24,9 +24,9 @@ public class CustomerRepository {
     private final String DELETE_CUSTOMER_BY_ID = "delete from customer where customer_id=?";
     private final String SELECT_ALL_CUSTOMER_TYPE = "select * from customer_type";
 
-    public static void main(String[] args) {
-        BaseRepository baseRepository = new BaseRepository();
-    }
+//    public static void main(String[] args) {
+//        BaseRepository baseRepository = new BaseRepository();
+//    }
     public List<Customer> findAll() {
         List<Customer> customers = new ArrayList<>();
         Connection connection = baseRepository.getConnection();
