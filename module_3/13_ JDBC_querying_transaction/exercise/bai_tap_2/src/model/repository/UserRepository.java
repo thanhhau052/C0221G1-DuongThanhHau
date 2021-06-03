@@ -354,7 +354,7 @@ public class UserRepository {
                 for (int permisionId : permision) {
 
                     pstmtAssignment.setInt(1, userId);
-// sua code o day!  
+// sua code o day!
                     pstmtAssignment.setInt(1, permisionId);
 
                     pstmtAssignment.executeUpdate();

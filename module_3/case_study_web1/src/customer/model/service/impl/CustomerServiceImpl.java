@@ -4,10 +4,9 @@ import customer.model.bean.Customer;
 import customer.model.repository.CustomerRepository;
 import customer.model.service.ICustomerService;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
+
 
 public class CustomerServiceImpl implements ICustomerService {
     CustomerRepository customerRepository = new CustomerRepository();
