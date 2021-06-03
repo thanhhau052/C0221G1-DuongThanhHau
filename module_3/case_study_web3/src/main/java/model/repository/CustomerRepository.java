@@ -21,6 +21,7 @@ public class CustomerRepository {
     private final String UPDATE_CUSTOMER_BY_ID = "update customer " +
             "set customer_type_id=?,customer_name=?,customer_birthday=?,customer_gender=?,customer_id_card=?,customer_phone=?,customer_email=?,customer_address=?" +
             "where customer_id=?";
+
     private final String DELETE_CUSTOMER_BY_ID = "delete from customer where customer_id=?";
     private final String SELECT_ALL_CUSTOMER_TYPE = "select * from customer_type";
 
@@ -137,17 +138,19 @@ public class CustomerRepository {
     public boolean update(int customer_id, Customer customer) {
         boolean rowUpdate = false;
         Connection connection = baseRepository.getConnection();
+ // int customerTypeId, String customerName, String customerBirthday, String customerGender, String customerIdCard,
+        //                    String customerPhone, String customerEmail, String customerAddress)
         try {
             PreparedStatement statement = connection.prepareStatement(UPDATE_CUSTOMER_BY_ID);
             statement.setInt(1, customer.getCustomerTypeId());
             statement.setString(2, customer.getCustomerName());
             statement.setString(3, customer.getCustomerBirthday());
-            statement.setString(4, customer.getCustomerGender());
+            statement.setInt(4, Integer.parseInt(customer.getCustomerGender()));
             statement.setString(5, customer.getCustomerIdCard());
             statement.setString(6, customer.getCustomerPhone());
             statement.setString(7, customer.getCustomerEmail());
             statement.setString(8, customer.getCustomerAddress());
-            statement.setInt(9, customer_id);
+            statement.setInt(9, customer.getCustomerId());
             rowUpdate = statement.executeUpdate() > 0;
             statement.close();
             connection.close();
