@@ -24,7 +24,9 @@ public class CustomerRepository {
     private final String DELETE_CUSTOMER_BY_ID = "delete from customer where customer_id=?";
     private final String SELECT_ALL_CUSTOMER_TYPE = "select * from customer_type";
 
-
+    public static void main(String[] args) {
+        BaseRepository baseRepository = new BaseRepository();
+    }
     public List<Customer> findAll() {
         List<Customer> customers = new ArrayList<>();
         Connection connection = baseRepository.getConnection();
@@ -112,15 +114,17 @@ public class CustomerRepository {
         boolean rowInsert = false;
         Connection connection = baseRepository.getConnection();
         try {
+            //customer_type_id,customer_name,customer_birthday,customer_gender,customer_id_card,customer_phone,customer_email, customer_address
             PreparedStatement statement = connection.prepareStatement(INSERT_CUSTOMER);
             statement.setInt(1, customer.getCustomer_type_id());
             statement.setString(2, customer.getCustomer_name());
             statement.setString(3, customer.getCustomer_birthday());
-            statement.setString(4, customer.getCustomer_gender());
+            statement.setInt(4, Integer.parseInt(customer.getCustomer_gender()));
             statement.setString(5, customer.getCustomer_id_card());
             statement.setString(6, customer.getCustomer_phone());
             statement.setString(7, customer.getCustomer_email());
             statement.setString(8, customer.getCustomer_address());
+            System.out.println(statement.toString());
             rowInsert = statement.executeUpdate() > 0;
             statement.close();
             connection.close();

@@ -42,6 +42,7 @@ CustomerRepository customerRepository = new CustomerRepository();
     public boolean remove(int customer_id) {
         return customerRepository.delete(customer_id);
     }
+
     public  List<CustomerType> findAllCustomerType(){
         return customerRepository.findAllCustomerType();
     }

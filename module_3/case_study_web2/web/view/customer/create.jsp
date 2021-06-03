@@ -23,7 +23,7 @@
                     <label> Customer Type : </label>
                     <select class="form-control" name="customer_type_id">
                         <c:forEach var="type" items="${customerTypes}">
-                            <option value="${customer_type.customer_type_id}">${customer_type.customer_type_name}</option>
+                            <option value="${type.customer_type_id}">${type.customer_type_name}</option>
                         </c:forEach>
                     </select>
                 </div>
@@ -44,8 +44,8 @@
                     <label>Gender: </label>
                     <select class="form-control "  name="customer_gender" aria-label="Default select example">
                         <option selected>Choose gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
                     </select>
                 </div>
                 <div class="form-group">
