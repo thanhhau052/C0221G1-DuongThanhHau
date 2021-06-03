@@ -68,8 +68,8 @@ values ("admin"),
   create table user_role (role_id int ,
 						 username varchar(255),
                          primary key (role_id,username),
-                         foreign key( role_id) references `role`(role_id),
-                         foreign key( username) references `user`(username)
+                         foreign key( role_id) references `role`(role_id)  on delete cascade on update cascade,
+                         foreign key( username) references `user`(username)  on delete cascade on update cascade
                          
                          );
 						
@@ -78,21 +78,21 @@ values ("admin"),
   
 CREATE TABLE employee(  -- nhan vien
 	employee_id INT AUTO_INCREMENT PRIMARY KEY,
-    employee_name VARCHAR(45),
+    employee_name VARCHAR(45) NOT NULL,
     position_id INT NOT NULL, -- id vi tri
     education_degree_id INT NOT NULL,  -- id trinh do
     division_id INT NOT NULL, --  id bo phan
     employee_birthday DATE NOT NULL, -- ngay sinh 
-    employee_id_card VARCHAR(45), -- so cmnd
-    employee_salary DOUBLE, -- tien luong 
+    employee_id_card VARCHAR(45) NOT NULL, -- so cmnd
+    employee_salary DOUBLE NOT NULL, -- tien luong 
     employee_phone VARCHAR(45), -- sdt
     employee_email VARCHAR(45), -- email
     employee_address VARCHAR(45), -- dia chi
     username varchar(255),
-    foreign key (username) references `user` (username),
-    FOREIGN KEY (position_id) REFERENCES `position`(position_id),
-    FOREIGN KEY (education_degree_id) REFERENCES education_degree(education_degree_id),
-    FOREIGN KEY (division_id) REFERENCES division(division_id)
+    foreign key (username) references `user` (username)  on delete cascade on update cascade,
+    FOREIGN KEY (position_id) REFERENCES `position`(position_id)  on delete cascade on update cascade,
+    FOREIGN KEY (education_degree_id) REFERENCES education_degree(education_degree_id)  on delete cascade on update cascade,
+    FOREIGN KEY (division_id) REFERENCES division(division_id)  on delete cascade on update cascade
 );
 
 /*
@@ -134,16 +134,21 @@ values ("Diamond"),
 CREATE TABLE customer( -- khach hang
 	customer_id INT AUTO_INCREMENT PRIMARY KEY, -- id khach hang 
     customer_type_id INT NOT NULL, -- id loai khach hang
-    customer_name VARCHAR(45), -- ten khach hang
+    customer_name VARCHAR(45) NOT NULL, -- ten khach hang
     customer_birthday DATE NOT NULL, -- ngay sinh cua khach hang
-    customer_id_card VARCHAR(45), -- so cmnd cua khach hang
-    customer_phone VARCHAR(45), -- sdt cua khach hang
+    customer_id_card VARCHAR(45)  NOT NULL, -- so cmnd cua khach hang
+    customer_phone VARCHAR(45)  NOT NULL, -- sdt cua khach hang
     customer_email VARCHAR(45), -- email khach hang
     customer_address VARCHAR(45), -- dia chi khach hang
-    customer_gender bit(1) , -- gioi tinh khach hang
-    FOREIGN KEY (customer_type_id) REFERENCES customer_type(customer_type_id)
+    customer_gender bit(1)  NOT NULL, -- gioi tinh khach hang
+    FOREIGN KEY (customer_type_id) REFERENCES customer_type(customer_type_id)   on delete cascade on update cascade
 );
 
+ insert into customer(customer_type_id,customer_name,customer_birthday,customer_gender,customer_id_card,customer_phone,customer_email, customer_address)
+ values(1,'khanh luon leo','2021-06-01','1','2121','212','ddaw@gmail.com','qewqde');
+
+insert into customer(customer_type_id,customer_name,customer_birthday,customer_gender,customer_id_card,customer_phone,customer_email, customer_address)
+values (1,"Tran Van Nam","1999-11-11",1,"12345678","12345678","vannam@gmail.com","hue");
     
 insert into customer(customer_type_id,customer_name,customer_birthday,customer_id_card,customer_phone,customer_email,customer_address,customer_gender)
 values (1,"Tran Van Nam","1999-11-11","1234","12345678","vannam@gmail.com","hue",1),
@@ -156,7 +161,7 @@ values (1,"Tran Van Nam","1999-11-11","1234","12345678","vannam@gmail.com","hue"
 		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi",1);
         
         
-        
+ SELECT * FROM case_study_db_web2.customer;
         
 CREATE TABLE service_type( -- loai dich vu
 	service_type_id INT AUTO_INCREMENT PRIMARY KEY,  -- id loai dich vu
@@ -194,18 +199,18 @@ values ("6h",500000),
 
 CREATE TABLE service(  -- dich vu
 	service_id INT AUTO_INCREMENT PRIMARY KEY,  -- id dich vu
-    service_name VARCHAR(45), -- ten dich vu
+    service_name VARCHAR(45) NOT NULL, -- ten dich vu
     service_area INT, -- dien tich
-    service_cost int, -- gia dich vu
+    service_cost int NOT NULL, -- gia dich vu
     service_max_people int,  -- so nguoi toi da
-	rent_type_id INT NOT NULL,  -- id kieu thue
-	service_type_id INT NOT NULL, -- id loai dich vu
+	rent_type_id INT ,  -- id kieu thue
+	service_type_id INT , -- id loai dich vu
     standrad_room varchar(45), -- tieu chuan phong
     description_other_convenience varchar(45),  -- trang thai
     pool_area int, -- dien tich ho boi
     number_of_floors int , -- so tang
-     FOREIGN KEY (rent_type_id) REFERENCES rent_type(rent_type_id),
-     FOREIGN KEY (service_type_id) REFERENCES service_type(service_type_id)
+     FOREIGN KEY (rent_type_id) REFERENCES rent_type(rent_type_id)  on delete cascade on update cascade,
+     FOREIGN KEY (service_type_id) REFERENCES service_type(service_type_id)  on delete cascade on update cascade
      
      
      
@@ -239,11 +244,11 @@ CREATE TABLE  contract(  -- hop dong
     service_id INT NOT NULL,  -- id dich vu
     contract_start_date DATE NOT NULL, -- ngay lam hop dong
     contract_end_date DATE NOT NULL, -- ngay ket thuc hop dong
-    contract_deposit INT, -- tien dat coc
-    contract_total INT, -- tong tien 
-    FOREIGN KEY (employee_id) REFERENCES employee(employee_id),
-    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
-    FOREIGN KEY (service_id) REFERENCES service(service_id)
+    contract_deposit INT NOT NULL, -- tien dat coc
+    contract_total INT NOT NULL, -- tong tien 
+    FOREIGN KEY (employee_id) REFERENCES employee(employee_id)      on delete cascade on update cascade ,
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id)      on delete cascade on update cascade ,    
+    FOREIGN KEY (service_id) REFERENCES service(service_id) on delete cascade on update cascade 
 );
 /*
 insert into contract (employee_id,customer_id,service_id,contract_start_date,contract_end_date,contract_deposit,contract_total)
@@ -258,9 +263,9 @@ values  (1,1,1,"2018-08-11","2019-10-10",5000,10000),
 
  CREATE TABLE attach_service(  -- dich vu di kem
 		attach_service_id INT AUTO_INCREMENT PRIMARY KEY, -- id dich vu di kem
-        attach_service_name VARCHAR(45),  -- ten dich vu di kem
-        attach_service_cost INT, -- gia dich vu di kem
-        attach_service_until INT, -- don vi
+        attach_service_name VARCHAR(45) NOT NULL,  -- ten dich vu di kem
+        attach_service_cost INT NOT NULL, -- gia dich vu di kem
+        attach_service_until INT NOT NULL, -- don vi
         attach_service_status VARCHAR(45)  -- trang thai
     );
     
@@ -287,11 +292,11 @@ values  (1,1,1,"2018-08-11","2019-10-10",5000,10000),
 
 CREATE TABLE contract_detail(  -- hop dong chi tiet 
 	contract_detail_id INT AUTO_INCREMENT PRIMARY KEY,  -- id hop dong chi tiet
-    contract_id INT NOT NULL,  -- id hop dong 
-    attach_service_id INT NOT NULL,  -- id dich vu di kem
-    quantity INT,  -- so luong
-    FOREIGN KEY (contract_id) REFERENCES contract(contract_id),
-    FOREIGN KEY (attach_service_id) REFERENCES attach_service(attach_service_id)
+    contract_id INT ,  -- id hop dong 
+    attach_service_id INT ,  -- id dich vu di kem
+    quantity INT NOT NULL,  -- so luong
+    FOREIGN KEY (contract_id) REFERENCES contract(contract_id)  on delete cascade on update cascade,
+    FOREIGN KEY (attach_service_id) REFERENCES attach_service(attach_service_id)  on delete cascade on update cascade
     );
     
     

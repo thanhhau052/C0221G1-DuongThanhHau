@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerServiceImpl implements IService<Customer> {
-    CustomerRepository customerRepository = new CustomerRepository();
+CustomerRepository customerRepository = new CustomerRepository();
 
     @Override
     public List<Customer> findAll() {
@@ -19,13 +19,13 @@ public class CustomerServiceImpl implements IService<Customer> {
     }
 
     @Override
-    public Customer findById(int customer_id) {
-        return customerRepository.findById(customer_id);
+    public Customer findById(int customerId) {
+        return customerRepository.findById(customerId);
     }
 
     @Override
-    public List<Customer> findByName(String customer_name) {
-        return customerRepository.findByName(customer_name);
+    public List<Customer> findByName(String customerName) {
+        return customerRepository.findByName(customerName);
     }
 
     @Override
@@ -34,13 +34,13 @@ public class CustomerServiceImpl implements IService<Customer> {
     }
 
     @Override
-    public boolean update(int customer_id, Customer customer) {
-        return customerRepository.update(customer_id,customer);
+    public boolean update(int customerId, Customer customer) {
+        return customerRepository.update(customerId,customer);
     }
 
     @Override
-    public boolean remove(int customer_id) {
-        return customerRepository.delete(customer_id);
+    public boolean remove(int customerId) {
+        return customerRepository.delete(customerId);
     }
 
     public  List<CustomerType> findAllCustomerType(){
