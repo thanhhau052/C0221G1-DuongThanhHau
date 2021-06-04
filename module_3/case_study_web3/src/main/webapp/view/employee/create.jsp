@@ -28,31 +28,31 @@
             <form action="/employees?action=create" method="post" class="container border border-dark mb-3 pt-3">
                 <div class="form-group">
                     <label>Name:</label>
-                    <input type="text" class="form-control" placeholder="Enter name... " name="employee_name">
+                    <input type="text" class="form-control" placeholder="Enter name... " name="employeeName">
                 </div>
                 <div class="form-group">
                     <label>Birthday:</label>
-                    <input type="date" class="form-control" placeholder="Enter birthday" name="employee_birthday">
+                    <input type="date" class="form-control" placeholder="Enter birthday" name="employeeBirthday">
                 </div>
                 <div class="form-group">
                     <label>ID Card: </label>
-                    <input type="text" class="form-control" placeholder="Enter id card... " name="employee_id_card">
+                    <input type="text" class="form-control" placeholder="Enter id card... " name="employeeIdCard">
                 </div>
                 <div class="form-group">
                     <label>Salary: </label>
-                    <input type="number" class="form-control" placeholder="Enter salary..." name="employee_salary">
+                    <input type="number" class="form-control" placeholder="Enter salary..." name="employeeSalary">
                 </div>
                 <div class="form-group">
                     <label>Phone: </label>
-                    <input type="number" class="form-control" placeholder="Enter phone number..." name="employee_phone">
+                    <input type="number" class="form-control" placeholder="Enter phone number..." name="employeePhone">
                 </div>
                 <div class="form-group">
                     <label>Email: </label>
-                    <input type="email" class="form-control" placeholder="Enter email..." name="employee_email">
+                    <input type="email" class="form-control" placeholder="Enter email..." name="employeeEmail">
                 </div>
                 <div class="form-group">
                     <label>Address: </label>
-                    <input type="text" class="form-control" placeholder="Enter address... " name="employee_address">
+                    <input type="text" class="form-control" placeholder="Enter address... " name="employeeAddress">
                 </div>
                 <div class="form-group">
                     <label>Position ID: </label>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group">
                     <label>Education degree ID: </label>
-                    <select name="education_degree_id" class="form-control">
+                    <select name="educationDegreeId" class="form-control">
                         <c:forEach var="education" items="${educationDegrees}">
                             <option value="${education.educationDegreeId}">${education.educationDegreeName}</option>
                         </c:forEach>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="form-group">
                     <label>Division ID: </label>
-                    <select name="division_id" class="form-control">
+                    <select name="divisionId" class="form-control">
                         <c:forEach var="division" items="${divisions}">
                             <option value="${division.divisionId}">${division.divisionName}</option>
                         </c:forEach>

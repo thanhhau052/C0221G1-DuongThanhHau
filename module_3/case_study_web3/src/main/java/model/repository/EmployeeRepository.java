@@ -17,7 +17,8 @@ public class EmployeeRepository {
     private final String SELECT_ALL_EMPLOYEE = "select * from employee";
     private final String SELECT_EMPLOYEE_BY_ID = "select * from employee where employee_id=?";
     private final String SELECT_EMPLOYEE_BY_NAME = "select * from employee where employee_name like ?";
-    private final String INSERT_EMPLOYEE = "insert into employee(employee_name, employee_birthday, employee_id_card, employee_salary, employee_phone, employee_email, employee_address, position_id, education_degree_id, division_id, username) " +
+    private final String INSERT_EMPLOYEE = "insert into employee(  employee_name,position_id,education_degree_id,division_id," +
+            "employee_birthday,employee_id_card,employee_salary,employee_phone,employee_email,employee_address,username )\n " +
             "values (?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?)";
     private final String UPDATE_EMPLOYEE_BY_ID = "update employee " +
             "set employee_name=?, employee_birthday=?, employee_id_card=?, employee_salary=?, employee_phone=?, employee_email=?, employee_address=?, position_id=?, education_degree_id=?, division_id=?, username=? " +
@@ -26,7 +27,7 @@ public class EmployeeRepository {
     private final String SELECT_ALL_POSITION = "select * from position";
     private final String SELECT_ALL_EDUCATION_DEGREE = "select * from education_degree";
     private final String SELECT_ALL_DIVISION = "select * from division";
-    private final String INSERT_USER ="insert into `user` values(?,?)";
+    private final String INSERT_USER = "insert into `user` values(?,?)";
 
     public List<Employee> findAll() {
         List<Employee> employees = new ArrayList<>();
@@ -124,32 +125,25 @@ public class EmployeeRepository {
         boolean rowInsert = false;
         Connection connection = repository.getConnection();
         try {
-            connection.setAutoCommit(false);
-            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USER);
-            preparedStatement.setString(1,employee.getUsername());
-            preparedStatement.setString(2,"123456");
-            rowInsert = preparedStatement.executeUpdate()>0;
-            if(rowInsert){
-                PreparedStatement statement = connection.prepareStatement(INSERT_EMPLOYEE);
-                statement.setString(1, employee.getEmployeeName());
-                statement.setString(2, employee.getEmployeeBirthday());
-                statement.setString(3, employee.getEmployeeIdCard());
-                statement.setDouble(4, employee.getEmployeeSalary());
-                statement.setString(5, employee.getEmployeePhone());
-                statement.setString(6, employee.getEmployeeEmail());
-                statement.setString(7, employee.getEmployeeAddress());
-                statement.setInt(8, employee.getPositionId());
-                statement.setInt(9, employee.getEducationDegreeId());
-                statement.setInt(10, employee.getDivisionId());
-                statement.setString(11, employee.getUsername());
-                rowInsert = statement.executeUpdate() > 0;
-                connection.commit();
-                statement.close();
-            }else {
-                connection.rollback();
-            }
-            preparedStatement.close();
-            connection.close();
+
+            PreparedStatement statement = connection.prepareStatement(INSERT_EMPLOYEE);
+            statement.setString(1, employee.getEmployeeName());
+            statement.setInt(2, employee.getPositionId());
+            statement.setInt(3, employee.getEducationDegreeId());
+            statement.setInt(4, employee.getDivisionId());
+            statement.setString(5, employee.getEmployeeBirthday());
+            statement.setString(6, employee.getEmployeeIdCard());
+            statement.setDouble(7, employee.getEmployeeSalary());
+            statement.setString(8, employee.getEmployeePhone());
+            statement.setString(9, employee.getEmployeeEmail());
+            statement.setString(10, employee.getEmployeeAddress());
+            statement.setString(11, employee.getUsername());
+            rowInsert = statement.executeUpdate() > 0;
+            // //String employeeName, String employeeBirthday, String employeeIdCard, double employeeSalary, String employeePhone,
+            // String employeeEmail, String employeeAddress, int positionId, int educationDegreeId, int divisionId, String username)
+            connection.commit();
+            statement.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

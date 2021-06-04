@@ -59,11 +59,16 @@ values ("admin"),
 		("quan li");
 
 
-  create table 	`user`( username varchar(255) primary key,
-					role_name varchar(255) ,
+  create table 	`user`( username varchar(255) primary key ,
 					`password` varchar(255)
                         );
                         
+  
+  insert into `user`
+  values ("Thuy hoang1","12345"),
+		("Thuy hoang2","12345"),
+		("Thuy hoang3","12345");
+  
   
   
   create table user_role (role_id int ,
@@ -97,9 +102,7 @@ CREATE TABLE employee(  -- nhan vien
 );
 
 
-insert into employee(  employee_name,
-						position_id,
-				education_degree_id,division_id,employee_birthday,employee_id_card,employee_salary,employee_phone,employee_email,employee_address,username )
+insert into employee(  employee_name,position_id,education_degree_id,division_id,employee_birthday,employee_id_card,employee_salary,employee_phone,employee_email,employee_address,username )
 values ("Duong Thanh Hau",1,1,1,"1997-02-24","194571756",15000000,"0399191054","thanhhau026@gmail.com","quang binh",null),
  ("Nguyen Phuong Nam",2,2,2,"1999-12-12","123456789",10000000,"0333313033","nam11@gmail.com","Da Nang",null),
 ("Dao Thao",3,3,3,"1993-12-12","123456789",10000000,"03932323223","thao22@gmail.com","quang binh",null),

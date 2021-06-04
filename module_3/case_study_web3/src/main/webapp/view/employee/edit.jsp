@@ -25,49 +25,49 @@
             <p>
                 <a href="/employees">Back to menu</a>
             </p>
-            <form action="/employees?action=edit&employee_id=${employee.employee_id}" method="post" class="container border border-dark mb-3 pt-3">
+            <form action="/employees?action=edit&employeeId=${employee.employeeId}" method="post" class="container border border-dark mb-3 pt-3">
                 <div class="form-group">
                     <label>ID:</label>
-                    <input type="text" class="form-control" name="employee_id" value="${employee.employee_id}" disabled>
+                    <input type="text" class="form-control" name="employeeId" value="${employee.employeeId}" disabled>
                 </div>
                 <div class="form-group">
                     <label>Name:</label>
-                    <input type="text" class="form-control" name="employee_name" value="${employee.employee_name}">
+                    <input type="text" class="form-control" name="employeeName" value="${employee.employeeName}">
                 </div>
                 <div class="form-group">
                     <label>Birthday:</label>
-                    <input type="date" class="form-control" name="employee_birthday" value="${employee.employee_birthday}">
+                    <input type="date" class="form-control" name="employeeBirthday" value="${employee.employeeBirthday}">
                 </div>
                 <div class="form-group">
                     <label>ID Card: </label>
-                    <input type="text" class="form-control" name="employee_id_card" value="${employee.employee_id_card}">
+                    <input type="text" class="form-control" name="employeeIdCard" value="${employee.employeeIdCard}">
                 </div>
                 <div class="form-group">
                     <label>Salary: </label>
-                    <input type="number" class="form-control" name="employee_salary" value="${employee.employee_salary}">
+                    <input type="number" class="form-control" name="employeeSalary" value="${employee.employeeSalary}">
                 </div>
                 <div class="form-group">
                     <label>Phone: </label>
-                    <input type="number" class="form-control" name="employee_phone" value="${employee.employee_phone}">
+                    <input type="number" class="form-control" name="employeePhone" value="${employee.employeePhone}">
                 </div>
                 <div class="form-group">
                     <label>Email: </label>
-                    <input type="email" class="form-control" name="employee_email" value="${employee.employee_email}">
+                    <input type="email" class="form-control" name="employeeEmail" value="${employee.employeeEmail}">
                 </div>
                 <div class="form-group">
                     <label>Address: </label>
-                    <input type="text" class="form-control" name="employee_address" value="${employee.employee_address}">
+                    <input type="text" class="form-control" name="employeeAddress" value="${employee.employeeAddress}">
                 </div>
                 <div class="form-group">
                     <label>Position ID: </label>
-                    <select class="form-control" name="position_id">
+                    <select class="form-control" name="positionId">
                         <c:forEach var="position" items="${requestScope['positions']}">
                             <c:choose>
-                                <c:when test="${position.position_id == employee.position_id}">
-                                    <option value="${position.position_id}" selected>${position.position_name}</option>
+                                <c:when test="${position.positionId == employee.positionId}">
+                                    <option value="${position.positionId}" selected>${position.positionName}</option>
                                 </c:when>
                                 <c:otherwise>
-                                    <option value="${position.position_id}">${position.position_name}</option>
+                                    <option value="${position.positionId}">${position.positionName}</option>
                                 </c:otherwise>
                             </c:choose>
                         </c:forEach>
@@ -75,14 +75,14 @@
                 </div>
                 <div class="form-group">
                     <label>Education degree ID: </label>
-                    <select class="form-control" name="education_degree_id">
+                    <select class="form-control" name="educationDegreeId">
                         <c:forEach var="education" items="${requestScope['educationDegrees']}">
                             <c:choose>
-                                <c:when test="${education.education_degree_id == employee.education_degree_id}">
-                                    <option value="${education.education_degree_id}" selected>${education.education_degree_name}</option>
+                                <c:when test="${education.educationDegreeId == employee.educationDegreeId}">
+                                    <option value="${education.educationDegreeId}" selected>${education.educationDegreeName}</option>
                                 </c:when>
                                 <c:otherwise>
-                                    <option value="${education.education_degree_id}">${education.education_degree_name}</option>
+                                    <option value="${education.educationDegreeId}">${education.educationDegreeName}</option>
                                 </c:otherwise>
                             </c:choose>
                         </c:forEach>
@@ -90,14 +90,14 @@
                 </div>
                 <div class="form-group">
                     <label>Division ID: </label>
-                    <select class="form-control" name="division_id">
+                    <select class="form-control" name="divisionId">
                         <c:forEach var="division" items="${requestScope['divisions']}">
                             <c:choose>
-                                <c:when test="${division.division_id == employee.division_id}">
-                                    <option value="${division.division_id}" selected>${division.division_name}</option>
+                                <c:when test="${division.divisionId == employee.divisionId}">
+                                    <option value="${division.divisionId}" selected>${division.divisionName}</option>
                                 </c:when>
                                 <c:otherwise>
-                                    <option value="${division.division_id}">${division.division_name}</option>
+                                    <option value="${division.divisionId}">${division.divisionName}</option>
                                 </c:otherwise>
                             </c:choose>
                         </c:forEach>

@@ -18,19 +18,19 @@ import java.util.List;
 @WebServlet(name = "EmployeeServlet", urlPatterns = {"/employees"})
 public class EmployeeServlet extends HttpServlet {
 
-    private EmployeeServiceImpl employeeService;
-    private List<Position> positions;
-    private List<EducationDegree> educationDegrees;
-    private List<Division> divisions;
+    private EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+    private List<Position> positions= employeeService.findAllPosition();
+    private List<EducationDegree> educationDegrees= employeeService.findAllEducationDegree();
+    private List<Division> divisions = employeeService.findAllDivision();
 
-    @Override
-    public void init() throws ServletException {
-        employeeService = new EmployeeServiceImpl();
-        positions = employeeService.findAllPosition();
-        educationDegrees = employeeService.findAllEducationDegree();
-        divisions = employeeService.findAllDivision();
-    }
-
+//    @Override
+//    public void init() throws ServletException {
+//
+//    }
+//    employeeService
+//    positions = employeeService.findAllPosition();
+//    educationDegrees = employeeService.findAllEducationDegree();
+//    divisions = employeeService.findAllDivision();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -107,18 +107,23 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void createEmployee(HttpServletRequest request, HttpServletResponse response) {
-        String employee_name = request.getParameter("employee_name");
-        String employee_birthday = String.valueOf(request.getParameter("employee_birthday"));
-        String employee_id_card = request.getParameter("employee_id_card");
-        double employee_salary = Double.parseDouble(request.getParameter("employee_salary"));
-        String employee_phone = request.getParameter("employee_phone");
-        String employee_email = request.getParameter("employee_email");
-        String employee_address = request.getParameter("employee_address");
-        int position_id = Integer.parseInt(request.getParameter("position_id"));
-        int education_degree_id = Integer.parseInt(request.getParameter("education_degree_id"));
-        int division_id = Integer.parseInt(request.getParameter("division_id"));
+        String employeeName = request.getParameter("employeeName");
+        String employeeBirthday = String.valueOf(request.getParameter("employeeBirthday"));
+        String employeeIdCard = request.getParameter("employeeIdCard");
+        double employeeSalary = Double.parseDouble(request.getParameter("employeeSalary"));
+        String employeePhone = request.getParameter("employeePhone");
+        String employeeEmail = request.getParameter("employeeEmail");
+        String employeeAddress = request.getParameter("employeeAddress");
+        int positionId = Integer.parseInt(request.getParameter("positionId"));
+        int educationDegreeId = Integer.parseInt(request.getParameter("educationDegreeId"));
+        int divisionId = Integer.parseInt(request.getParameter("divisionId"));
         String username = request.getParameter("username");
-        Employee employee = new Employee( employee_name, employee_birthday, employee_id_card, employee_salary, employee_phone, employee_email, employee_address, position_id, education_degree_id, division_id, username);
+
+        //String employeeName, String employeeBirthday, String employeeIdCard, double employeeSalary, String employeePhone,
+        // String employeeEmail, String employeeAddress, int positionId, int educationDegreeId, int divisionId, String username)
+
+        Employee employee = new Employee( employeeName, employeeBirthday, employeeIdCard, employeeSalary, employeePhone, employeeEmail,
+                                         employeeAddress, positionId, educationDegreeId, divisionId, username);
         boolean check = this.employeeService.save(employee);
         if(check){
             request.setAttribute("message", "New employee was created");
@@ -140,8 +145,8 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
-        int employee_id = Integer.parseInt(request.getParameter("employee_id"));
-        Employee employee = this.employeeService.findById(employee_id);
+        int employeeId = Integer.parseInt(request.getParameter("employeeId"));
+        Employee employee = this.employeeService.findById(employeeId);
         RequestDispatcher dispatcher;
         if (employee == null) {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
@@ -162,24 +167,24 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void updateEmployee(HttpServletRequest request, HttpServletResponse response) {
-        int employee_id = Integer.parseInt(request.getParameter("employee_id"));
-        Employee employee = this.employeeService.findById(employee_id);
+        int employeeId = Integer.parseInt(request.getParameter("employeeId"));
+        Employee employee = this.employeeService.findById(employeeId);
         RequestDispatcher dispatcher;
         if (employee == null) {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
         } else {
-            employee.setEmployeeName(request.getParameter("employee_name"));
-            employee.setEmployeeBirthday(String.valueOf(request.getParameter("employee_birthday")));
-            employee.setEmployeeIdCard(request.getParameter("employee_id_card"));
-            employee.setEmployeeSalary(Double.parseDouble(request.getParameter("employee_salary")));
-            employee.setEmployeePhone(request.getParameter("employee_phone"));
-            employee.setEmployeeEmail(request.getParameter("employee_email"));
-            employee.setEmployeeAddress(request.getParameter("employee_address"));
-            employee.setPositionId(Integer.parseInt(request.getParameter("position_id")));
-            employee.setEducationDegreeId(Integer.parseInt(request.getParameter("education_degree_id")));
-            employee.setDivisionId(Integer.parseInt(request.getParameter("division_id")));
+            employee.setEmployeeName(request.getParameter("employeeName"));
+            employee.setEmployeeBirthday(String.valueOf(request.getParameter("employeeBirthday")));
+            employee.setEmployeeIdCard(request.getParameter("employeeIdCard"));
+            employee.setEmployeeSalary(Double.parseDouble(request.getParameter("employeeSalary")));
+            employee.setEmployeePhone(request.getParameter("employeePhone"));
+            employee.setEmployeeEmail(request.getParameter("employeeEmail"));
+            employee.setEmployeeAddress(request.getParameter("employeeAddress"));
+            employee.setPositionId(Integer.parseInt(request.getParameter("positionId")));
+            employee.setEducationDegreeId(Integer.parseInt(request.getParameter("educationDegreeId")));
+            employee.setDivisionId(Integer.parseInt(request.getParameter("divisionId")));
             employee.setUsername(request.getParameter("username"));
-            boolean check = this.employeeService.update(employee_id, employee);
+            boolean check = this.employeeService.update(employeeId, employee);
             if(check){
                 request.setAttribute("message", "Employee information was updated");
             }
@@ -202,8 +207,8 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) {
-        int employee_id = Integer.parseInt(request.getParameter("employee_id"));
-        boolean check = this.employeeService.remove(employee_id);
+        int employeeId = Integer.parseInt(request.getParameter("employeeId"));
+        boolean check = this.employeeService.remove(employeeId);
         String message;
         if (check) {
             message = "Success deleted customer";
@@ -214,8 +219,8 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void viewEmployee(HttpServletRequest request, HttpServletResponse response) {
-        int employee_id = Integer.parseInt(request.getParameter("employee_id"));
-        Employee employee = this.employeeService.findById(employee_id);
+        int employeeId = Integer.parseInt(request.getParameter("employeeId"));
+        Employee employee = this.employeeService.findById(employeeId);
         RequestDispatcher dispatcher;
         if (employee == null) {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
@@ -236,8 +241,8 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void searchEmployee(HttpServletRequest request, HttpServletResponse response) {
-        String employee_name = request.getParameter("employee_name");
-        List<Employee> employees = this.employeeService.findByName(employee_name);
+        String employeeName = request.getParameter("employeeName");
+        List<Employee> employees = this.employeeService.findByName(employeeName);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/employee/list.jsp");
         request.setAttribute("employees", employees);
         request.setAttribute("positions", positions);

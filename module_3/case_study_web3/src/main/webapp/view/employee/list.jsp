@@ -25,7 +25,7 @@
         </div>
         <div class="col-6 d-flex justify-content-end">
             <form action="/employees?action=search" method="post">
-                <input type="text" name="employee_name" placeholder="Enter name...">
+                <input type="text" name="employeeName" placeholder="Enter name...">
                 <input type="submit" value="Search">
             </form>
         </div>
@@ -106,7 +106,7 @@
                     <div class="modal-footer">
                         <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger btn-ok" value="Delete">
-                        <input type="hidden" id="employee_id" name="employee_id">
+                        <input type="hidden" id="employeeId" name="employeeId">
                     </div>
                 </div>
             </form>
@@ -135,7 +135,7 @@
 </script>
 <script>
     function myFunction(id){
-        document.getElementById("employee_id").value=id;
+        document.getElementById("employeeId").value=id;
     }
 </script>
 </body>

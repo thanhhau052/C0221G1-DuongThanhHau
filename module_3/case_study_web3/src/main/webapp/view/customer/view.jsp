@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label>Type ID: </label>
                     <c:forEach var="type" items="${customerTypes}">
-                        <c:if test="${type.customer_type_id == customer.customerTypeId}">
+                        <c:if test="${type.customerTypeId == customer.customerTypeId}">
                             <input type="text" class="form-control" name="customer_type_id" value="${type.customerTypeName}">
                         </c:if>
                     </c:forEach>

@@ -25,57 +25,57 @@
             <form class="container border border-dark mb-3 pt-3">
                 <div class="form-group">
                     <label>ID:</label>
-                    <input type="text" class="form-control" value="${employee.employee_id}">
+                    <input type="text" class="form-control" value="${employee.employeeId}">
                 </div>
                 <div class="form-group">
                     <label>Name:</label>
-                    <input type="text" class="form-control" value="${employee.employee_name}">
+                    <input type="text" class="form-control" value="${employee.employeeName}">
                 </div>
                 <div class="form-group">
                     <label>Birthday:</label>
-                    <input type="date" class="form-control" value="${employee.employee_birthday}">
+                    <input type="date" class="form-control" value="${employee.employeeBirthday}">
                 </div>
                 <div class="form-group">
                     <label>ID Card: </label>
-                    <input type="text" class="form-control" value="${employee.employee_id_card}">
+                    <input type="text" class="form-control" value="${employee.employeeIdCard}">
                 </div>
                 <div class="form-group">
                     <label>Salary: </label>
-                    <input type="number" class="form-control" value="${employee.employee_salary}">
+                    <input type="number" class="form-control" value="${employee.employeeSalary}">
                 </div>
                 <div class="form-group">
                     <label>Phone: </label>
-                    <input type="number" class="form-control" value="${employee.employee_phone}">
+                    <input type="number" class="form-control" value="${employee.employeePhone}">
                 </div>
                 <div class="form-group">
                     <label>Email: </label>
-                    <input type="email" class="form-control" value="${employee.employee_email}">
+                    <input type="email" class="form-control" value="${employee.employeeEmail}">
                 </div>
                 <div class="form-group">
                     <label>Address: </label>
-                    <input type="text" class="form-control" value="${employee.employee_address}">
+                    <input type="text" class="form-control" value="${employee.employeeAddress}">
                 </div>
                 <div class="form-group">
                     <label>Position ID: </label>
                     <c:forEach var="position" items="${requestScope['positions']}">
-                        <c:if test="${position.position_id == employee.position_id}">
-                            <input type="text" class="form-control" value="${position.position_name}">
+                        <c:if test="${position.positionId == employee.positionId}">
+                            <input type="text" class="form-control" value="${position.positionName}">
                         </c:if>
                     </c:forEach>
                 </div>
                 <div class="form-group">
                     <label>Education degree ID: </label>
                     <c:forEach var="education" items="${requestScope['educationDegrees']}">
-                        <c:if test="${education.education_degree_id == employee.education_degree_id}">
-                            <input type="text" class="form-control" value="${education.education_degree_name}">
+                        <c:if test="${education.educationDegreeId == employee.educationDegreeId}">
+                            <input type="text" class="form-control" value="${education.educationDegreeName}">
                         </c:if>
                     </c:forEach>
                 </div>
                 <div class="form-group">
                     <label>Division ID: </label>
                     <c:forEach var="division" items="${requestScope['divisions']}">
-                        <c:if test="${division.division_id == employee.division_id}">
-                            <input type="text" class="form-control" value="${division.division_name}">
+                        <c:if test="${division.divisionId == employee.divisionId}">
+                            <input type="text" class="form-control" value="${division.divisionName}">
                         </c:if>
                     </c:forEach>
                 </div>
