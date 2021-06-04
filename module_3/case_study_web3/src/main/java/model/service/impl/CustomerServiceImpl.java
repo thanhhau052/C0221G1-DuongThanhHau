@@ -7,7 +7,6 @@ import model.repository.CustomerRepository;
 import model.service.IService;
 
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerServiceImpl implements IService<Customer> {

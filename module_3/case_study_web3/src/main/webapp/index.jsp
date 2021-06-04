@@ -60,7 +60,7 @@
           <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item px-5">
-          <a class="nav-link" href="#">Employee</a>
+          <a class="nav-link" href="employees">Employee</a>
         </li>
         <li class="nav-item px-5">
           <a class="nav-link" href="customers">Customer</a>

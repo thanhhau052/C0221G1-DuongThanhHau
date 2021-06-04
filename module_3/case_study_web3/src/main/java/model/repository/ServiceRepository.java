@@ -71,11 +71,11 @@ public class ServiceRepository {
         }
         return serviceTypes;
     }
-
-    public static void main(String[] args) {
-        ServiceRepository serviceRepository= new ServiceRepository();
-        System.out.println("size"+serviceRepository.findAllRentType().size());
-    }
+// test chuong trinh
+//    public static void main(String[] args) {
+//        ServiceRepository serviceRepository= new ServiceRepository();
+//        System.out.println("size"+serviceRepository.findAllRentType().size());
+//    }
     public List<RentType> findAllRentType() {
         List<RentType> rentTypes = new ArrayList<>();
         try {
