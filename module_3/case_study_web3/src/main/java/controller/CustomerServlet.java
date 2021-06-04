@@ -172,7 +172,7 @@ public class CustomerServlet extends HttpServlet {
             boolean check = this.customerService.remove(customer_id);
             String message;
             if(check){
-                message ="thanh cong";
+                message ="Thanh cong";
             }else {
                 message = "that bai";
             }

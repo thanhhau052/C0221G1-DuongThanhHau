@@ -58,7 +58,14 @@
                 </c:forEach>
                 <td>${customer.customerName}</td>
                 <td>${customer.customerBirthday}</td>
-                <td>${customer.customerGender}</td>
+                <td>
+                    <c:if test="${customer.customerGender == '1'}">
+                        Male
+                    </c:if>
+                    <c:if test="${customer.customerGender == '0'}">
+                        Female
+                    </c:if>
+                </td>
                 <td>${customer.customerIdCard}</td>
                 <td>${customer.customerPhone}</td>
                 <td>${customer.customerEmail}</td>
