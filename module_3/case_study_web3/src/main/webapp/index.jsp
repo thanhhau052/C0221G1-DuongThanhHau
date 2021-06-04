@@ -66,7 +66,7 @@
           <a class="nav-link" href="customers">Customer</a>
         </li>
         <li class="nav-item px-5">
-          <a class="nav-link" href="#">Service</a>
+          <a class="nav-link" href="services">Service</a>
         </li>
         <li class="nav-itempx px-5">
           <a class="nav-link" href="#">Contract</a>

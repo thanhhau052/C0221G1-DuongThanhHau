@@ -119,11 +119,7 @@
 </c:if>
 
 
-<script src="../../dataweb/jquery-3.6.0.min.js"></script>
-<script src="../../dataweb/jquery.dataTables.min.js"></script>
-<script src="../../dataweb/dataTables.bootstrap4.min.js"></script>
-<script src="../../dataweb/popper.min.js"></script>
-<script src="../../dataweb/bootstrap.min.js"></script>
+
 <script>
     $(document).ready(function () {
         $('#tableCustomer').dataTable({
@@ -138,7 +134,11 @@
         document.getElementById("customer_id").value = id;
     }
 </script>
-
+<script src="../../dataweb/jquery-3.6.0.min.js"></script>
+<script src="../../dataweb/jquery.dataTables.min.js"></script>
+<script src="../../dataweb/dataTables.bootstrap4.min.js"></script>
+<script src="../../dataweb/popper.min.js"></script>
+<script src="../../dataweb/bootstrap.min.js"></script>
 
 </body>
 </html>

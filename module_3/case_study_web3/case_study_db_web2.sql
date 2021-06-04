@@ -144,11 +144,9 @@ CREATE TABLE customer( -- khach hang
     FOREIGN KEY (customer_type_id) REFERENCES customer_type(customer_type_id)   on delete cascade on update cascade
 );
 
- insert into customer(customer_type_id,customer_name,customer_birthday,customer_gender,customer_id_card,customer_phone,customer_email, customer_address)
- values(1,'khanh luon leo','2021-06-01','1','2121','212','ddaw@gmail.com','qewqde');
 
-insert into customer(customer_type_id,customer_name,customer_birthday,customer_gender,customer_id_card,customer_phone,customer_email, customer_address)
-values (1,"Tran Van Nam","1999-11-11",1,"12345678","12345678","vannam@gmail.com","hue");
+
+
     
 insert into customer(customer_type_id,customer_name,customer_birthday,customer_id_card,customer_phone,customer_email,customer_address,customer_gender)
 values (1,"Tran Van Nam","1999-11-11","1234","12345678","vannam@gmail.com","hue",1),
@@ -160,8 +158,7 @@ values (1,"Tran Van Nam","1999-11-11","1234","12345678","vannam@gmail.com","hue"
 		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi",0),
 		(5,"Nguyen ANh Tuan","1990-02-02","123000005","87654321","anhtuan@gmail.com","Ha Noi",1);
         
-        
- SELECT * FROM case_study_db_web2.customer;
+
         
 CREATE TABLE service_type( -- loai dich vu
 	service_type_id INT AUTO_INCREMENT PRIMARY KEY,  -- id loai dich vu
@@ -205,7 +202,7 @@ CREATE TABLE service(  -- dich vu
     service_max_people int,  -- so nguoi toi da
 	rent_type_id INT ,  -- id kieu thue
 	service_type_id INT , -- id loai dich vu
-    standrad_room varchar(45), -- tieu chuan phong
+    standard_room varchar(45), -- tieu chuan phong
     description_other_convenience varchar(45),  -- trang thai
     pool_area int, -- dien tich ho boi
     number_of_floors int , -- so tang
@@ -215,19 +212,8 @@ CREATE TABLE service(  -- dich vu
      
      
 );
-/*
-insert into service(service_id,
-					service_name,
-                    service_area,
-                    service_cost,
-                    service_max_people,
-                    rent_type_id,
-                    service_type_id,
-                    standrad_room,
-                    description_other_convenience,
-                    pool_area,
-                    number_of_floors)
-                    
+
+insert into service(service_name,service_area,service_cost,service_max_people,rent_type_id,service_type_id,standard_room,description_other_convenience,pool_area,number_of_floors)
 values ("house",20,2,3,1,1,"ok","close",50,3),
 	   ("villa1",25,3,3,2,2,"ok","open",60,2),
 	   ("villa2",26,3,3,2,2,"ok","open",60,4),
@@ -235,7 +221,7 @@ values ("house",20,2,3,1,1,"ok","close",50,3),
 	   ("villa5",28,3,3,2,2,"ok","open",55,4);
 
 
-*/
+
 
 CREATE TABLE  contract(  -- hop dong
 	contract_id INT AUTO_INCREMENT PRIMARY KEY,  -- id hop dong
