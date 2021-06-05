@@ -15,8 +15,8 @@ import java.util.List;
 public class ServiceRepository {
     private BaseRepository baseRepository = new BaseRepository();
     private final String SELECT_ALL_SERVICE = "SELECT * FROM case_study_db_web2.service;";
-    private final String SELECT_SERVICE_BY_ID = "select * from service where service_id=?";
-    private final String SELECT_SERVICE_BY_NAME = "select * from service where service_name like ?";
+//    private final String SELECT_SERVICE_BY_ID = "select * from service where service_id=?";
+//    private final String SELECT_SERVICE_BY_NAME = "select * from service where service_name like ?";
     private final String INSERT_SERVICE = "insert into service(service_name,service_area,service_cost,service_max_people," +
             "rent_type_id,service_type_id,standard_room,description_other_convenience,pool_area,number_of_floors)" +
             "values(?,?,?,?,?,?,?,?,?,?)";
@@ -94,5 +94,34 @@ public class ServiceRepository {
             e.printStackTrace();
         }
         return rentTypes;
+    }
+
+    public List<Service> findAll() {
+        List<Service> services = new ArrayList<>();
+        Connection connection = baseRepository.getConnection();
+        try {
+            PreparedStatement statement = connection.prepareStatement(SELECT_ALL_SERVICE);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int serviceId = resultSet.getInt("service_id");
+                String serviceName = resultSet.getString("service_name");
+                int serviceArea = resultSet.getInt("service_area");
+                double serviceCost = resultSet.getDouble("service_cost");
+                int serviceMaxPeople = resultSet.getInt("service_max_people");
+                int rentTypeId = resultSet.getInt("rent_type_id");
+                int serviceTypeId = resultSet.getInt("service_type_id");
+                String standardRoom = resultSet.getString("standard_room");
+                String descriptionOtherConvenience = resultSet.getString("description_other_convenience");
+                String poolArea = resultSet.getString("pool_area");
+                String numberOfFloors = resultSet.getString("number_of_floors");
+                services.add(new Service(serviceId, serviceName, serviceArea, serviceCost, serviceMaxPeople, rentTypeId,
+                        serviceTypeId, standardRoom, descriptionOtherConvenience,poolArea,numberOfFloors));
+            }
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return services;
     }
 }

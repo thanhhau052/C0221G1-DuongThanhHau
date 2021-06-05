@@ -8,38 +8,38 @@ import model.service.IService;
 
 import java.util.List;
 
-public class ServiceServiceImpl implements IService {
+public class ServiceServiceImpl implements IService<Service> {
     ServiceRepository serviceRepository =new ServiceRepository();
     @Override
     public List<Service> findAll() {
-        return null;
+        return serviceRepository.findAll();
     }
 
     @Override
-    public Object findById(int id) {
+    public Service findById(int id) {
         return null;
     }
+
 
     @Override
     public List findByName(String name) {
         return null;
     }
 
+
     @Override
-    public boolean save(Object o) {
+    public boolean update(int id, Service service) {
         return false;
     }
 
-    @Override
-    public boolean update(int id, Object o) {
-        return false;
-    }
 
     @Override
     public boolean remove(int id) {
         return false;
     }
-
+    public boolean save(Service service) {
+        return serviceRepository.insert(service);
+    }
     public List<ServiceType> findAllServiceType() {
         return serviceRepository.findAllServiceType();
     }
