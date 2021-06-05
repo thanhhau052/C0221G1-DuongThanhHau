@@ -110,6 +110,9 @@ values ("Duong Thanh Hau",1,1,1,"1997-02-24","194571756",15000000,"0399191054","
 ("Nguyen Van cuong",5,5,5,"1997-12-12","10010000100",10000000,"03932323211","thao22@gmail.com","quang binh",null);
 
 
+
+-- insert into employee(  employee_name,position_id,education_degree_id,division_id,employee_birthday,employee_id_card,employee_salary,employee_phone,employee_email,employee_address,username )
+-- values ("Duong Thanh Hau",1,1,1,"1997-02-24","194571756",15000000,"0399191054","thanhhau026@gmail.com","quang binh","Thuy hoang2");
     
 CREATE TABLE customer_type(  -- loai khach hang
 	customer_type_id INT AUTO_INCREMENT PRIMARY KEY, -- id loai khach hang
