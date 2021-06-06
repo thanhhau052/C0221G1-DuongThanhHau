@@ -30,11 +30,21 @@ public class ContractDetailServlet extends HttpServlet {
 
     IContractService iContractService = new ContractServiceImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        createContractDetail(request, response);
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "create" :  createContractDetail(request, response);
+        }
 
     }
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        showFormCreateContractDetail(request, response);
+
+    }
     private void createContractDetail(HttpServletRequest request, HttpServletResponse response) {
         int contractId = Integer.parseInt(request.getParameter("contractId"));
         int attachServiceId = Integer.parseInt(request.getParameter("attachServiceId"));
@@ -56,11 +66,6 @@ public class ContractDetailServlet extends HttpServlet {
     }
 
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        showFormCreateContractDetail(request, response);
-
-    }
 
     private void showFormCreateContractDetail(HttpServletRequest request, HttpServletResponse response) {
         request.setAttribute("contracts", contracts);

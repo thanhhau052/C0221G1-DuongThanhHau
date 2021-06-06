@@ -32,8 +32,20 @@ public class ContractServlet extends HttpServlet {
     List<Customer> customers = new CustomerRepository().findAll();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "create":
+                createContract(request, response);
+                break;
+        }
 
-        createContract(request, response);
+
+    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        showFormCreateContract(request, response);
 
     }
 
@@ -44,10 +56,18 @@ public class ContractServlet extends HttpServlet {
         int serviceId = Integer.parseInt(request.getParameter("serviceId"));
         String contractStartDate = request.getParameter("contractStartDate");
         String contractEndDate = request.getParameter("contractEndDate");
-        int contractDeposit = Integer.parseInt(request.getParameter("contractDeposit"));
+        int contractDeposit = Integer.parseInt(request.getParameter("deposit"));
         int contractTotal = Integer.parseInt(request.getParameter("contractTotal"));
         Contract contract = new Contract(employeeId, customerId, serviceId, contractStartDate, contractEndDate,
                 contractDeposit, contractTotal);
+        //     private int contractId;
+        //    private int employeeId;
+        //    private int customerId;
+        //    private int serviceId;
+        //    private String contractStartDate;
+        //    private String contractEndDate;
+        //    private int contractDeposit;
+        //    private int contractTotal;
         request.setAttribute("message", "Create contract is success");
         request.setAttribute("services", services);
         request.setAttribute("employees", employees);
@@ -65,13 +85,10 @@ public class ContractServlet extends HttpServlet {
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        showFormCreateContract(request, response);
-
-    }
 
 
     private void showFormCreateContract(HttpServletRequest request, HttpServletResponse response) {
+
         request.setAttribute("services", services);
         request.setAttribute("employees", employees);
         request.setAttribute("customers", customers);

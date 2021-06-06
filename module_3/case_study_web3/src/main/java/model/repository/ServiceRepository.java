@@ -112,11 +112,12 @@ public class ServiceRepository {
                 int serviceTypeId = resultSet.getInt("service_type_id");
                 String standardRoom = resultSet.getString("standard_room");
                 String descriptionOtherConvenience = resultSet.getString("description_other_convenience");
-                String poolArea = resultSet.getString("pool_area");
-                String numberOfFloors = resultSet.getString("number_of_floors");
-                services.add(new Service(serviceId, serviceName, serviceArea, serviceCost, serviceMaxPeople, rentTypeId,
-                        serviceTypeId, standardRoom, descriptionOtherConvenience,poolArea,numberOfFloors));
+                double poolArea = resultSet.getDouble("pool_area");
+                int numberOfFloors = resultSet.getInt("number_of_floors");
+                services.add(new Service(serviceId,serviceName,serviceArea,serviceCost,serviceMaxPeople,rentTypeId,
+                        serviceTypeId,standardRoom,descriptionOtherConvenience,poolArea,numberOfFloors));
             }
+
             statement.close();
             connection.close();
         } catch (SQLException e) {

@@ -229,13 +229,13 @@ CREATE TABLE  contract(  -- hop dong
     service_id INT NOT NULL,  -- id dich vu
     contract_start_date DATE NOT NULL, -- ngay lam hop dong
     contract_end_date DATE NOT NULL, -- ngay ket thuc hop dong
-    contract_deposit INT NOT NULL, -- tien dat coc
-    contract_total INT NOT NULL, -- tong tien 
+    contract_deposit double NOT NULL, -- tien dat coc
+    contract_total double NOT NULL, -- tong tien 
     FOREIGN KEY (employee_id) REFERENCES employee(employee_id)      on delete cascade on update cascade ,
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id)      on delete cascade on update cascade ,    
     FOREIGN KEY (service_id) REFERENCES service(service_id) on delete cascade on update cascade 
 );
-/*
+
 insert into contract (employee_id,customer_id,service_id,contract_start_date,contract_end_date,contract_deposit,contract_total)
 values  (1,1,1,"2018-08-11","2019-10-10",5000,10000),
 		(2,2,2,"2016-11-11","2017-11-11",3000,2000),
@@ -243,7 +243,7 @@ values  (1,1,1,"2018-08-11","2019-10-10",5000,10000),
 		(4,4,4,"2020-11-11","2022-11-11",15000,5000),
 		(5,5,5,"2020-11-11","2021-11-11",6000,3000);
 
-*/
+
 
 
  CREATE TABLE attach_service(  -- dich vu di kem

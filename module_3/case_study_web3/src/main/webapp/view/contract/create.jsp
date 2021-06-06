@@ -33,34 +33,34 @@
                 </div>
                 <div class="form-group">
                     <label>total Money  :</label>
-                    <input type="number" class="form-control" name="totalMoney"
+                    <input type="number" class="form-control" name="contractTotal"
                            placeholder="total Money ">
                 </div>
 
                 <div class="form-group">
-                    <label>Rent Type id: </label>
-                    <select  name="rent_type_id" class="form-control">
+                    <label>Employee  </label>
+                    <select  name="employeeId" class="form-control">
                         <c:forEach var="employee" items="${employees}">
-                            <option value="${employee.employeeId}">${employee.employeeId}</option>
+                            <option value="${employee.employeeId}">${employee.employeeId}- ${employee.employeeName}</option>
                         </c:forEach>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Customer Type id: </label>
-                    <select  name="service_type_id" class="form-control">
+                    <label>Customer id: </label>
+                    <select  name="customerId" class="form-control">
                         <c:forEach var="customer" items="${customers}">
-                            <option value="${customer.customerId}">${customer.customerId}</option>
+                            <option value="${customer.customerId}">${customer.customerId}-${customer.customerName}</option>
                         </c:forEach>
                     </select>
                 </div>
 
 
                 <div class="form-group">
-                    <label>Service Type id: </label>
-                    <select  name="service_type_id" class="form-control">
+                    <label>Service : </label>
+                    <select  name="serviceId" class="form-control">
                         <c:forEach var="service" items="${services}">
-                            <option value="${service.serviceId}">${service.serviceId}</option>
+                            <option value="${service.serviceId}">${service.serviceId}-${service.serviceName}</option>
                         </c:forEach>
                     </select>
                 </div>
