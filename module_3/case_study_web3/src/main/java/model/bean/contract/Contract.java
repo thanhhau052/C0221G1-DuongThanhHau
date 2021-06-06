@@ -1,41 +1,36 @@
 package model.bean.contract;
 
-import model.bean.customer.Customer;
-import model.bean.employee.Employee;
-import model.bean.service.Service;
+
 
 public class Contract {
     private int contractId;
+    private int employeeId;
+    private int customerId;
+    private int serviceId;
     private String contractStartDate;
     private String contractEndDate;
-    private double deposit;
-    private double totalMoney;
-    private Employee employeeId;
-    private Customer customersId;
-    private Service serviceId;
+    private int contractDeposit;
+    private int contractTotal;
 
-    public Contract() {
-    }
-
-    public Contract(int contractId, String contractStartDate, String contractEndDate, double deposit, double totalMoney, Employee employeeId, Customer customersId, Service serviceId) {
+    public Contract(int contractId, int employeeId, int customerId, int serviceId, String contractStartDate, String contractEndDate, int contractDeposit, int contractTotal) {
         this.contractId = contractId;
+        this.employeeId = employeeId;
+        this.customerId = customerId;
+        this.serviceId = serviceId;
         this.contractStartDate = contractStartDate;
         this.contractEndDate = contractEndDate;
-        this.deposit = deposit;
-        this.totalMoney = totalMoney;
-        this.employeeId = employeeId;
-        this.customersId = customersId;
-        this.serviceId = serviceId;
+        this.contractDeposit = contractDeposit;
+        this.contractTotal = contractTotal;
     }
 
-    public Contract(String contractStartDate, String contractEndDate, double deposit, double totalMoney, Employee employeeId, Customer customersId, Service serviceId) {
+    public Contract(int employeeId, int customerId, int serviceId, String contractStartDate, String contractEndDate, int contractDeposit, int contractTotal) {
+        this.employeeId = employeeId;
+        this.customerId = customerId;
+        this.serviceId = serviceId;
         this.contractStartDate = contractStartDate;
         this.contractEndDate = contractEndDate;
-        this.deposit = deposit;
-        this.totalMoney = totalMoney;
-        this.employeeId = employeeId;
-        this.customersId = customersId;
-        this.serviceId = serviceId;
+        this.contractDeposit = contractDeposit;
+        this.contractTotal = contractTotal;
     }
 
     public int getContractId() {
@@ -44,6 +39,30 @@ public class Contract {
 
     public void setContractId(int contractId) {
         this.contractId = contractId;
+    }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public int getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(int serviceId) {
+        this.serviceId = serviceId;
     }
 
     public String getContractStartDate() {
@@ -62,43 +81,19 @@ public class Contract {
         this.contractEndDate = contractEndDate;
     }
 
-    public double getDeposit() {
-        return deposit;
+    public int getContractDeposit() {
+        return contractDeposit;
     }
 
-    public void setDeposit(double deposit) {
-        this.deposit = deposit;
+    public void setContractDeposit(int contractDeposit) {
+        this.contractDeposit = contractDeposit;
     }
 
-    public double getTotalMoney() {
-        return totalMoney;
+    public int getContractTotal() {
+        return contractTotal;
     }
 
-    public void setTotalMoney(double totalMoney) {
-        this.totalMoney = totalMoney;
-    }
-
-    public Employee getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Employee employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public Customer getCustomersId() {
-        return customersId;
-    }
-
-    public void setCustomersId(Customer customersId) {
-        this.customersId = customersId;
-    }
-
-    public Service getServiceId() {
-        return serviceId;
-    }
-
-    public void setServiceId(Service serviceId) {
-        this.serviceId = serviceId;
+    public void setContractTotal(int contractTotal) {
+        this.contractTotal = contractTotal;
     }
 }

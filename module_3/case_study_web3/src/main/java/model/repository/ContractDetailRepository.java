@@ -1,5 +1,7 @@
 package model.repository;
 
+import model.bean.contract.AttachService;
+import model.bean.contract.Contract;
 import model.bean.contract.ContractDetail;
 
 import java.sql.Connection;
@@ -10,52 +12,50 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContractDetailRepository {
-    BaseRepository baseRepository = new BaseRepository();
+    BaseRepository baseRepository=new BaseRepository();
 
-    private static final String INSERT_CONTRACT_DETAIL = "insert into contract_detail " +
-            "(contract_id, attach_service_id, quantity) " +
-            "values (?, ?, ?)";
-    private static final String SELECT_ALL = "select * from contract_detail;";
+    String insertContractDetail="insert into contract_detail(contract_id,attach_service_id,quantity)\n" +
+            " values (?,?,?);";
 
-    public List<ContractDetail> findAll() {
-        List<ContractDetail> list = new ArrayList<>();
+
+
+    public boolean createContractDetail(ContractDetail contractDetail) throws SQLException {
+        boolean check = false;
         Connection connection = baseRepository.getConnection();
         try {
-            PreparedStatement statement = connection.prepareStatement(SELECT_ALL);
-            ResultSet rs = statement.executeQuery();
-            while (rs.next()) {
-                int id = rs.getInt("contract_detail_id");
-                int conId = rs.getInt("contract_id");
-                int attId = rs.getInt("attach_service_id");
-                int quantity = rs.getInt("quantity");
-                ContractDetail contractDetail = new ContractDetail(id, conId, attId, quantity);
-                list.add(contractDetail);
+            PreparedStatement statement = connection.prepareStatement(insertContractDetail);
+            statement.setInt(1,contractDetail.getContractId());
+            statement.setInt(2,contractDetail.getAttachServiceId());
+            statement.setInt(3,contractDetail.getQuantity());
+            check = statement.executeUpdate() > 0;
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return check;
+    }
+
+    public List<AttachService> findByAllAttachService() {
+        Connection connection = baseRepository.getConnection();
+        List<AttachService> attachServices = new ArrayList<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("select * from attach_service");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int attachServiceId=resultSet.getInt("attach_service_id");
+                String attachServiceName=resultSet.getString("attach_service_name");
+                double attachServiceCost=resultSet.getDouble("attach_service_cost");
+                int attachServiceUnit=resultSet.getInt("attach_service_until");
+                String attachServiceStatus=resultSet.getString("attach_service_status");
+                attachServices.add(new AttachService(attachServiceId,attachServiceName,attachServiceCost,attachServiceUnit,attachServiceStatus));
             }
             statement.close();
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return list;
+        return attachServices;
     }
 
-
-    public boolean insert(ContractDetail contractDetail){
-        boolean isInsert = false;
-        Connection connection = baseRepository.getConnection();
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CONTRACT_DETAIL);
-            preparedStatement.setInt(1, contractDetail.getContractId());
-            preparedStatement.setInt(2, contractDetail.getAttachServiceID());
-            preparedStatement.setInt(3, contractDetail.getQuantity());
-            isInsert = preparedStatement.executeUpdate() > 0;
-
-            preparedStatement.close();
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return isInsert;
-    }
 }

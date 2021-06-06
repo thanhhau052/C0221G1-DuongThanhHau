@@ -1,33 +1,23 @@
 package model.bean.contract;
 
 public class ContractDetail {
-    private int detailId;
+    private int contractDetailId;
     private int contractId;
-    private int attachServiceID;
+    private int attachServiceId;
     private int quantity;
 
-    public ContractDetail() {
-    }
-
-    public ContractDetail(int contractId, int attachServiceID, int quantity) {
+    public ContractDetail(int contractId, int attachServiceId, int quantity) {
         this.contractId = contractId;
-        this.attachServiceID = attachServiceID;
+        this.attachServiceId = attachServiceId;
         this.quantity = quantity;
     }
 
-    public ContractDetail(int detailId, int contractId, int attachServiceID, int quantity) {
-        this.detailId = detailId;
-        this.contractId = contractId;
-        this.attachServiceID = attachServiceID;
-        this.quantity = quantity;
+    public int getContractDetailId() {
+        return contractDetailId;
     }
 
-    public int getDetailId() {
-        return detailId;
-    }
-
-    public void setDetailId(int detailId) {
-        this.detailId = detailId;
+    public void setContractDetailId(int contractDetailId) {
+        this.contractDetailId = contractDetailId;
     }
 
     public int getContractId() {
@@ -38,12 +28,12 @@ public class ContractDetail {
         this.contractId = contractId;
     }
 
-    public int getAttachServiceID() {
-        return attachServiceID;
+    public int getAttachServiceId() {
+        return attachServiceId;
     }
 
-    public void setAttachServiceID(int attachServiceID) {
-        this.attachServiceID = attachServiceID;
+    public void setAttachServiceId(int attachServiceId) {
+        this.attachServiceId = attachServiceId;
     }
 
     public int getQuantity() {

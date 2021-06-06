@@ -11,7 +11,7 @@
 <div class="row">
     <div class="container d-flex justify-content-center">
         <div class="col-6 d-flex flex-column">
-            <h1>Create new service</h1>
+            <h1>Create new Contract</h1>
             <c:if test="${message != null}">
                 <span>${message}</span>
             </c:if>
@@ -28,7 +28,7 @@
                     <input type="date" class="form-control" name="contractEndDate" placeholder="End day ">
                 </div>
                 <div class="form-group">
-                    <label>Cost:</label>
+                    <label>deposit</label>
                     <input type="number" class="form-control" name="deposit" placeholder="  deposit ">
                 </div>
                 <div class="form-group">
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Rent Type: </label>
+                    <label>Rent Type id: </label>
                     <select  name="rent_type_id" class="form-control">
                         <c:forEach var="employee" items="${employees}">
                             <option value="${employee.employeeId}">${employee.employeeId}</option>
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Service Type: </label>
+                    <label>Customer Type id: </label>
                     <select  name="service_type_id" class="form-control">
                         <c:forEach var="customer" items="${customers}">
                             <option value="${customer.customerId}">${customer.customerId}</option>
@@ -57,7 +57,7 @@
 
 
                 <div class="form-group">
-                    <label>Service Type: </label>
+                    <label>Service Type id: </label>
                     <select  name="service_type_id" class="form-control">
                         <c:forEach var="service" items="${services}">
                             <option value="${service.serviceId}">${service.serviceId}</option>

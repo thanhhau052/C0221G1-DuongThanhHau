@@ -1,12 +1,17 @@
 package controller;
 
+import model.bean.contract.AttachService;
+import model.bean.contract.Contract;
+import model.bean.contract.ContractDetail;
 import model.bean.customer.Customer;
 import model.bean.employee.Employee;
 import model.bean.service.Service;
+
+import model.repository.CustomerRepository;
+import model.repository.EmployeeRepository;
+import model.repository.ServiceRepository;
+import model.service.IContractService;
 import model.service.impl.ContractServiceImpl;
-import model.service.impl.CustomerServiceImpl;
-import model.service.impl.EmployeeServiceImpl;
-import model.service.impl.ServiceServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,36 +19,69 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+
+import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "ContractServlet",urlPatterns = "/contracts")
+@WebServlet(name = "ContractServlet", urlPatterns = "/contracts")
 public class ContractServlet extends HttpServlet {
-    ContractServiceImpl contractService = new ContractServiceImpl();
-    EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
-    CustomerServiceImpl customerService = new CustomerServiceImpl();
-    ServiceServiceImpl serviceService = new ServiceServiceImpl();
+    IContractService iContractService = new ContractServiceImpl();
+    List<Service> services = new ServiceRepository().findAll();
+    List<Employee> employees = new EmployeeRepository().findAll();
+    List<Customer> customers = new CustomerRepository().findAll();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        createContract(request, response);
+
+    }
+
+
+    private void createContract(HttpServletRequest request, HttpServletResponse response) {
+        int employeeId = Integer.parseInt(request.getParameter("employeeId"));
+        int customerId = Integer.parseInt(request.getParameter("customerId"));
+        int serviceId = Integer.parseInt(request.getParameter("serviceId"));
+        String contractStartDate = request.getParameter("contractStartDate");
+        String contractEndDate = request.getParameter("contractEndDate");
+        int contractDeposit = Integer.parseInt(request.getParameter("contractDeposit"));
+        int contractTotal = Integer.parseInt(request.getParameter("contractTotal"));
+        Contract contract = new Contract(employeeId, customerId, serviceId, contractStartDate, contractEndDate,
+                contractDeposit, contractTotal);
+        request.setAttribute("message", "Create contract is success");
+        request.setAttribute("services", services);
+        request.setAttribute("employees", employees);
+        request.setAttribute("customers", customers);
+        try {
+            request.getRequestDispatcher("/view/contract/create.jsp").forward(request, response);
+            iContractService.createContract(contract);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        showCreateContract(request, response);
+        showFormCreateContract(request, response);
+
     }
 
-    private void showCreateContract(HttpServletRequest request, HttpServletResponse response) {
-        List<Employee> employees = employeeService.findAll();
-        List<Customer> customers = customerService.findAll();
-        List<Service> services = serviceService.findAll();
-        request.setAttribute("employees",employees);
-        request.setAttribute("customers",customers);
-        request.setAttribute("services",services);
 
+    private void showFormCreateContract(HttpServletRequest request, HttpServletResponse response) {
+        request.setAttribute("services", services);
+        request.setAttribute("employees", employees);
+        request.setAttribute("customers", customers);
         try {
-            request.getRequestDispatcher("/view/contract/create.jsp").forward(request,response);
+            request.getRequestDispatcher("/view/contract/create.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

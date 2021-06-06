@@ -72,7 +72,7 @@
           <a class="nav-link" href="contracts">Contract</a>
         </li>
         <li class="nav-itempx px-5">
-          <a class="nav-link" href="contracts">Contract detail</a>
+          <a class="nav-link" href="contractDetails">Contract detail</a>
         </li>
       </ul>
       <form  method="post" action="/customers?action=search"><input type="text" name="key"  ><input type="submit"value="Search"></form>

@@ -1,28 +1,26 @@
 package model.bean.contract;
 
+
 public class AttachService {
-    private  int attachServiceId;
-    private  String attachServiceName;
-    private  double attachServiceCost;
+    private int attachServiceId;
+    private String attachServiceName;
+    private double attachServiceCost;
+    private int attachServiceUnit;
     private String attachServiceStatus;
 
-    public AttachService() {
-    }
-
-    public AttachService(String attachServiceName, double attachServiceCost, String attachServiceStatus) {
-        this.attachServiceName = attachServiceName;
-        this.attachServiceCost = attachServiceCost;
-        this.attachServiceStatus = attachServiceStatus;
-    }
-
-    public AttachService(int attachServiceId, String attachServiceName, double attachServiceCost, String attachServiceStatus) {
+    public AttachService(int attachServiceId, String attachServiceName, double attachServiceCost, int attachServiceUnit, String attachServiceStatus) {
         this.attachServiceId = attachServiceId;
         this.attachServiceName = attachServiceName;
         this.attachServiceCost = attachServiceCost;
+        this.attachServiceUnit = attachServiceUnit;
         this.attachServiceStatus = attachServiceStatus;
     }
 
-    public AttachService(int id, String name, double cost, int unit, String status) {
+    public AttachService(String attachServiceName, double attachServiceCost, int attachServiceUnit, String attachServiceStatus) {
+        this.attachServiceName = attachServiceName;
+        this.attachServiceCost = attachServiceCost;
+        this.attachServiceUnit = attachServiceUnit;
+        this.attachServiceStatus = attachServiceStatus;
     }
 
     public int getAttachServiceId() {
@@ -47,6 +45,14 @@ public class AttachService {
 
     public void setAttachServiceCost(double attachServiceCost) {
         this.attachServiceCost = attachServiceCost;
+    }
+
+    public int getAttachServiceUnit() {
+        return attachServiceUnit;
+    }
+
+    public void setAttachServiceUnit(int attachServiceUnit) {
+        this.attachServiceUnit = attachServiceUnit;
     }
 
     public String getAttachServiceStatus() {

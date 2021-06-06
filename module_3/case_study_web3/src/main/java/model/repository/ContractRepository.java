@@ -1,73 +1,91 @@
 package model.repository;
 
+import model.bean.contract.AttachService;
 import model.bean.contract.Contract;
+import model.bean.contract.ContractDetail;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-//public class ContractRepository {
-//    private  BaseRepository baseRepository = new BaseRepository();
-//    private  final  String  INSERT_CONTRACT ="insert into contract (employee_id,customer_id,service_id,contract_start_date," +
-//            "contract_end_date,contract_deposit,contract_total)\n" +
-//            "values (?,?,?,?,?,?,?)";
-////    private  final  String SELECT_
-//
-//    public  boolean insert(Contract contract){
-//        boolean rowInsert=false;
-//        Connection connection = baseRepository.getConnection();
-//        try {
-//            PreparedStatement statement = connection.prepareStatement(INSERT_CONTRACT);
-//            statement.setInt(1,contract.getEmployeeId());
-//            statement.setInt(2,contract.getCustomerId());
-//            statement.setInt(3,contract.getServiceId());
-//            statement.setString(4,contract.getContractStartDay());
-//            statement.setString(5,contract.getContractEndDay());
-//            statement.setDouble(6,contract.getContractDeposit());
-//            statement.setDouble(7,contract.getContractTotalMoney());
-//            rowInsert= statement.executeUpdate() >0;
-//            statement.close();
-//            connection.close();
-//
-//        }catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return  rowInsert;
-//    }
-//}
 public class ContractRepository {
-    BaseRepository baseRepository = new BaseRepository();
+    BaseRepository baseRepository=new BaseRepository();
+    String insertContract="insert into contract (employee_id,customer_id,service_id,contract_start_date,contract_end_date,contract_deposit,contract_total)\n" +
+            "values  \n" +
+            "(?,?,?,?,?,?,?);";
 
-    BaseRepository repository = new BaseRepository();
-    private final String INSERT_CONTRACT = "insert into contract (contract_start_date,contract_end_date,contract_deposit,employee_id,customer_id,service_id," +
-            "values (?,?,?,?,?,?,?)";
-
-
-    public void insertContract(Contract contract) {
+    public boolean createContract(Contract contract) throws SQLException {
+        boolean check = false;
         Connection connection = baseRepository.getConnection();
-        PreparedStatement statement = null;
-
         try {
-            statement = connection.prepareStatement(INSERT_CONTRACT);
-            statement.setString(1, contract.getContractStartDate());
-            statement.setString(2, contract.getContractEndDate());
-            statement.setDouble(3, contract.getDeposit());
-            statement.setDouble(4, contract.getTotalMoney());
-            statement.setInt(5, contract.getEmployeeId().getEmployeeId());
-            statement.setInt(6, contract.getCustomersId().getCustomerId());
-            statement.setInt(7, contract.getServiceId().getServiceId());
-            statement.executeUpdate();
+            PreparedStatement statement = connection.prepareStatement(insertContract);
+            statement.setInt(1,contract.getEmployeeId());
+            statement.setInt(2,contract.getCustomerId());
+            statement.setInt(3,contract.getServiceId());
+            statement.setString(4,contract.getContractStartDate());
+            statement.setString(5,contract.getContractEndDate());
+            statement.setInt(6,contract.getContractDeposit());
+            statement.setInt(6,contract.getContractTotal());
+            check = statement.executeUpdate() > 0;
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                statement.close();
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
         }
+        return check;
     }
+
+
+
+    public List<Contract> findByAllContract() {
+        Connection connection = baseRepository.getConnection();
+        List<Contract> contracts = new ArrayList<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("select * from contract");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int contractId=resultSet.getInt("contract_id");
+                int employeeId=resultSet.getInt("employee_id");
+                int customerId=resultSet.getInt("customer_id");
+                int serviceId=resultSet.getInt("service_id");
+                String contractStartDate=resultSet.getString("contract_start_date");
+                String contractEndDate=resultSet.getString("contract_end_date");
+                int contractDeposit=resultSet.getInt("contract_deposit");
+                int contractTotal=resultSet.getInt("contract_total");
+                contracts.add(new Contract(contractId,employeeId,customerId,serviceId,contractStartDate,contractEndDate,contractDeposit,contractTotal));
+            }
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return contracts;
+    }
+
+
+    public List<AttachService> findByAllAttachService() {
+        Connection connection = baseRepository.getConnection();
+        List<AttachService> attachServices = new ArrayList<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("select * from attach_service");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int attachServiceId=resultSet.getInt("attach_service_id");
+                String attachServiceName=resultSet.getString("attach_service_name");
+                double attachServiceCost=resultSet.getDouble("attach_service_cost");
+                int attachServiceUnit=resultSet.getInt("attach_service_until");
+                String attachServiceStatus=resultSet.getString("attach_service_status");
+                attachServices.add(new AttachService(attachServiceId,attachServiceName,attachServiceCost,attachServiceUnit,attachServiceStatus));
+            }
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return attachServices;
+    }
+
 }
