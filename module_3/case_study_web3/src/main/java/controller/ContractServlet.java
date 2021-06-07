@@ -1,8 +1,6 @@
 package controller;
 
-import model.bean.contract.AttachService;
 import model.bean.contract.Contract;
-import model.bean.contract.ContractDetail;
 import model.bean.customer.Customer;
 import model.bean.employee.Employee;
 import model.bean.service.Service;
@@ -10,7 +8,7 @@ import model.bean.service.Service;
 import model.repository.CustomerRepository;
 import model.repository.EmployeeRepository;
 import model.repository.ServiceRepository;
-import model.service.IContractService;
+import model.service.interfacee.IContractService;
 import model.service.impl.ContractServiceImpl;
 
 import javax.servlet.ServletException;

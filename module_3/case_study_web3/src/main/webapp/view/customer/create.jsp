@@ -82,6 +82,6 @@ f<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"> console.log()</script>
 </body>
 </html>

@@ -9,6 +9,7 @@ public class CustomerUserService {
     private String serviceName;
     private  String contractStartDay;
     private  String contractEndDay;
+    private String attachServiceName;
 
     public CustomerUserService() {
     }
@@ -22,12 +23,22 @@ public class CustomerUserService {
         this.contractEndDay = contractEndDay;
     }
 
-    public CustomerUserService(int customerId, String customerName, String serviceName, String contractStartDay, String contractEndDay) {
+    public CustomerUserService(int contractId, int customerId, String customerName, String serviceName, String contractStartDay, String contractEndDay, String attachServiceName) {
+        this.contractId = contractId;
         this.customerId = customerId;
         this.customerName = customerName;
         this.serviceName = serviceName;
         this.contractStartDay = contractStartDay;
         this.contractEndDay = contractEndDay;
+        this.attachServiceName = attachServiceName;
+    }
+
+    public String getAttachServiceName() {
+        return attachServiceName;
+    }
+
+    public void setAttachServiceName(String attachServiceName) {
+        this.attachServiceName = attachServiceName;
     }
 
     public int getContractId() {
@@ -78,12 +89,3 @@ public class CustomerUserService {
         this.contractEndDay = contractEndDay;
     }
 }
-//drop view view_customer;
-//create   view view_customer as
-//select contract.contract_id,customer.customer_id,customer.customer_name,service.service_name,
-//contract.contract_start_date,contract.contract_end_date
-//from contract
-//left join customer on contract.customer_id=customer.customer_id
-//left join service on contract.service_id=service.service_id
-//where contract_end_date>=now();
-//select* from view_customer;

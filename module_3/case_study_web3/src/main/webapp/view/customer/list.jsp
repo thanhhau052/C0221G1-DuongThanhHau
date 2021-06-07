@@ -110,6 +110,12 @@
 
     </div>
 </div>
+
+<script src="../../dataweb/jquery-3.6.0.min.js"></script>
+<script src="../../dataweb/jquery.dataTables.min.js"></script>
+<script src="../../dataweb/dataTables.bootstrap4.min.js"></script>
+<script src="../../dataweb/popper.min.js"></script>
+<script src="../../dataweb/bootstrap.min.js"></script>
 <c:if test="${message != null}">
     <input type="hidden" id="message" value="${message}">
     <script>
@@ -134,11 +140,7 @@
         document.getElementById("customer_id").value = id;
     }
 </script>
-<script src="../../dataweb/jquery-3.6.0.min.js"></script>
-<script src="../../dataweb/jquery.dataTables.min.js"></script>
-<script src="../../dataweb/dataTables.bootstrap4.min.js"></script>
-<script src="../../dataweb/popper.min.js"></script>
-<script src="../../dataweb/bootstrap.min.js"></script>
+
 
 </body>
 </html>

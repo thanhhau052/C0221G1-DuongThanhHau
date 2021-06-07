@@ -285,17 +285,33 @@ CREATE TABLE contract_detail(  -- hop dong chi tiet
     );
     
     
-    /*
+
  insert into contract_detail(contract_id,attach_service_id,quantity)
  values (1,1,5),
  	(2,2,3),
- 	(3,3,7),
- 	(4,4,5),
- 	(5,5,9);
-
-*/
+ 	(3,3,7);
 
 
+
+use case_study_db_web2 ;
+drop view view_customer;
+create   view view_customer as
+select contract.contract_id,customer.customer_id,customer.customer_name,service.service_name,
+contract.contract_start_date,contract.contract_end_date
+from contract
+left join customer on contract.customer_id=customer.customer_id
+left join service on contract.service_id=service.service_id
+where contract_end_date>=now();
+select* from view_customer;
+-- select* from view_customer
+-- where customer_name like '%?%' or service_name like '%?%';
+-- select* from view_customer 
+-- where contract_id=? or customer_id=?;
+drop view view_contract_detail;
+create view view_contract_detail as
+select contract_id,attach_service.attach_service_name
+from contract_detail
+left join attach_service on attach_service.attach_service_id=contract_detail.attach_service_id;
 --     use case_study_db; 
 --     drop database case_study_db;
 --     delete from case_study_db;

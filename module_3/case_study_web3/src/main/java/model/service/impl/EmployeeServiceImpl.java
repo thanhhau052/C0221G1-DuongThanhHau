@@ -5,14 +5,15 @@ import model.bean.employee.EducationDegree;
 import model.bean.employee.Employee;
 import model.bean.employee.Position;
 import model.repository.EmployeeRepository;
-import model.service.IService;
+import model.service.commom.Validate;
+import model.service.interfacee.IService;
 
 import java.util.List;
 
 
 public class EmployeeServiceImpl implements  IService<Employee> {
     EmployeeRepository employeeRepository = new EmployeeRepository();
-
+Validate validate= new Validate();
 
     public List<Employee> findAll() {
         return employeeRepository.findAll();
@@ -30,11 +31,31 @@ public class EmployeeServiceImpl implements  IService<Employee> {
 
     @Override
     public boolean save(Employee employee) {
+        try {
+            validate.validateDate(employee.getEmployeeBirthday());
+            validate.validateIdCard(employee.getEmployeeIdCard());
+            validate.validateDNumber(employee.getEmployeeSalary());
+            validate.validatePhone(employee.getEmployeePhone());
+            validate.validateEmail(employee.getEmployeeEmail());
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return employeeRepository.insert(employee);
     }
 
 
     public boolean update(int employeeId, Employee employee) {
+        try {
+            validate.validateDate(employee.getEmployeeBirthday());
+            validate.validateIdCard(employee.getEmployeeIdCard());
+            validate.validateDNumber(employee.getEmployeeSalary());
+            validate.validatePhone(employee.getEmployeePhone());
+            validate.validateEmail(employee.getEmployeeEmail());
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
        return  employeeRepository.update(employeeId,employee);
     }
 

@@ -4,14 +4,15 @@ import model.bean.customer.Customer;
 import model.bean.customer.CustomerType;
 import model.repository.CustomerRepository;
 
-import model.service.IService;
+import model.service.commom.Validate;
+import model.service.interfacee.IService;
 
 
 import java.util.List;
 
 public class CustomerServiceImpl implements IService<Customer> {
 CustomerRepository customerRepository = new CustomerRepository();
-
+Validate validate = new Validate();
     @Override
     public List<Customer> findAll() {
         return customerRepository.findAll();
@@ -29,11 +30,30 @@ CustomerRepository customerRepository = new CustomerRepository();
 
     @Override
     public boolean save(Customer customer) {
+        try {
+//          validate.validateCustomer(customer.getCustomerId());
+            validate.validateDate(customer.getCustomerBirthday());
+            validate.validateIdCard(customer.getCustomerIdCard());
+            validate.validatePhone(customer.getCustomerPhone());
+            validate.validateEmail(customer.getCustomerEmail());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        }
         return customerRepository.insert(customer);
     }
 
     @Override
     public boolean update(int customerId, Customer customer) {
+        try {
+            validate.validateDate(customer.getCustomerBirthday());
+            validate.validateIdCard(customer.getCustomerIdCard());
+            validate.validatePhone(customer.getCustomerPhone());
+            validate.validateEmail(customer.getCustomerEmail());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return customerRepository.update(customerId,customer);
     }
 
