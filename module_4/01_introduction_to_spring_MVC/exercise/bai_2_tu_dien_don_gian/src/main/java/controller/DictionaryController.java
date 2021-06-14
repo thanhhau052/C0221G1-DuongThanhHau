@@ -14,13 +14,13 @@ public class DictionaryController {
     }
 
     @PostMapping("abc")
-    public String exchange(@RequestParam String input, Model model) {
-        String[] vn = {"xin chao", "tam biet", "cam on"};
-        String[] engl = {"Hello", "Good bye", "Thank you"};
-
+    public String exchange(@RequestParam String input,String result, Model model) {
+        String[] vn = {"xin chào", "tạm biệt", "cảm ơn"};
+        String[] engl = {"hello", "good bye", "thank you"};
 //        int index = 0;
 //        boolean check=false;
-        String result=null;
+        input=input.toLowerCase();
+//        String result=null;
         for (int i =0 ; i< vn.length; i++ ){
             if (input.equals(vn[i])){
                 result=engl[i];
@@ -34,30 +34,8 @@ public class DictionaryController {
                 result="not found !! ";
             }
         }
-//
-//        for (int i = 0; i < 3; i++) {
-//            if (input.equals(engl[i])) {
-//                result=vn[i];
-//                break;
-//            }else  if (input.equals(vn[i])){
-//                result=engl[i];
-//                break;
-//            }else  {
-//                result="ko tim thay";
-//            }
-//        }
-
-//        for (int i = 0; i < vn.length; i++) {
-//            if (input.equals(vn[i])) {
-//                index = i;
-//                result=engl[index];
-//                break;
-//            }
-//        }
-
+        model.addAttribute("input", input);
         model.addAttribute("result", result);
-
-
         return "/home";
     }
 }

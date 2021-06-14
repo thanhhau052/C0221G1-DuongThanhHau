@@ -9,19 +9,31 @@
 <html>
 <head>
     <title>Ứng dụng từ điển đơn giản </title>
+    <style>
+        div {
+            margin: auto;
+            text-align: center;
+            padding-top: 30px;
+            width: 35%;
+        }
+    </style>
 </head>
 <body>
-<form action="abc" method="post">
-    <center><h2>Ứng dụng từ điển đơn giản</h2>
+<div>
+    <form action="abc" method="post">
+        <h2>Ứng dụng từ điển đơn giản</h2>
         <br>
         <label>Input : </label>
-    <input type="text" placeholder="input" name="input" >
-    <br>
-    <br>
-    <button type="submit"> translate </button>
-    <p> Result : ${result}</p>
-    </center>
+        <input type="text" placeholder="input" name="input" value="${input}">
+        <br>
+        <br>
+        <button type="submit"> translate</button>
+        <p> Result :
+            ${result}
+        </p>
 
-</form>
+
+    </form>
+</div>
 </body>
 </html>
