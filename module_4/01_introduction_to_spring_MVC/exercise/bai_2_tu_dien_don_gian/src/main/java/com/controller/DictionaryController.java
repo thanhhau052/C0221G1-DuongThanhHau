@@ -19,9 +19,9 @@ public class DictionaryController {
 
     @PostMapping("abc")
     public String exchange(@RequestParam String input, Model model) {
-
+        String result= dictionaryService.translate(input);
         model.addAttribute("input", input);
-        model.addAttribute("result", dictionaryService.translate(input));
+        model.addAttribute("result",result);
         return "/home";
     }
 }
