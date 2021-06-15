@@ -21,6 +21,7 @@ public class DictionaryController {
 //        boolean check=false;
         input=input.toLowerCase();
 //        String result=null;
+
         for (int i =0 ; i< vn.length; i++ ){
             if (input.equals(vn[i])){
                 result=engl[i];
