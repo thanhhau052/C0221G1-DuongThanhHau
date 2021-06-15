@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class DictionaryController {
     @Autowired
     IDictionaryService dictionaryService;
-    @GetMapping("/")
+    @GetMapping(value = "/")
     public String home() {
         return "/home";
     }
 
-    @PostMapping("abc")
+    @PostMapping(value = "/exchange")
     public String exchange(@RequestParam String input, Model model) {
         String result= dictionaryService.translate(input);
         model.addAttribute("input", input);

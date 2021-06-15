@@ -20,7 +20,7 @@
 </head>
 <body>
 <div>
-    <form action="abc" method="post">
+    <form action="/exchange" method="post">
         <h2>Ứng dụng từ điển đơn giản</h2>
         <br>
         <label>Input : </label>
