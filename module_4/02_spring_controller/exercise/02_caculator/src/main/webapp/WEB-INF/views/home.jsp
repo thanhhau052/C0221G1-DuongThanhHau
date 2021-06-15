@@ -10,7 +10,7 @@
 <head>
     <title>home</title>
     <style>
-        div{
+        div {
             text-align: center;
             font-size: 120%;
             background: azure;
@@ -21,24 +21,24 @@
 </head>
 <body>
 <div>
-<h1>Welcome</h1>
+    <h1>Welcome</h1>
     <br>
     <br>
     <br>
 
-<form action="calculate">
-    <input type="text" name="num1" width="100px" placeholder="number1" value="${num1}">
-    <input type="text" name="num2" width="100px" placeholder="number2" value="${num2}">
-    <br>
-    <br>
-    <button name="operator" type="submit"  value="+">Addition(+)</button>
-    <button name="operator" type="submit"  value="-">Subtraction(-)</button>
-    <button name="operator" type="submit" value="*">Multiplication(X)</button>
-    <button name="operator" type="submit"  value="/">Division(/)</button>
+    <form action="calculate">
+        <input type="number" name="num1" width="100px" placeholder="number1" >
+        <input type="number" name="num2" width="100px" placeholder="number2" >
+        <br>
+        <br>
+        <button name="operator" type="submit" value="+">Addition(+)</button>
+        <button name="operator" type="submit" value="-">Subtraction(-)</button>
+        <button name="operator" type="submit" value="*">Multiplication(X)</button>
+        <button name="operator" type="submit" value="/">Division(/)</button>
 
-</form>
+    </form>
 
-<h1>Result ${num1} ${operator} ${num2} = ${result}</h1>
+    <h2>Result : ${num1} ${operator} ${num2} : <span style="color: blue"> ${result} </span></h2>
 
 </div>
 </body>
