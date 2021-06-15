@@ -20,7 +20,7 @@
 </head>
 <body>
 <div>
-    <form action="a" method="post">
+    <form action="/a" method="post">
         <p>RATE</p>
         <label>
             <input type="number" name="rate" value="${rate}" placeholder="Rate">
