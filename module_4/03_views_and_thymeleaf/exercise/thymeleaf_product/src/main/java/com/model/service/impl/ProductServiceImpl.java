@@ -4,10 +4,8 @@ import com.model.bean.Product;
 import com.model.service.ProductService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 @Service
 public class ProductServiceImpl implements ProductService {
     private static Map<Integer, Product> products;
@@ -49,15 +47,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ArrayList<Product> findByName(String name) {
-        List<Product> searchList = new ArrayList<>();
-
-        for (Product product : findAll()
-        ) {
-            if (product.getName().contains(name)) {
-                searchList.add(product);
+    public List<Product> findByName(String name) {
+        List<Product> productList = new ArrayList<>();
+        Set<Integer> setKey = products.keySet();
+        for(int key : setKey){
+            if(products.get(key).getName().contains(name)){
+                productList.add(products.get(key));
             }
         }
-        return (ArrayList<Product>) searchList;
+        return productList;
     }
 }

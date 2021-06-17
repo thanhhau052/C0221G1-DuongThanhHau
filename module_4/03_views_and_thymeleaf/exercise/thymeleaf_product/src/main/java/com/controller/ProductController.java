@@ -72,7 +72,11 @@ public class ProductController {
         return "/view";
     }
 
-
+    @GetMapping("/search")
+    public String findProduct(@RequestParam String name,Model model){
+        model.addAttribute("products",productService.findByName(name));
+        return "/index";
+    }
 
 
 //    @PostMapping(value = "/search")
