@@ -12,9 +12,9 @@
 <head>
     <title>Title</title>
     <style>
-        div{
+        div {
             /*text-align: center;*/
-            font-size:120% ;
+            font-size: 120%;
             margin-left: 500px;
             margin-top: 80px;
         }
@@ -22,8 +22,6 @@
 </head>
 <body>
 <div>
-
-
     <h2>Setting mail info</h2>
     <table>
         <tr>
@@ -42,11 +40,7 @@
             <td>Signature</td>
             <td>${email.signature}</td>
         </tr>
-
-
     </table>
-
-    <h1>View Mail</h1>
     <button>
         <a href="/">Back to Menu</a>
     </button>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layuot :: head"></head>
+<body>
+<h3>View Product</h3>
+<p>
+    <a th:href="@{product}">
+        Back to product list
+    </a>
+</p>
+<div id="detail">
+    <div class="cusdetail">
+        <label>Name</label>
+        <label th:text="${product.name}"></label>
+    </div>
+
+    <div class="cusdetail">
+        <label>detail</label>
+        <label th:text="${product.detail}"></label>
+    </div>
+    <div class="cusdetail">
+        <label>category</label>
+        <label th:text="${product.category}"></label>
+    </div>
+    <div class="cusdetail">
+        <label>amount</label>
+        <label th:text="${product.amount}"></label>
+    </div>
+</div>
+<footer th:replace="/layuot :: footer"></footer>
+</body>
+</html>
+<!--private int id;-->
+<!--private String name;-->
+<!--private String detail;-->
+<!--private String category;-->
+<!--private int amount-->

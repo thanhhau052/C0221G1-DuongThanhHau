@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class SandwichController {
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/")
     public String oder() {
-        return "/oder";
+        return "/order";
     }
 
-    @RequestMapping("/save")
+    @RequestMapping(value = "/save")
     public String save(@RequestParam(name ="condiment") String[] condiment, Model model) {
 
             model.addAttribute("condiment", condiment);

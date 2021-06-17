@@ -28,6 +28,7 @@
                     </form:select>
                 </td>
             </tr>
+
             <tr>
                 <td><form:label path="pageSize">Page size</form:label></td>
                 <td>Show
@@ -37,6 +38,7 @@
                     emails per page
                 </td>
             </tr>
+
             <tr>
                 <td><form:label path="filter">Spam filter</form:label></td>
                 <td>
