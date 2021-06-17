@@ -11,6 +11,7 @@
     <title>oder page</title>
 </head>
 <body>
+<div style="text-align: center;margin-top: 100px;height: 200px;height: 300px">
 <h1>Sandwich Condiments</h1>
 <form action="/save" method="post">
     <input type="checkbox" id="Lettuce" name="condiment" value="Lettuce">
@@ -21,8 +22,11 @@
     <label for="Mustard"> Mustard</label>
     <input type="checkbox" id="Sprouts" name="condiment" value="Sprouts">
     <label for="Sprouts"> Sprouts</label>
-    <input type="submit" name="SAVE">
+    <br>
+    <br>
+<%--    <br>--%>
+    <input type="submit" name="SAVE" style="width: 80px;height: 30px">
 </form>
-
+</div>
 </body>
 </html>

@@ -27,13 +27,13 @@
     <br>
 
     <form action="calculate">
-        <input type="number" name="num1" width="100px" placeholder="number1" >
-        <input type="number" name="num2" width="100px" placeholder="number2" >
+        <input type="number" name="num1" width="100px" placeholder="input number 1" value="${num1}">
+        <input type="number" name="num2" width="100px" placeholder="input number 2" value="${num2}" >
         <br>
         <br>
         <button name="operator" type="submit" value="+">Addition(+)</button>
         <button name="operator" type="submit" value="-">Subtraction(-)</button>
-        <button name="operator" type="submit" value="*">Multiplication(X)</button>
+        <button name="operator" type="submit" value="*">Multiplication(x)</button>
         <button name="operator" type="submit" value="/">Division(/)</button>
 
     </form>

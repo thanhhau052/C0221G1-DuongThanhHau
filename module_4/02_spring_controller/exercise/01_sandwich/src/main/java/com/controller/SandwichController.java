@@ -15,18 +15,8 @@ public class SandwichController {
 
     @RequestMapping("/save")
     public String save(@RequestParam(name ="condiment") String[] condiment, Model model) {
-        String result ="";
 
-        for (int i = 0; i < condiment.length; i++) {
-            if (!condiment[i].equals("") && condiment[i] != null) {
-                result += condiment[i] + " ";
-            }
-        }
-
-        if (result.equals(""))
-            model.addAttribute("result", " not found ");
-        else
-            model.addAttribute("result", result);
+            model.addAttribute("condiment", condiment);
 
         return "/result";
     }
