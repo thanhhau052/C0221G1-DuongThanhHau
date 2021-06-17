@@ -21,12 +21,14 @@
         </a>
     </button>
 </p>
+
 <div>
     <form th:action="@{/search}">
         <input type="text" name="name" placeholder="Enter name..." style="width: 300px">
         <input type="submit" value="Search" style="width: 80px">
     </form>
 </div>
+
 <div class="notify">
     <div th:if="${success}">
         <span th:text="${success}"></span>

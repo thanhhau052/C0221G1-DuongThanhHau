@@ -49,11 +49,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> findByName(String name) {
         List<Product> productList = new ArrayList<>();
-        Set<Integer> setKey = products.keySet();
-        for(int key : setKey){
-            if(products.get(key).getName().contains(name)){
-                productList.add(products.get(key));
+        List<Product> list = findAll();
+        for (Product product : list) {
+            if (product.getName().contains(name)) {
+                productList.add(product);
             }
+
         }
         return productList;
     }
