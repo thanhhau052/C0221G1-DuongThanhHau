@@ -48,10 +48,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> findByName(String name) {
+        name=name.toLowerCase();
         List<Product> productList = new ArrayList<>();
         List<Product> list = findAll();
         for (Product product : list) {
-            if (product.getName().contains(name)) {
+            if (product.getName().toLowerCase().contains(name)) {
                 productList.add(product);
             }
 

@@ -52,39 +52,30 @@ public class ProductController {
         return "redirect:/product/";
     }
 
-    @GetMapping(value = "/{id}/delete")
-    public String delete(@PathVariable int id, Model model) {
-        model.addAttribute("product", productService.findById(id));
-        return "/delete";
-    }
+//    @GetMapping(value = "/{id}/delete")
+//    public String delete(@PathVariable int id, Model model) {
+//        model.addAttribute("product", productService.findById(id));
+//        return "/delete";
+//    }
 
     @PostMapping(value = "/delete")
-    public String delete(Product product, RedirectAttributes redirect) {
-        productService.remove(product.getId());
+    public String delete(@RequestParam int id, RedirectAttributes redirect) {
+        productService.remove(id);
         redirect.addFlashAttribute("success", "Delete Product Successfully!");
         return "redirect:/product/";
     }
 
 
-    @GetMapping("/{id}/view")
+    @GetMapping(value = "/{id}/view")
     public String view(@PathVariable int id, Model model) {
         model.addAttribute("product", productService.findById(id));
         return "/view";
     }
 
-    @GetMapping("/search")
+    @GetMapping(value = "/search")
     public String findProduct(@RequestParam String name,Model model){
         model.addAttribute("products",productService.findByName(name));
         return "/index";
     }
 
-
-//    @PostMapping(value = "/search")
-//    public ModelAndView searchForm(@ModelAttribute Product product) {
-//        System.out.println(product.getName());
-//        System.out.println(productService.findByName(product.getName()).get(0).getName());
-//        ModelAndView modelAndView = new ModelAndView("search");
-//        modelAndView.addObject("products", productService.findByName(product.getName()));
-//        return modelAndView;
-//    }
 }
