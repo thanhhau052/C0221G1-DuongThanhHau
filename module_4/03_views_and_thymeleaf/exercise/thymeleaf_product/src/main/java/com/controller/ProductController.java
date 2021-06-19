@@ -24,14 +24,14 @@ public class ProductController {
     }
 
     @GetMapping(value ="/create")
-    public String create(Model model) {
+    public String createProduct(Model model) {
         model.addAttribute("product", new Product());
         return "/create";
     }
 
 
     @PostMapping(value = "/save")
-    public String save(@ModelAttribute("product") Product product, RedirectAttributes redirect) {
+    public String showCreateForm(@ModelAttribute("product") Product product, RedirectAttributes redirect) {
         product.setId(productService.findAll().size() + 1);
         productService.save(product);
         redirect.addFlashAttribute("success", "Add Product Successfully!");
@@ -46,20 +46,20 @@ public class ProductController {
 
 
     @PostMapping(value = "/update")
-    public String update(Product product, RedirectAttributes redirect) {
+    public String showEditForm(Product product, RedirectAttributes redirect) {
         productService.update(product.getId(), product);
         redirect.addFlashAttribute("success", "Update Product Successfully!");
         return "redirect:/product/";
     }
-
+//
 //    @GetMapping(value = "/{id}/delete")
 //    public String delete(@PathVariable int id, Model model) {
 //        model.addAttribute("product", productService.findById(id));
 //        return "/delete";
 //    }
 
-    @PostMapping(value = "/delete")
-    public String delete(@RequestParam int id, RedirectAttributes redirect) {
+    @PostMapping(value = "/dele/update/update/update/update/updatete")
+    public String showDeleteForm(@RequestParam int id, RedirectAttributes redirect) {
         productService.remove(id);
         redirect.addFlashAttribute("success", "Delete Product Successfully!");
         return "redirect:/product/";
@@ -67,7 +67,7 @@ public class ProductController {
 
 
     @GetMapping(value = "/{id}/view")
-    public String view(@PathVariable int id, Model model) {
+    public String showViewForm(@PathVariable int id, Model model) {
         model.addAttribute("product", productService.findById(id));
         return "/view";
     }
