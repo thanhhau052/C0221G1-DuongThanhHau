@@ -49,8 +49,6 @@ public class HibernateCommentServiceImp implements CommentService {
         origin.setAuthor(comment.getAuthor());
         origin.setRating("+ " + comment.getRating());
 
-        origin.setDate();
-
         session.save(origin);
         transaction.commit();
         return origin;
@@ -90,7 +88,7 @@ public class HibernateCommentServiceImp implements CommentService {
 
         comment.setLikes(comment.getLikes() - 1);
 
-        String queryStr = "update Comment set likes=:newLike WHERE id=:id";
+        String queryStr = "update Comment   set likes=:newLike WHERE id=:id";
         Query query = session.createQuery(queryStr);
         query.setParameter("newLike", comment.getLikes());
         query.setParameter("id", comment.getId());

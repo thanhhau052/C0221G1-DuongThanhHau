@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Entity
-@Table
+@Table (name="Comment")
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,10 +56,14 @@ public class Comment {
         return date;
     }
 
-    public void setDate() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate today = LocalDate.now();
-        this.date = today.format(formatter);
+//    public void setDate() {
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        LocalDate today = LocalDate.now();
+//        this.date = today.format(formatter);
+//    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getLikes() {
