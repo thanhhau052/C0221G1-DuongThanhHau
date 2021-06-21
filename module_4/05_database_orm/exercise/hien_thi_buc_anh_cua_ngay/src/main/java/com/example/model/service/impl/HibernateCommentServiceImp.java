@@ -1,6 +1,6 @@
 package com.example.model.service.impl;
 
-import com.example.model.bean.Comment;
+import com.example.model.entity.Comment;
 import com.example.model.service.CommentService;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -31,7 +31,7 @@ public class HibernateCommentServiceImp implements CommentService {
 
     @Override
     public List<Comment> showAllComment() {
-        String queryStr = "SELECT c FROM Comment AS c WHERE (c.date=CURRENT_DATE)";
+        String queryStr = "SELECT c FROM Comment AS c ";
         TypedQuery<Comment> query = entityManager.createQuery(queryStr, Comment.class);
         return query.getResultList();
     }
@@ -47,7 +47,7 @@ public class HibernateCommentServiceImp implements CommentService {
         Comment origin = new Comment();
         origin.setFeedback(comment.getFeedback());
         origin.setAuthor(comment.getAuthor());
-        origin.setRating("+ " + comment.getRating());
+        origin.setRating(comment.getRating());
 
         session.save(origin);
         transaction.commit();

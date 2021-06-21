@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.model.bean.Comment;
+import com.example.model.entity.Comment;
 import com.example.model.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,9 +19,9 @@ public class CommentController {
     private CommentService commentService;
 
 
-    @GetMapping("/start")
+    @GetMapping(value = "/start")
     public ModelAndView showHome() {
-        ModelAndView modelAndView = new ModelAndView("/views/home");
+        ModelAndView modelAndView = new ModelAndView("home");
         List<Comment> comments = commentService.showAllComment();
         modelAndView.addObject("comments", comments);
         return modelAndView;

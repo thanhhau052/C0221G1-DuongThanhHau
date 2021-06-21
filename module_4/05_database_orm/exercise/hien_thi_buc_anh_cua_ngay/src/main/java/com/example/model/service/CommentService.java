@@ -1,7 +1,7 @@
 package com.example.model.service;
 
 
-import com.example.model.bean.Comment;
+import com.example.model.entity.Comment;
 
 import java.util.List;
 
