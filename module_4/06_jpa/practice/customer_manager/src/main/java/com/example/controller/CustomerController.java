@@ -18,7 +18,7 @@ public class CustomerController {
     @Autowired
     private ICustomerService customerService;
 
-    @GetMapping(value = {"/create-customer","/"})
+    @GetMapping(value = {"/create-customer", "/"})
     public ModelAndView showCreateForm() {
         ModelAndView modelAndView = new ModelAndView("/customer/create");
         modelAndView.addObject("customer", new Customer());
@@ -82,6 +82,6 @@ public class CustomerController {
     @PostMapping("/delete-customer")
     public String deleteCustomer(@ModelAttribute("customer") Customer customer) {
         customerService.remove(customer.getId());
-        return "redirect:customers";
+        return "redirect:/customers";
     }
 }
