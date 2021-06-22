@@ -13,11 +13,11 @@
 
 <form action="/saveComment" method="get">
     <select name="rating">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option>1*</option>
+        <option>2*</option>
+        <option>3*</option>
+        <option>4*</option>
+        <option>5*</option>
     </select>
     <p>Author</p>
     <!--    <input type="hidden" id="date" name="date" value="">-->
@@ -35,21 +35,20 @@
 <table th:each="comment: ${comments}">
     <!--        <input type="hidden" name="id" th:value="${comment.id}">-->
     <tr>
-        <td th:text="${comment.author}"></td>
+        <td th:text="${comment.author}"> comment</td>
         <td th:text="${comment.rating}"></td>
         <td th:text="${comment.date}"></td>
         <hr>
     </tr>
-
     <tr>
                 <td th:text="${comment.feedback}"></td>
+        <br>
                 <td th:text="${comment.likes}"></td>
         <td>
             <a th:href="@{/likeComment/{id}(id=${comment.id})}">
                 <button>Likes</button>
             </a>
         </td>
-
         <td>
             <a th:href="@{/dislikeComment/{id}(id=${comment.id})}">
                 <button>Dislike</button>
