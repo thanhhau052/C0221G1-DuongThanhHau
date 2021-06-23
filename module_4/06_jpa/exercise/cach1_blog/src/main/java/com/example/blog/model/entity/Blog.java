@@ -1,6 +1,4 @@
 package com.example.blog.model.entity;
-
-
 import javax.persistence.*;
 
 @Entity

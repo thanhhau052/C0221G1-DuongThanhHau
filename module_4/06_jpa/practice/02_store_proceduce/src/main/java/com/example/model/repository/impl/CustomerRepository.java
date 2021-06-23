@@ -11,7 +11,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-//@Service
 @Repository
 @Transactional
 public class CustomerRepository implements ICustomerRepository {

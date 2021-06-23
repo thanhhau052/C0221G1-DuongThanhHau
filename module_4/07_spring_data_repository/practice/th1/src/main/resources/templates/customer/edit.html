@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit customer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+<h1>Edit customer</h1>
+<p>
+    <a href="/customers">Customer list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/edit-customer}" th:object="${customer}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table class="table table-bordered table-striped ">
+<!--        <tr>-->
+<!--            <td>First name:</td>-->
+<!--            <td><input type="text" th:field="*{firstName}"/></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Last name:</td>-->
+<!--            <td><input type="text" th:field="*{lastName}"/></td>-->
+<!--        </tr>-->
+<!--        <tr >-->
+<!--            <td>Provinces:</td>-->
+<!--&lt;!&ndash;            <td><select type="text" th:field="*{province.name}"/></td>&ndash;&gt;-->
+<!--            <td>-->
+<!--                <select th:field="*{province}">-->
+<!--                    <option th:each="p : ${provinces}" th:value="${p.id}" th:text="${p.name}"></option>-->
+<!--                </select>-->
+<!--            </td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--            <td></td>-->
+<!--            <td><input type="submit" value="Update customer"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--</form>-->
+        <tr>
+            <td>First name:</td>
+            <td><input type="text" th:field="*{firstName}"/></td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td><input type="text" th:field="*{lastName}"/></td>
+        </tr>
+        <tr>
+            <td>Province:</td>
+            <td>
+                <select name="province">
+                    <option th:each="p : ${provinces}"
+                            th:value="${p.id}"
+                            th:text="${p.name}"
+                            th:selected="(${customer.province}) and (${p.id} == *{province.id})"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update customer"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
