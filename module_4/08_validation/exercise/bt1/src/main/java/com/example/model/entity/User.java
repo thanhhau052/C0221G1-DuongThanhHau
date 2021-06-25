@@ -1,14 +1,10 @@
 package com.example.model.entity;
 
-import org.hibernate.validator.constraints.Range;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+
 
 @Entity
 public class User {
@@ -16,24 +12,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
 
-    @NotEmpty
-    @Size(min = 5, max = 45)
+
     private String  firstName;
 
-    @NotEmpty
-    @Size(min = 5, max = 45)
     private String  lastName;
 
-    @NotEmpty
-    @Pattern(regexp = "^$|[0-9]{10}", message = "Pls input size must be 10 and style must be integer")
     private  String numberPhone;
 
-    @Pattern(regexp = "^$|[0-9]{2}" , message =  "Pls input age correct format (10 number")
-    @Range(min = 18, max = 100)
+
     private String age;
 
-    @NotEmpty
-    @Pattern(regexp =  "^(.+)@(.+)$", message = "Pls input email correct format. Ex : user@gmail.com")
+
     private  String email;
 
     public User(Long id, String firstName, String lastName, String numberPhone, String age, String email) {
