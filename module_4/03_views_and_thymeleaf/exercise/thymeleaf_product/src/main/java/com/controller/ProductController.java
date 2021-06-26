@@ -51,12 +51,12 @@ public class ProductController {
         redirect.addFlashAttribute("success", "Update Product Successfully!");
         return "redirect:/product/";
     }
-//
-//    @GetMapping(value = "/{id}/delete")
-//    public String delete(@PathVariable int id, Model model) {
-//        model.addAttribute("product", productService.findById(id));
-//        return "/delete";
-//    }
+
+    @GetMapping(value = "/{id}/delete")
+    public String delete(@PathVariable int id, Model model) {
+        model.addAttribute("product", productService.findById(id));
+        return "/delete";
+    }
 
     @PostMapping(value = "/dele/update/update/update/update/updatete")
     public String showDeleteForm(@RequestParam int id, RedirectAttributes redirect) {
