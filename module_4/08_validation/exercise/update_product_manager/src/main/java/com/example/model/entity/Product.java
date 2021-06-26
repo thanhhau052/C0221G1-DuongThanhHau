@@ -1,6 +1,10 @@
 package com.example.model.entity;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -9,14 +13,21 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+
     private String name;
+
+
     private String detail;
+
+
     private int amount;
-    private Date date= new Date();
+
+    private Date date = new Date();
 
 
     @ManyToOne(targetEntity = Category.class)
-    @JoinColumn(name = "category_id" ,referencedColumnName = "id")
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
     public Product() {
     }

@@ -47,9 +47,12 @@ public class CategoryController {
         return modelAndView;
     }
 
+
+
     @GetMapping("/edit-category/{id}")
     public ModelAndView showEditForm(@PathVariable Integer id) {
         Optional<Category> category = categoryService.findById(id);
+
         if (category.isPresent()) {
             ModelAndView modelAndView = new ModelAndView("/category/edit");
             modelAndView.addObject("category", category.get());

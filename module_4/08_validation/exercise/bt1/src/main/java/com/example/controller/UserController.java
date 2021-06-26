@@ -28,7 +28,7 @@ public class UserController {
     @PostMapping("/user")
     public ModelAndView showResult(@Validated @ModelAttribute UserDto userDto, BindingResult result){
         // xet validate (loi) cho result
-        // xet th minh muon sua lai validate
+        // xet t.h minh muon sua lai validate
 
         new UserDto().validate(userDto,result);
         if (result.hasFieldErrors()){
