@@ -28,6 +28,7 @@ public class Product {
 
     @ManyToOne(targetEntity = Category.class)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
+//    Long fk = entity1.getEntity2().getId();
     private Category category;
     public Product() {
     }
