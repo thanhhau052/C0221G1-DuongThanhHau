@@ -1,8 +1,8 @@
-package com.example.thuc_hanh2_spring_boot.model.service;
+package com.example.thuc_hanh2_spring_boot.service;
 
 
 import com.example.thuc_hanh2_spring_boot.exception.DuplicateEmailException;
-import com.example.thuc_hanh2_spring_boot.model.entity.Customer;
+import com.example.thuc_hanh2_spring_boot.model.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

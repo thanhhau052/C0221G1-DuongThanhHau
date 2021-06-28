@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.exception.BookException;
+import com.example.exception.NotFountException;
 import com.example.model.entity.Book;
 import com.example.model.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,12 +38,14 @@ public class BookController {
 
     // mượn sách
     @GetMapping("/books/borrow/{id}")
-    public ModelAndView borrowBook(@PathVariable Long id) {
+    public ModelAndView borrowBook(@PathVariable Long id)  {
         Book book = bookService.findById(id);
         if (book == null) {
-            return new ModelAndView("error");
+            return new ModelAndView("error-404");
         }
         book.setQuantity(book.getQuantity() - 1);
+
+
         if (book.getQuantity() < 0) {
             return new ModelAndView("error");
         }
@@ -58,7 +61,7 @@ public class BookController {
     public ModelAndView getBook(@PathVariable Long id) {
         Book book = bookService.findById(id);
         if (book == null) {
-            return new ModelAndView("error");
+            return new ModelAndView("error-404");
         }
         book.setQuantity(book.getQuantity() + 1);
         bookService.save(book);
@@ -68,10 +71,15 @@ public class BookController {
         return modelAndView;
     }
 
-    // Handler lại exception
+    // Handler exception
 
     @ExceptionHandler(BookException.class)
     public String handleBookException() {
         return "error";
+    }
+
+    @ExceptionHandler(BookException.class)
+    public String handleNotFountException() {
+        return "error-404";
     }
 }

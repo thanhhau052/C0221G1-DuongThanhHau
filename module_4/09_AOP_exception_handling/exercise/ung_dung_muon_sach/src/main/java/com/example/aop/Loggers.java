@@ -12,13 +12,14 @@ import java.util.Arrays;
 @Aspect
 public class Loggers {
     private Logger logger= LoggerFactory.getLogger(this.getClass());
+
     @AfterReturning("execution(* com.example.controller.BookController.*(..))")
     public void log(JoinPoint joinPoint) {
         String className = joinPoint.getTarget().getClass().getSimpleName();
         String method = joinPoint.getSignature().getName();
         String args = Arrays.toString(joinPoint.getArgs());
-        logger.error("ten class  la : " + className);
-        logger.error("ten phuong thuc :"+method);
-        logger.error("cac tham so  :"+args);
+        logger.error("class name : " + className);
+        logger.error("Method name :"+ method);
+        logger.error("parameter  :"+ args);
     }
 }

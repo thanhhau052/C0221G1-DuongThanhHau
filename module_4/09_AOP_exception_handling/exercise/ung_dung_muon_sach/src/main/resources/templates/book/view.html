@@ -10,18 +10,18 @@
 <form action="/books">
   <table class="table table-bordered table-striped ">
     <tr>
-      <th>Book's name</th>
+      <th>Tên sách  :</th>
       <td th:text="${book.name}"></td>
     </tr>
 
     <tr>
-      <th>Quantity</th>
+      <th>Số lượng hiện tại : </th>
       <td th:text="${book.quantity}"></td>
     </tr>
 
     <tr>
-      <th>Name</th>
-      <td th:text="${book.name}"></td>
+      <th>Tác giả :</th>
+      <td th:text="${book.customer.name}"></td>
     </tr>
 
   </table>

@@ -4,6 +4,7 @@ package com.example.thuc_hanh2_spring_boot.controller;
 import com.example.thuc_hanh2_spring_boot.exception.DuplicateEmailException;
 import com.example.thuc_hanh2_spring_boot.model.Customer;
 import com.example.thuc_hanh2_spring_boot.model.Province;
+
 import com.example.thuc_hanh2_spring_boot.service.CustomerService;
 import com.example.thuc_hanh2_spring_boot.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;

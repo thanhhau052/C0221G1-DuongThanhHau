@@ -1,9 +1,9 @@
-package com.example.thuc_hanh2_spring_boot.model.service.impl;
+package com.example.thuc_hanh2_spring_boot.service.impl;
 
 
-import com.example.thuc_hanh2_spring_boot.model.entity.Province;
-import com.example.thuc_hanh2_spring_boot.model.repository.ProvinceRepository;
-import com.example.thuc_hanh2_spring_boot.model.service.ProvinceService;
+import com.example.thuc_hanh2_spring_boot.model.Province;
+import com.example.thuc_hanh2_spring_boot.repository.ProvinceRepository;
+import com.example.thuc_hanh2_spring_boot.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
