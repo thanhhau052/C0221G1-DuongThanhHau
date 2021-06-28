@@ -1,7 +1,7 @@
-package com.example.thuc_hanh2_spring_boot.repository;
+package com.example.thuc_hanh2_spring_boot.model.repository;
 
 
-import com.example.thuc_hanh2_spring_boot.model.Province;
+import com.example.thuc_hanh2_spring_boot.model.entity.Province;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

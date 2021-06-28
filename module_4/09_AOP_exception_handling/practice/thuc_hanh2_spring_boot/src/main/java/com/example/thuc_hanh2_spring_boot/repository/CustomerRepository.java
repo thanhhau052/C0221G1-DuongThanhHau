@@ -1,7 +1,7 @@
-package com.example.thuc_hanh2_spring_boot.repository;
+package com.example.thuc_hanh2_spring_boot.model.repository;
 
 
-import com.example.thuc_hanh2_spring_boot.model.Customer;
+import com.example.thuc_hanh2_spring_boot.model.entity.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;

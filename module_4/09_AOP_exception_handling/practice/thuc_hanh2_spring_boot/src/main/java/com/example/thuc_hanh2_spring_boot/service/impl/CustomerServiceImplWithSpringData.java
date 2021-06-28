@@ -1,10 +1,8 @@
-package com.example.thuc_hanh2_spring_boot.service.impl;
+package com.example.thuc_hanh2_spring_boot.model.service.impl;
 
 
 import com.example.thuc_hanh2_spring_boot.exception.DuplicateEmailException;
-import com.example.thuc_hanh2_spring_boot.model.Customer;
-import com.example.thuc_hanh2_spring_boot.repository.CustomerRepository;
-import com.example.thuc_hanh2_spring_boot.service.CustomerService;
+import com.example.thuc_hanh2_spring_boot.model.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;

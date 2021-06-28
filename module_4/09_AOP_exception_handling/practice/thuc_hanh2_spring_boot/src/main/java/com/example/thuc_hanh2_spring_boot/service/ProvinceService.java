@@ -1,7 +1,7 @@
-package com.example.thuc_hanh2_spring_boot.service;
+package com.example.thuc_hanh2_spring_boot.model.service;
 
 
-import com.example.thuc_hanh2_spring_boot.model.Province;
+import com.example.thuc_hanh2_spring_boot.model.entity.Province;
 
 import java.util.List;
 import java.util.Optional;

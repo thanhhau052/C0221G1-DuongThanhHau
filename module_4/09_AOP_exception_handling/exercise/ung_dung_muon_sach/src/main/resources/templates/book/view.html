@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+<form action="/books">
+  <table class="table table-bordered table-striped ">
+    <tr>
+      <th>Book's name</th>
+      <td th:text="${book.name}"></td>
+    </tr>
+
+    <tr>
+      <th>Quantity</th>
+      <td th:text="${book.quantity}"></td>
+    </tr>
+
+    <tr>
+      <th>Name</th>
+      <td th:text="${book.name}"></td>
+    </tr>
+
+  </table>
+<tr>
+<td> <input type="submit" value="Back to list "></td>
+</tr>
+</form>
+</body>
+</html>
