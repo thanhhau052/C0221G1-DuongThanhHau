@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h2>Detail Item</h2>
+<a th:href="@{/}">Back to list Items</a>
+<th:block th:if="${message}">
+  <h3><p th:text="${message}"></p></h3>
+</th:block>
+<form th:action="@{/add/{id}(id = ${item.id})}" th:object="${item}" method="post">
+  <table border="1">
+    <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td th:text="${item.id}"></td>
+      <td th:text="${item.name}"></td>
+      <td th:text="${item.price}"></td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <input type="submit" value="Add to cart">
+  </div>
+</form>
+
+<div>
+  <a th:href="@{/cart}"> Go to Cart</a>
+</div>
+
+</body>
+</html>

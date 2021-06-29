@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.model.entity.Cart;
+import com.example.model.entity.Order;
 import com.example.model.entity.Product;
 import com.example.model.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -21,6 +24,10 @@ public class ProductController {
         return new Cart();
     }
 
+    @GetMapping(value = "/home")
+    public String goToHome(){
+        return "home";
+    }
     @GetMapping("/shop")
     public ModelAndView showShop() {
         ModelAndView modelAndView = new ModelAndView("/shop");
