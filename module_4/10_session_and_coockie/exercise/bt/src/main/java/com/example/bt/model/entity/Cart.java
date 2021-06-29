@@ -45,6 +45,25 @@ public class Cart {
             items.replace(itemEntry.getKey(),newQuantity);
         }
     }
+
+    public  void SubItem(Item item){
+        if (checkItemInCart(item)){
+            Map.Entry<Item,Integer> integerEntry=selectItemInCart(item);
+            Integer newQuantity=integerEntry.getValue()-1;
+            if (newQuantity==0){
+                this.removeItem(item);
+            }
+            else {
+                items.replace(integerEntry.getKey(),newQuantity);
+            }
+
+        }
+    }
+    public void removeItem(Item item){
+        Map.Entry<Item,Integer> integerEntry=selectItemInCart(item);
+        items.remove(integerEntry.getKey());
+    }
+
     public  Double toTalItem(){
         Double total=0.0;
         for (Map.Entry<Item,Integer> item :items.entrySet()
@@ -55,56 +74,9 @@ public class Cart {
         return total;
     }
 
-//    public Integer countItemQuantity(){
-//        Integer itemQuantity = 0;
-//        for (Map.Entry<Item, Integer> entry : items.entrySet()) {
-//            itemQuantity += entry.getValue();
-//        }
-//        return itemQuantity;
-//    }
-////
-//    public Integer countQuantity(){
-//        return items.size();
-//    }
-//
-//    public Float countTotalPayment(){
-//        float payment = 0;
-//        for (Map.Entry<Item, Integer> entry : items.entrySet()) {
-//            payment += entry.getKey().getPrice() * (float) entry.getValue();
-//        }
-//        return payment;
-//    }
-
-    public void removeItem(Item item){
-        items.remove(item);
-    }
 
 
 
 
-//    private Map<Item,Integer> cart;
-//
-//    public Cart(){
-//        cart = new HashMap<>();
-//    }
-//
-//    public void addToCart(Item item){
-//        if(cart.containsKey(item)){
-//            cart.replace(item,cart.get(item), cart.get(item) +1);
-//        }else {
-//            cart.put(item, 1);
-//        }
-//    }
-//
-
-//
-//    public int getQuantity(Item item){
-//        return cart.get(item);
-//    }
-//
-//    public Map<Item, Integer> getCart(){
-//        return cart;
-//    }
-//
 
 }

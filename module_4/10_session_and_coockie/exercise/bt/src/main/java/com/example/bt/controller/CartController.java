@@ -15,45 +15,58 @@ import java.util.Map;
 public class CartController {
 
     @ModelAttribute("cart")
-    public Cart getCart(){
-        return  new Cart();
+    public Cart getCart() {
+        return new Cart();
     }
 
     @Autowired
     private ItemService itemService;
 
     @GetMapping("/")
-    public String goToHomePage(Model model){
+    public String goToHomePage(Model model) {
         model.addAttribute("items", itemService.findAll());
         return "home";
     }
 
 
     @GetMapping("/detail/{id}")
-    public String getDetailPage(@PathVariable Integer id, Model model){
+    public String getDetailPage(@PathVariable Integer id, Model model) {
         model.addAttribute("item", itemService.findById(id));
         return "detail";
     }
-       @PostMapping("/add/{id}")
-        public String addToCart(@PathVariable("id") Integer id, Model model, @ModelAttribute("cart") Cart cart){
-            Item item = itemService.findById(id);
 
+    @GetMapping("/add/{id}")
+    public String addToCart(@PathVariable("id") Integer id, Model model,
+                            @ModelAttribute("cart") Cart cart,
+                            @RequestParam("action") String action) {
+        Item item = itemService.findById(id);
+        if (item == null) {
+            return "error";
+        }
+        if (action.equals("add")) {
             cart.addItem(item);
-            model.addAttribute("item", item);
-            model.addAttribute("message", "Successfully added !");
-            return "detail";
-        }
-
-        @GetMapping("/cart")
-        public String getCartPage(@ModelAttribute("cart") Cart cart, Model model){
-//            Map<Item, Integer> cart_item = cart.getItems();
-            model.addAttribute("cart", cart);
-            return "cart";
-        }
-
-        @GetMapping("/cart/delete/{id}")
-        public String removeItem(@ModelAttribute("cart") Cart cart, @PathVariable("id") Integer id){
-            cart.removeItem(itemService.findById(id));
             return "redirect:/cart";
         }
+        if (action.equals("sub")) {
+            cart.SubItem(item);
+            return "redirect:/cart";
+        }
+        cart.addItem(item);
+            model.addAttribute("message", "Successfully added !");
+        return "redirect:/detail";    }
+
+    @GetMapping("/cart")
+    public String getCartPage(@ModelAttribute("cart") Cart cart, Model model) {
+//            Map<Item, Integer> cart_item = cart.getItems();
+        model.addAttribute("cart", cart);
+        return "cart";
+    }
+
+    @GetMapping("/cart/delete/{id}")
+    public String removeItem(@ModelAttribute("cart") Cart cart, @PathVariable("id") Integer id) {
+        cart.removeItem(itemService.findById(id));
+        return "redirect:/cart";
+    }
+
+
 }

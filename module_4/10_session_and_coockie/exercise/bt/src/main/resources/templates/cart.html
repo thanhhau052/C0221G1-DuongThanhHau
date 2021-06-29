@@ -13,13 +13,17 @@
         <th>Item</th>
         <th>Price</th>
         <th>Quantity</th>
+
     </tr>
     <tbody>
     <tr th:each="item : ${cart.items}">
         <td th:text="${item.getKey().name}"></td>
         <td th:text="${item.getKey().price}"></td>
-
-        <td th:text="${item.getValue()}"></td>
+        <td>
+            <a th:href="@{/add/__${item.getKey().id}__(action='add')}">+</a>
+            <span th:text="${item.value}"></span>
+            <a th:href="@{/add/__${item.getKey().id}__(action='sub')}">-</a>
+        </td>
         <td><a th:href="@{/cart/delete/{id}(id = ${item.getKey().id})}">Delete</a></td>
     </tr>
     <tr>
