@@ -12,6 +12,7 @@
     <th>ID</th>
     <th>Name</th>
     <th>Price</th>
+    <th>Img</th>
     <th>Action</th>
     </thead>
     <tbody>
@@ -19,6 +20,9 @@
         <td th:text="${item.id}"></td>
         <td th:text="${item.name}"></td>
         <td th:text="${item.price}"></td>
+        <td>
+            <img th:src="@{'/img/hoa'+ ${item.id}+ '.jpg'}" width="100px" height="100px"/>
+        </td>
         <td>
             <button>
                 <a th:href="@{/detail/{id}(id = ${item.id})}">Detail</a>

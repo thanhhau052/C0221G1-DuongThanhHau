@@ -25,10 +25,7 @@
             <td th:text="${item.price}"></td>
         </tr>
     </table>
-<!--    <div>-->
-<!--            <input type="submit" value="Add to cart">-->
 
-<!--    </div>-->
     <button>
         <a th:href="@{/add/__${item.id}__(action='add')}">add to cart</a>
     </button>
