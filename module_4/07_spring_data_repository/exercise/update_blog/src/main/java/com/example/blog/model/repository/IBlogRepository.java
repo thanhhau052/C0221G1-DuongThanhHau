@@ -11,11 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IBlogRepository extends PagingAndSortingRepository<Blog, Integer> {
     Page<Blog> findByNameContaining(String name, Pageable pageable);
-
-//    @Query(value = "select *from blogs order by date desc", nativeQuery = true)
-//    Iterable<Blog> findAll();
-
-
+    Page<Blog> findAll(Pageable pageable);
     Iterable<Blog> findAllByCategory(Category category);
 
 }

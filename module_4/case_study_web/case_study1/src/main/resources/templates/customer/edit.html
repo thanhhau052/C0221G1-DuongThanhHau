@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Customer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+<p>
+    <a href="/customers">Customer list</a>
+</p>
+<h1>Edit Customer</h1>
+<th:block th:if="${mes}">
+    <p th:text="${mes}"></p>
+</th:block>
+<form th:action="@{/edit-customer}" th:object="${customer}" method="post">
+    <input type="hidden" name="id" th:field="*{id}">
+    <table class="table table-bordered table-striped ">
+        <tr>
+            <td>Customer Code:</td>
+            <td><input type="text" th:field="*{customerCode}"></td>
+        </tr>
+        <tr>
+            <td>Customer type:</td>
+            <td>
+                <select th:field="*{customerType}">
+                    <option th:each="c : ${customerTypes}" th:value="${c.id}" th:text="${c.customerTypeName}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Customer Name:</td>
+            <td><input type="text" th:field="*{customerName}"></td>
+        </tr>
+        <tr>
+            <td>Customer Birthday:</td>
+            <td><input type="text" th:field="*{customerBirthDay}"></td>
+        </tr>
+        <tr>
+            <td>Customer Gender:</td>
+
+<!--            <td><input type="text" th:field="*{customerGender}"></td>-->
+            <td>
+                <select th:field="*{customerGender}">
+                    <th:block th:if="*{customerGender=='1'}">
+                        <option th:value="1" th:text="Male" ></option>
+                        <option th:value="0" th:text="Fmale" selected ></option>
+                    </th:block>
+                    <th:block th:if="*{customerGender=='0'}">
+                        <option th:value="0" th:text="Male" ></option>
+                        <option th:value="1" th:text="Fmale" selected ></option>
+                    </th:block>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Customer ID Card:</td>
+            <td><input type="text" th:field="*{customerIdCard}"></td>
+        </tr>
+        <tr>
+            <td>Customer phone:</td>
+            <td><input type="text" th:field="*{customerPhone}"></td>
+        </tr>
+        <tr>
+            <td>Customer Email:</td>
+            <td><input type="text" th:field="*{customerEmail}"></td>
+        </tr>
+        <tr>
+            <td>Customer Address:</td>
+            <td><input type="text" th:field="*{customerAddress}"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Update Customer"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
