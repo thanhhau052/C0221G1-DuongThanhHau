@@ -41,9 +41,9 @@ public class CustomerController {
     public ModelAndView saveCustomer(@ModelAttribute("customer") Customer customer){
         customerService.save(customer);
         List<CustomerType> customerTypes= (List<CustomerType>) customerTypeService.findAll();
-        Customer customer1 = new Customer();
+//        Customer customer1 = new Customer();
         ModelAndView modelAndView = new ModelAndView("/customer/create");
-        modelAndView.addObject("customer",customer1);
+//        modelAndView.addObject("customer",customer1);
         modelAndView.addObject("customerTypes",customerTypes);
         modelAndView.addObject("mes","new customer created successfully");
         return modelAndView;
@@ -77,7 +77,6 @@ public class CustomerController {
             return modelAndView;
         }
     }
-
     @PostMapping(value = "/edit-customer")
     public ModelAndView updateCustomer(@ModelAttribute("customer") Customer customer){
         customerService.save(customer);

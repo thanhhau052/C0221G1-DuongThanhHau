@@ -39,22 +39,13 @@
         </tr>
         <tr>
             <td>Customer Gender:</td>
-
-<!--            <td><input type="text" th:field="*{customerGender}"></td>-->
             <td>
                 <select th:field="*{customerGender}">
-                    <th:block th:if="*{customerGender=='1'}">
-                        <option th:value="1" th:text="Male" ></option>
-                        <option th:value="0" th:text="Fmale" selected ></option>
-                    </th:block>
-                    <th:block th:if="*{customerGender=='0'}">
-                        <option th:value="0" th:text="Male" ></option>
-                        <option th:value="1" th:text="Fmale" selected ></option>
-                    </th:block>
+                    <option th:value="1" th:text="Male"></option>
+                    <option th:value="0" th:text="Fmale" ></option>
                 </select>
             </td>
         </tr>
-
         <tr>
             <td>Customer ID Card:</td>
             <td><input type="text" th:field="*{customerIdCard}"></td>

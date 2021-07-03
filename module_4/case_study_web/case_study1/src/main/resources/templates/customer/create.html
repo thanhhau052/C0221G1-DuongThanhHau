@@ -7,73 +7,76 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
-<h1>Create Customer</h1>
-<!--<p>-->
-<!--    <a href="/customers">Customer List</a>-->
-<!--</p>-->
+<div >
 
-<th:block th:if="${mes}">
-    <p th:text="${mes}"></p>
-</th:block>
-<form th:action="@{/create-customer}" th:object="${customer}" method="post">
-    <table class="table table-bordered table-striped ">
 
-        <tr>
-            <td>customer Name:</td>
-            <td><input type="text" th:field="*{customerName}" placeholder="Enter name"/></td>
-        </tr>
-        <tr>
-            <td>Customer Code:</td>
-            <td><input type="text" th:field="*{customerCode}" placeholder="Enter Customer code"/></td>
-        </tr>
-        <tr>
-            <td> Customer Type :</td>
-            <td>
-                <select th:field="*{customerType}">
-                    <option th:each="c : ${customerTypes}" th:value="${c.id}" th:text="${c.customerTypeName}"></option>
-                </select>
-            </td>
-        </tr>
+    <h1>Create Customer</h1>
+    <button>
+        <a href="/customers"> back to list</a>
+    </button>
 
-        <tr>
-            <td>customer Birthday:</td>
-            <td><input type="date" th:field="*{customerBirthDay}"/></td>
-        </tr>
-        <tr>
-            <td>Customer Gender:</td>
-            <td>
-                <select th:field="*{customerGender}">
-                    <option  th:value="1" th:text="Male"></option>
-                    <option  th:value="0" th:text="Female"></option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>customer ID card:</td>
-            <td><input type="number" th:field="*{customerIdCard}" placeholder="Enter customer id card"/></td>
-        </tr>
-        <tr>
-            <td>customer Phone:</td>
-            <td><input type="number" th:field="*{customerPhone}" placeholder="Enter customer phone"/></td>
-        </tr>
+    <th:block th:if="${mes}">
+        <p th:text="${mes}"></p>
+    </th:block>
+    <form th:action="@{/create-customer}" th:object="${customer}" method="post">
+        <table class="table table-bordered table-striped ">
 
-        <tr>
-            <td>customer Email:</td>
-            <td><input type="email" th:field="*{customerEmail}" placeholder="Enter customer email"/></td>
-        </tr>
-        <tr>
-            <td>customer Address :</td>
-            <td><input type="text" th:field="*{customerAddress}" placeholder="Enter customer address "/></td>
-        </tr>
+            <tr>
+                <td>customer Name:</td>
+                <td><input type="text" th:field="*{customerName}" placeholder="Enter name"/></td>
+            </tr>
+            <tr>
+                <td>Customer Code:</td>
+                <td><input type="text" th:field="*{customerCode}" placeholder="Enter Customer code"/></td>
+            </tr>
 
-        <tr>
-            <td></td>
-            <td><input type="submit" value="Create Customer"></td>
-        </tr>
-    </table>
-</form>
-<button>
-    <a href="/customers"> back to list</a>
-</button>
+            <tr>
+                <td> Customer Type :</td>
+                <td>
+                    <select th:field="*{customerType}">
+                        <option th:each="c : ${customerTypes}" th:value="${c.id}"
+                                th:text="${c.customerTypeName}"></option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>customer Birthday:</td>
+                <td><input type="date" th:field="*{customerBirthDay}"/></td>
+            </tr>
+            <tr>
+                <td>Customer Gender:</td>
+                <td>
+                    <select th:field="*{customerGender}">
+                        <option th:value="1" th:text="Male"></option>
+                        <option th:value="0" th:text="Female"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>customer ID card:</td>
+                <td><input type="number" th:field="*{customerIdCard}" placeholder="Enter customer id card"/></td>
+            </tr>
+            <tr>
+                <td>customer Phone:</td>
+                <td><input type="number" th:field="*{customerPhone}" placeholder="Enter customer phone"/></td>
+            </tr>
+
+            <tr>
+                <td>customer Email:</td>
+                <td><input type="email" th:field="*{customerEmail}" placeholder="Enter customer email"/></td>
+            </tr>
+            <tr>
+                <td>customer Address :</td>
+                <td><input type="text" th:field="*{customerAddress}" placeholder="Enter customer address "/></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Create Customer"></td>
+            </tr>
+        </table>
+    </form>
+</div>
 </body>
 </html>

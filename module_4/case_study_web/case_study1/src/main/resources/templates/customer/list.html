@@ -9,7 +9,6 @@
 <body>
 <p>
     <a href="/create-customer">Create Customer</a>
-    <!--    <a href="/create-category" >Create Category</a>-->
 </p>
 <h1>Customer</h1>
 <form>
@@ -17,17 +16,6 @@
     <input name="search" type="text"/>
     <input type="submit" value="Search"/>
 </form>
-<!--private Integer id;-->
-<!--private String customerCode;-->
-
-<!--private CustomerType customerType;-->
-<!--private String customerName;-->
-<!--private String customerBirthDay;-->
-<!--private String customerGender;-->
-<!--private String customerIdCard;-->
-<!--private String customerPhone;-->
-<!--private String customerEmail;-->
-<!--private String customerAddress;-->
 
 <table class="table table-bordered table-striped ">
     <tr>
@@ -47,23 +35,19 @@
     <th:block th:each="customer : ${customers}">
         <tr>
             <td th:text="${customer.customerCode}"></td>
-            <th:block th:each="cus:${customerTypes}">
-                <td th:if="*{cus.id==customer.id}" th:text="*{cus.customerTypeName}"></td>
-            </th:block>
-
+            <td th:text="${customer.customerType.customerTypeName}"></td>
             <td th:text="${customer.customerName}"></td>
             <td th:text="${customer.customerBirthDay}"></td>
             <th:block>
                 <td th:if="${customer.customerGender=='1'}" th:text="Male"></td>
                 <td th:if="${customer.customerGender=='0'}" th:text="Fmale"></td>
-
             </th:block>
             <td th:text="${customer.customerIdCard}"></td>
             <td th:text="${customer.customerPhone}"></td>
             <td th:text="${customer.customerEmail}"></td>
             <td th:text="${customer.customerAddress}"></td>
             <td><a th:href="@{/edit-customer/__${customer.id}__}">Edit</a></td>
-                                    <td><a th:href="@{/delete-customer/__${customer.id}__}">Delete</a></td>
+            <td><a th:href="@{/delete-customer/__${customer.id}__}">Delete</a></td>
         </tr>
     </th:block>
 </table>
@@ -71,6 +55,17 @@
     <a th:href="@{'/customers'(page=${customers.number - 1}, search=${search})}" th:if="${customers.hasPrevious()}">Previous</a>
     <span th:text="${customers.number + 1}"></span>/<span th:text="${customers.totalPages}"></span>
     <a th:href="@{'/customers'(page=${customers.number + 1}, search=${search})}" th:if="${customers.hasNext()}">Next</a>
+</div>
+
+<div>
+<!--        <a th:href="@{'/customers'(page=${customers.number - 1}, search=${search})}" th:if="${customers.hasPrevious()}">Previous</a>-->
+
+        <span th:each="pageNo:${#numbers.sequence(0,customers.totalPages - 1)}">
+            <a th:href="@{/customers(page=${pageNo})}" th:text="${pageNo+1}"></a>
+        </span>
+
+<!--        <a th:href="@{'/customers'(page=${customers.number + 1}, search=${search})}"-->
+<!--           th:if="${customers.hasNext()}">Next</a>-->
 </div>
 </body>
 </html>
