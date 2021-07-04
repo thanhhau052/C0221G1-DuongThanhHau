@@ -2,8 +2,8 @@ package com.example.controller;
 
 import com.example.model.entity.customer.Customer;
 import com.example.model.entity.customer.CustomerType;
-import com.example.model.service.ICustomerService;
-import com.example.model.service.ICustomerTypeService;
+import com.example.model.service.interface_service.customer_service.ICustomerService;
+import com.example.model.service.interface_service.customer_service.ICustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

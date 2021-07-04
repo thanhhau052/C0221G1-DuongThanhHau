@@ -1,8 +1,8 @@
-package com.example.model.service.impl;
+package com.example.model.service.impl.customer_impl;
 
 import com.example.model.entity.customer.Customer;
-import com.example.model.repository.ICustomerRepository;
-import com.example.model.service.ICustomerService;
+import com.example.model.repository.customer_repository.ICustomerRepository;
+import com.example.model.service.interface_service.customer_service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service
+//@Service
 public class CustomerServiceImpl implements ICustomerService {
     @Autowired
     private ICustomerRepository iCustomerRepository;
