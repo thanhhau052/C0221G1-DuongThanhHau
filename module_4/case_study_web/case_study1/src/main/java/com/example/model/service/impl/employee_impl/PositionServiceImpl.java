@@ -4,9 +4,10 @@ import com.example.model.entity.employee.Position;
 import com.example.model.repository.employee_repository.IPositionRepository;
 import com.example.model.service.interface_service.employee_service.IPositionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
+@Service
 public class PositionServiceImpl implements IPositionService {
     @Autowired
     private IPositionRepository positionRepository;

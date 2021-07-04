@@ -53,7 +53,6 @@ public class ServiceController {
     @PostMapping(value = "/create-service")
     public ModelAndView saveService(@ModelAttribute("service") Services service) {
         serviceService.save(service);
-
         List<ServiceType> serviceTypes = (List<ServiceType>) serviceTypeService.findAll();
         List<RentType> rentTypes = (List<RentType>) rentTypeService.findAll();
         ModelAndView modelAndView = new ModelAndView("/service/create");

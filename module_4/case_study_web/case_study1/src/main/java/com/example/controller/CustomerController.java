@@ -33,7 +33,6 @@ public class CustomerController {
         Customer customer = new Customer();
         ModelAndView modelAndView= new ModelAndView("customer/create");
         modelAndView.addObject("customer", customer);
-//        modelAndView.addObject("msg", "Da tao thanh cong");
         return  modelAndView;
     }
 
