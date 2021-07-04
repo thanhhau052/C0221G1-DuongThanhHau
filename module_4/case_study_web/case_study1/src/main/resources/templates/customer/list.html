@@ -58,14 +58,14 @@
 </div>
 
 <div>
-<!--        <a th:href="@{'/customers'(page=${customers.number - 1}, search=${search})}" th:if="${customers.hasPrevious()}">Previous</a>-->
+    <!--        <a th:href="@{'/customers'(page=${customers.number - 1}, search=${search})}" th:if="${customers.hasPrevious()}">Previous</a>-->
 
-        <span th:each="pageNo:${#numbers.sequence(0,customers.totalPages - 1)}">
+    <span th:each="pageNo:${#numbers.sequence(0,customers.totalPages - 1)}">
             <a th:href="@{/customers(page=${pageNo})}" th:text="${pageNo+1}"></a>
         </span>
 
-<!--        <a th:href="@{'/customers'(page=${customers.number + 1}, search=${search})}"-->
-<!--           th:if="${customers.hasNext()}">Next</a>-->
+    <!--        <a th:href="@{'/customers'(page=${customers.number + 1}, search=${search})}"-->
+    <!--           th:if="${customers.hasNext()}">Next</a>-->
 </div>
 </body>
 </html>
