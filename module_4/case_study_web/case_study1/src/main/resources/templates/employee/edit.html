@@ -1,10 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
+<p>
+    <a href="/employees">Employee list</a>
+</p>
+<h1>Edit Employee</h1>
+<th:block th:if="${mes}">
+    <p th:text="${mes}"></p>
+</th:block>
+<form th:action="@{/edit-employee}" th:object="${employee}" method="post">
+    <input type="hidden" name="id" th:field="*{id}">
+    <table class="table table-bordered table-striped ">
+        <tr>
+            <td>Employee name:</td>
+            <td><input type="text" th:field="*{employeeName}"></td>
+        </tr>
+        <tr>
+            <td>Employee Birthday:</td>
+            <td><input type="date" th:field="*{employeeBirthday}"></td>
+        </tr>
+        <tr>
+            <td>Employee ID Card:</td>
+            <td><input type="number" th:field="*{employeeIdCard}"></td>
+        </tr>
+        <tr>
+            <td>Employee Salary:</td>
+            <td><input type="text" th:field="*{employeeSalary}"></td>
+        </tr>
+        <tr>
+            <td>Employee Phone:</td>
+            <td><input type="number" th:field="*{employeePhone}"></td>
+        </tr>
+        <tr>
+            <td>Employee Email:</td>
+            <td><input type="text" th:field="*{employeeEmail}"></td>
+        </tr>
+        <tr>
+            <td>Employee Address:</td>
+            <td><input type="text" th:field="*{employeeAddress}"></td>
+        </tr>
+        <tr>
+            <td>Position :</td>
+            <td>
+                <select th:field="*{position}">
+                    <option th:each="c : ${positions}" th:value="${c.id}" th:text="${c.positionName}"></option>
+                </select>
+            </td>
+        </tr>
 
+        <tr>
+            <td>Division :</td>
+            <td>
+                <select th:field="*{division}">
+                    <option th:each="c : ${divisions}" th:value="${c.id}" th:text="${c.divisionName}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>EducationDegree :</td>
+            <td>
+                <select th:field="*{educationDegree}">
+                    <option th:each="c : ${educationDegrees}" th:value="${c.id}" th:text="${c.educationDegreeName}"></option>
+                </select>
+            </td>
+        </tr>
+        <!--            private  Integer id;-->
+        <!--            private  String employeeName;-->
+        <!--            private  String employeeBirthday;-->
+        <!--            private String employeeIdCard;-->
+        <!--            private Double employeeSalary;-->
+        <!--            private  String employeePhone;-->
+        <!--            private  String employeeEmail;-->
+        <!--            private String employeeAddress;
+
+                        private Position position;
+                        private Division division;
+                        private  String userName;
+                        private EducationDegree educationDegree;-->
+        <tr>
+            <td><input type="submit" value="Update employee"></td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>

@@ -1,4 +1,6 @@
 package com.example.controller;
+import com.example.model.entity.customer.Customer;
+import com.example.model.entity.customer.CustomerType;
 import com.example.model.entity.employee.Division;
 import com.example.model.entity.employee.EducationDegree;
 import com.example.model.entity.employee.Employee;
@@ -8,13 +10,14 @@ import com.example.model.service.interface_service.employee_service.IEducationSe
 import com.example.model.service.interface_service.employee_service.IEmployeeService;
 import com.example.model.service.interface_service.employee_service.IPositionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value = {"/employee","/"})
@@ -64,8 +67,66 @@ public class EmployeeController {
         modelAndView.addObject("divisions",divisions);
         modelAndView.addObject("educationDegrees",educationDegrees);
         modelAndView.addObject("positions",positions);
-        modelAndView.addObject("mes","new customer created successfully");
+        modelAndView.addObject("mes","new employee created successfully");
         return modelAndView;
+    }
+
+    @GetMapping(value = "/employees")
+    public ModelAndView listEmployee(@RequestParam("search") Optional<String> search, @PageableDefault(value =2 ) Pageable pageable){
+        Page<Employee> employees;
+        ModelAndView modelAndView = new ModelAndView("/employee/list");
+        if(search.isPresent()){
+            employees = employeeService.findAllByEmployeeNameContaining(search.get(), pageable);
+            modelAndView.addObject("search",search.get());
+        } else {
+            employees = employeeService.findAll(pageable);
+        }
+        modelAndView.addObject("employees", employees);
+        return modelAndView;
+    }
+    @GetMapping( value = "/edit-employee/{id}")
+    public ModelAndView showEditForm(@PathVariable Integer id){
+        Optional<Employee> employee = employeeService.findById(id);
+        if (employee.isPresent()){
+            ModelAndView modelAndView = new ModelAndView("/employee/edit");
+            modelAndView.addObject("employee",employee.get());
+            return modelAndView;
+        }else {
+            ModelAndView modelAndView = new ModelAndView("/error");
+            return modelAndView;
+        }
+    }
+    @PostMapping(value = "/edit-employee")
+    public ModelAndView updateEmployee(@ModelAttribute("employee") Employee employee){
+         employeeService.save(employee);
+        List<Division> divisions= (List<Division>) divisionService.findAll();
+        List<EducationDegree> educationDegrees= (List<EducationDegree>) educationService.findAll();
+        List<Position> positions= (List<Position>) positionService.findAll();
+        ModelAndView modelAndView = new ModelAndView("employee/edit");
+        modelAndView.addObject("employee",employee);
+        modelAndView.addObject("divisions",divisions);
+        modelAndView.addObject("educationDegrees",educationDegrees);
+        modelAndView.addObject("positions",positions);
+        modelAndView.addObject("mes","Employee update successfully");
+        return modelAndView;
+    }
+
+    @GetMapping(value = "/delete-employee/{id}")
+    public ModelAndView showDeleteForm(@PathVariable Integer id){
+        Optional<Employee> employee = employeeService.findById(id);
+        if (employee.isPresent()){
+            ModelAndView modelAndView = new ModelAndView("employee/delete");
+            modelAndView.addObject("employee",employee.get());
+            return modelAndView;
+        }else {
+            ModelAndView modelAndView = new ModelAndView("/error");
+            return modelAndView;
+        }
+    }
+    @PostMapping(value = "/delete-employee")
+    public String deleteEmployee(@ModelAttribute("employee") Employee employee){
+        employeeService.remove(employee.getId());
+        return "redirect:employees";
     }
 
 }
