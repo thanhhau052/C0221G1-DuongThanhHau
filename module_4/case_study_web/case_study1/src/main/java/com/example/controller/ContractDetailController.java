@@ -1,13 +1,18 @@
 package com.example.controller;
 
+import com.example.model.dto.ContractDetailDto;
 import com.example.model.entity.contract.AttachService;
 import com.example.model.entity.contract.Contract;
 import com.example.model.entity.contract.ContractDetail;
 import com.example.model.service.interface_service.contract_service.IAttachServiceService;
 import com.example.model.service.interface_service.contract_service.IContractDetailService;
 import com.example.model.service.interface_service.contract_service.IContractService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,22 +44,32 @@ public class ContractDetailController {
 
     @GetMapping(value = {"/create-contract-detail"})
     public ModelAndView showCreateContractDetail(){
-        ContractDetail contractDetail = new ContractDetail();
+        ContractDetailDto contractDetailDto = new ContractDetailDto();
         ModelAndView modelAndView= new ModelAndView("contract/create-contract-detail");
-        modelAndView.addObject("contractDetail", contractDetail);
+        modelAndView.addObject("contractDetailDto", contractDetailDto);
         return  modelAndView;
     }
 
     @PostMapping(value = "/create-contract-detail")
-    public ModelAndView saveContractDetail(@ModelAttribute("contractDetail") ContractDetail contractDetail){
-        contractDetailService.save(contractDetail);
+    public ModelAndView saveContractDetail(@Validated @ModelAttribute ContractDetailDto contractDetailDto, BindingResult bindingResult){
         List<Contract> contracts= (List<Contract>) contractService.findAll();
         List<AttachService> attachServices= (List<AttachService>) attachServiceService.findAll();
-        ModelAndView modelAndView = new ModelAndView("/contract/create-contract-detail");
-        modelAndView.addObject("contracts",contracts);
-        modelAndView.addObject("attachServices",attachServices);
-        modelAndView.addObject("mes","new Contract detail created successfully");
-        return modelAndView;
-    }
+       ContractDetail contractDetail = new ContractDetail();
+        BeanUtils.copyProperties(contractDetailDto,contractDetail);
 
+        if (bindingResult.hasErrors()){
+            ModelAndView modelAndView = new ModelAndView("/contract/create-contract-detail");
+            modelAndView.addObject("contracts",contracts);
+            modelAndView.addObject("attachServices",attachServices);
+            modelAndView.addObject(bindingResult.getModel());
+            return modelAndView;
+        }else {
+            contractDetailService.save(contractDetail);
+            ModelAndView modelAndView = new ModelAndView("/contract/create-contract-detail");
+            modelAndView.addObject("contracts",contracts);
+            modelAndView.addObject("attachServices",attachServices);
+            modelAndView.addObject("mes","new Contract detail created successfully");
+            return modelAndView;
+        }
+    }
 }

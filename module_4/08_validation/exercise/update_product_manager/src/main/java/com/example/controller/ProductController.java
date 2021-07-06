@@ -45,7 +45,8 @@ public class ProductController {
 
 
     @PostMapping(value = "/create-product")
-    public ModelAndView saveProduct(@Validated @ModelAttribute ProductDto productDto, BindingResult bindingResult) {
+    public ModelAndView saveProduct(@Validated @ModelAttribute ProductDto productDto,
+                                                               BindingResult bindingResult) {
         List<Category> categories = (List<Category>) categoryService.findAll();
 
         Product product = new Product();
@@ -101,7 +102,8 @@ public class ProductController {
     }
 
     @PostMapping(value = "/edit-product")
-    public ModelAndView updateProduct(@Validated @ModelAttribute ProductDto productDto, BindingResult bindingResult) {
+    public ModelAndView updateProduct(@Validated @ModelAttribute ProductDto productDto,
+                                      BindingResult bindingResult) {
         List<Category> provinces = (List<Category>) categoryService.findAll();
         Product product = new Product();
         BeanUtils.copyProperties(productDto, product);

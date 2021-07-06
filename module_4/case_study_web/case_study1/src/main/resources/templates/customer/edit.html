@@ -5,6 +5,11 @@
     <title>Edit Customer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        span {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <p>
@@ -14,12 +19,15 @@
 <th:block th:if="${mes}">
     <p th:text="${mes}"></p>
 </th:block>
-<form th:action="@{/edit-customer}" th:object="${customer}" method="post">
+<form th:action="@{/edit-customer}" th:object="${customerDto}" method="post">
     <input type="hidden" name="id" th:field="*{id}">
     <table class="table table-bordered table-striped ">
         <tr>
             <td>Customer Code:</td>
             <td><input type="text" th:field="*{customerCode}"></td>
+            <td>
+                <span th:if="${#fields.hasErrors()}" th:errors="*{customerCode}"></span>
+            </td>
         </tr>
         <tr>
             <td>Customer type:</td>
@@ -32,31 +40,46 @@
         <tr>
             <td>Customer Name:</td>
             <td><input type="text" th:field="*{customerName}"></td>
+            <td>
+                <span th:if="${#fields.hasErrors()}" th:errors="*{customerName}"></span>
+            </td>
         </tr>
         <tr>
             <td>Customer Birthday:</td>
-            <td><input type="text" th:field="*{customerBirthDay}"></td>
+            <td><input type="date" th:field="*{customerBirthDay}"></td>
+            <td>
+                <span th:if="${#fields.hasErrors()}" th:errors="*{customerBirthDay}"></span>
+            </td>
         </tr>
         <tr>
             <td>Customer Gender:</td>
             <td>
                 <select th:field="*{customerGender}">
                     <option th:value="1" th:text="Male"></option>
-                    <option th:value="0" th:text="Fmale" ></option>
+                    <option th:value="0" th:text="Fmale"></option>
                 </select>
             </td>
         </tr>
         <tr>
             <td>Customer ID Card:</td>
-            <td><input type="text" th:field="*{customerIdCard}"></td>
+            <td><input type="number" th:field="*{customerIdCard}"></td>
+            <td>
+                <span th:if="${#fields.hasErrors()}" th:errors="*{customerIdCard}"></span>
+            </td>
         </tr>
         <tr>
             <td>Customer phone:</td>
             <td><input type="text" th:field="*{customerPhone}"></td>
+            <td>
+                <span th:if="${#fields.hasErrors()}" th:errors="*{customerPhone}"></span>
+            </td>
         </tr>
         <tr>
             <td>Customer Email:</td>
-            <td><input type="text" th:field="*{customerEmail}"></td>
+            <td><input type="email" th:field="*{customerEmail}"></td>
+            <td>
+                <span th:if="${#fields.hasErrors()}" th:errors="*{customerEmail}"></span>
+            </td>
         </tr>
         <tr>
             <td>Customer Address:</td>

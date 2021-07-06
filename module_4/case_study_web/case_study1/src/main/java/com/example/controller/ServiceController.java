@@ -1,14 +1,19 @@
 package com.example.controller;
 
 
+import com.example.model.dto.ServiceDto;
+import com.example.model.entity.customer.Customer;
 import com.example.model.entity.service.RentType;
 import com.example.model.entity.service.ServiceType;
 import com.example.model.entity.service.Services;
 import com.example.model.service.interface_service.service_service.IRentTypeService;
 import com.example.model.service.interface_service.service_service.IServiceService;
 import com.example.model.service.interface_service.service_service.IServiceTypeService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,22 +49,34 @@ public class ServiceController {
 
     @GetMapping(value = {"/create-service"})
     public ModelAndView showCreateService() {
-        Services service = new Services();
+        ServiceDto serviceDto = new ServiceDto();
         ModelAndView modelAndView = new ModelAndView("service/create");
-        modelAndView.addObject("service", service);
+        modelAndView.addObject("serviceDto", serviceDto);
         return modelAndView;
     }
 
     @PostMapping(value = "/create-service")
-    public ModelAndView saveService(@ModelAttribute("service") Services service) {
-        serviceService.save(service);
+    public ModelAndView saveService(@Validated @ModelAttribute ServiceDto serviceDto, BindingResult bindingResult) {
         List<ServiceType> serviceTypes = (List<ServiceType>) serviceTypeService.findAll();
         List<RentType> rentTypes = (List<RentType>) rentTypeService.findAll();
-        ModelAndView modelAndView = new ModelAndView("/service/create");
-        modelAndView.addObject("serviceTypes", serviceTypes);
-        modelAndView.addObject("rentTypes", rentTypes);
-        modelAndView.addObject("mes", "new service created successfully");
-        return modelAndView;
+        Services service = new Services();
+        BeanUtils.copyProperties(serviceDto, service);
+        if (bindingResult.hasErrors()) {
+            ModelAndView modelAndView = new ModelAndView("/service/create");
+            modelAndView.addObject("serviceTypes", serviceTypes);
+            modelAndView.addObject("rentTypes", rentTypes);
+            modelAndView.addObject("mes", "new service created successfully");
+            return  modelAndView;
+        }else {
+            serviceService.save(service);
+            ModelAndView modelAndView = new ModelAndView("/service/create");
+            modelAndView.addObject("serviceTypes", serviceTypes);
+            modelAndView.addObject("rentTypes", rentTypes);
+            modelAndView.addObject("mes", "new service created successfully");
+            return modelAndView;
+        }
+
+
 
     }
 }
