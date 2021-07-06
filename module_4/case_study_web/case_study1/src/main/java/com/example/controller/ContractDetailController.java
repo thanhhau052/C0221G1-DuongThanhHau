@@ -9,7 +9,6 @@ import com.example.model.service.interface_service.contract_service.IContractDet
 import com.example.model.service.interface_service.contract_service.IContractService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -18,8 +17,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
 
 @Controller
 @RequestMapping(value = {"/contract-details", "/"})
@@ -52,22 +49,16 @@ public class ContractDetailController {
 
     @PostMapping(value = "/create-contract-detail")
     public ModelAndView saveContractDetail(@Validated @ModelAttribute ContractDetailDto contractDetailDto, BindingResult bindingResult){
-        List<Contract> contracts= (List<Contract>) contractService.findAll();
-        List<AttachService> attachServices= (List<AttachService>) attachServiceService.findAll();
        ContractDetail contractDetail = new ContractDetail();
         BeanUtils.copyProperties(contractDetailDto,contractDetail);
 
         if (bindingResult.hasErrors()){
             ModelAndView modelAndView = new ModelAndView("/contract/create-contract-detail");
-            modelAndView.addObject("contracts",contracts);
-            modelAndView.addObject("attachServices",attachServices);
             modelAndView.addObject(bindingResult.getModel());
             return modelAndView;
         }else {
             contractDetailService.save(contractDetail);
             ModelAndView modelAndView = new ModelAndView("/contract/create-contract-detail");
-            modelAndView.addObject("contracts",contracts);
-            modelAndView.addObject("attachServices",attachServices);
             modelAndView.addObject("mes","new Contract detail created successfully");
             return modelAndView;
         }

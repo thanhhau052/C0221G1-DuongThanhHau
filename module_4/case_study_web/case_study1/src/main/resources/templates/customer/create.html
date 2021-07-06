@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Customer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"-->
+<!--          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">-->
     <style>
         span{
             color: red ;
@@ -12,11 +12,17 @@
     </style>
 </head>
 <body>
+
 <div >
     <h1>Create Customer</h1>
-    <button>
-        <a href="/customers"> back to list</a>
-    </button>
+    <div>
+        <a href="/customers"><button> back to list</button></a>
+    </div>
+    <div style=" text-align: right">
+        <a href="/home">
+            <button>Back to home</button>
+        </a>
+    </div>
 
     <th:block th:if="${mes}">
         <p th:text="${mes}"></p>
@@ -33,7 +39,7 @@
             </tr>
             <tr>
                 <td>Customer Code:</td>
-                <td><input type="number" th:field="*{customerCode}" placeholder="Enter Customer code"/></td>
+                <td><input type="text" th:field="*{customerCode}" placeholder="Enter Customer code"/></td>
                 <td>
                     <span th:if="${#fields.hasErrors('customerCode')}" th:errors="*{customerCode}"></span>
                 </td>

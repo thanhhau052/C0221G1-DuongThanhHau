@@ -57,26 +57,17 @@ public class ServiceController {
 
     @PostMapping(value = "/create-service")
     public ModelAndView saveService(@Validated @ModelAttribute ServiceDto serviceDto, BindingResult bindingResult) {
-        List<ServiceType> serviceTypes = (List<ServiceType>) serviceTypeService.findAll();
-        List<RentType> rentTypes = (List<RentType>) rentTypeService.findAll();
         Services service = new Services();
         BeanUtils.copyProperties(serviceDto, service);
         if (bindingResult.hasErrors()) {
             ModelAndView modelAndView = new ModelAndView("/service/create");
-            modelAndView.addObject("serviceTypes", serviceTypes);
-            modelAndView.addObject("rentTypes", rentTypes);
             modelAndView.addObject("mes", "new service created successfully");
             return  modelAndView;
         }else {
             serviceService.save(service);
             ModelAndView modelAndView = new ModelAndView("/service/create");
-            modelAndView.addObject("serviceTypes", serviceTypes);
-            modelAndView.addObject("rentTypes", rentTypes);
             modelAndView.addObject("mes", "new service created successfully");
             return modelAndView;
         }
-
-
-
     }
 }

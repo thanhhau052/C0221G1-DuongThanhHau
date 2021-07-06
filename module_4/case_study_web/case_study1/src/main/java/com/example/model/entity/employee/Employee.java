@@ -31,6 +31,15 @@ public class Employee {
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "username_id",referencedColumnName = "id")
     private  String userName;
+    private  boolean flag;
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
 
     public Employee() {
     }

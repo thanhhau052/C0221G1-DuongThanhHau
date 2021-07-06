@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 public interface ICustomerService extends IGeneralService<Customer> {
     Page<Customer> findByCustomerNameContaining(String name, Pageable pageable);
-    Page<Customer> findAll(Pageable pageable);
+//    Page<Customer> findAll(Pageable pageable);
 }
 
 

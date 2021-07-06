@@ -18,6 +18,15 @@ public class Customer {
     private String customerPhone;
     private String customerEmail;
     private String customerAddress;
+    private boolean flag;
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
 
 
     public Customer() {

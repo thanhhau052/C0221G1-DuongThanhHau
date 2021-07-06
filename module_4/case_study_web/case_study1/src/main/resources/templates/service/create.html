@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Service</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"-->
+<!--          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">-->
     <style>
         span{
             color: red ;
@@ -14,9 +14,11 @@
 <body>
 <div>
     <h1>Create Service</h1>
-    <button>
-        <a href="/home"> back to home</a>
-    </button>
+    <div>
+        <a href="/home">
+            <button>Back to home</button>
+        </a>
+    </div>
 
     <th:block th:if="${mes}">
         <p th:text="${mes}"></p>
