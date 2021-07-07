@@ -1,13 +1,14 @@
 package com.example.model.entity.employee;
 
-import com.example.model.entity.user.User;
+import com.example.model.entity.user.AppUser;
+
 
 import javax.persistence.*;
 
 @Entity
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;
     private  String employeeName;
     private  String employeeBirthday;
@@ -28,9 +29,9 @@ public class Employee {
     @JoinColumn(name = "division_id", referencedColumnName = "id")
     private Division division;
 
-    @ManyToOne(targetEntity = User.class)
-    @JoinColumn(name = "username_id",referencedColumnName = "id")
-    private  String userName;
+//    @ManyToOne(targetEntity = AppUser.class)
+//    @JoinColumn(name = "user_name",referencedColumnName = "id")
+//    private  AppUser appUser;
     private  boolean flag;
 
     public boolean isFlag() {
@@ -57,7 +58,7 @@ public class Employee {
         this.position = position;
         this.educationDegree = educationDegree;
         this.division = division;
-        this.userName = userName;
+//        this.userName = userName;
     }
 
     public Employee(Integer id, String employeeName, String employeeBirthday, String employeeIdCard, Double employeeSalary,
@@ -74,7 +75,7 @@ public class Employee {
         this.position = position;
         this.educationDegree = educationDegree;
         this.division = division;
-        this.userName = userName;
+//        this.userName = userName;
     }
 
     public Integer getId() {
@@ -165,11 +166,11 @@ public class Employee {
         this.division = division;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+//    public String getUserName() {
+//        return userName;
+//    }
+//
+//    public void setUserName(String userName) {
+//        this.userName = userName;
+//    }
 }

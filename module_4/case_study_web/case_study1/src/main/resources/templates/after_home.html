@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,11 +36,13 @@
       <h2 class=" align-items-center">WelCome to Furama Resorf Đà Nẵng</h2>
     </div>
     <div class="col-md-2 h4">
-<!--      <p>Dương Thanh Hậu</p>-->
-      <a href="/login"> <button> login</button></a>
+            <p>Dương Thanh Hậu</p>
+      <a href="/logout"> <button>Logout</button></a>
+<!--      <th:block th:field="*{}">-->
+<!--        <span th:text="${}"></span>-->
 
+<!--      </th:block>-->
     </div>
-
   </div>
 </div>
 
@@ -58,7 +60,7 @@
           <a class="nav-link" href="/employees">Employee</a>
         </li>
         <li class="nav-item px-5">
-          <a class="nav-link" href="/customers">Customer</a>
+          <a class="nav-link" href="/customers/customers">Customer</a>
         </li>
         <li class="nav-item px-5">
           <a class="nav-link" href="/create-service">Service</a>
@@ -77,6 +79,8 @@
 
 
 <!--body-->
+
+
 
 <div class="row" style="width: 100%; height: 1000px ;background: #e5ffe8">
   <div class="col-3" style="background: #03ccff ">

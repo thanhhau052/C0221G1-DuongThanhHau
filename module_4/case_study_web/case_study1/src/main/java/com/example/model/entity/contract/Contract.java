@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 public class Contract {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;
     private  String contractStartDay;
     private  String contractEndDay;

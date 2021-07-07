@@ -6,7 +6,7 @@ import java.util.List;
 @Entity
 public class EducationDegree {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String educationDegreeName;
 
