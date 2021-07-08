@@ -12,7 +12,9 @@ public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;
+    @Column(columnDefinition = "date")
     private  String contractStartDay;
+    @Column(columnDefinition = "date")
     private  String contractEndDay;
     private double contractDeposit;
     private double contractTotal;

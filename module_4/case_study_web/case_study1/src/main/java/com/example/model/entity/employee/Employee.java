@@ -33,6 +33,14 @@ public class Employee {
 //    @JoinColumn(name = "user_name",referencedColumnName = "id")
 //    private  AppUser appUser;
     private  boolean flag;
+//
+//    public AppUser getAppUser() {
+//        return appUser;
+//    }
+//
+//    public void setAppUser(AppUser appUser) {
+//        this.appUser = appUser;
+//    }
 
     public boolean isFlag() {
         return flag;

@@ -88,13 +88,13 @@ public class MainController {
         String userInfo = WebUtils.toString(loginedUser);
         model.addAttribute("userInfo", userInfo);
 
-        return "adminPage";
+        return "user/adminPage";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage(Model model) {
 
-        return "loginPage";
+        return "user/loginPage";
     }
 
     @RequestMapping(value = {"/logoutSuccessful"}, method = RequestMethod.GET)
@@ -117,6 +117,6 @@ public class MainController {
             model.addAttribute("message", message);
 
         }
-        return "403Page";
+        return "user/403Page";
     }
 }

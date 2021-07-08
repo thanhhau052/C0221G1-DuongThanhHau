@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,8 +36,20 @@
       <h2 class=" align-items-center">WelCome to Furama Resorf Đà Nẵng</h2>
     </div>
     <div class="col-md-2 h4">
+
+
+      <th:block th:if="${#request.userPrincipal==null}">
+        <a href="/login"> <button> Login </button></a>
+      </th:block>
+
+      <th:block th:if="${#request.userPrincipal!=null}">
+        <span th:text="${#request.userPrincipal.name}"></span>
+        <a href="/logout"> <button> Logout</button></a>
+      </th:block>
+
+
 <!--      <p>Dương Thanh Hậu</p>-->
-      <a href="/login"> <button> login</button></a>
+<!--      <a href="/login"> <button> login</button></a>-->
 
     </div>
 

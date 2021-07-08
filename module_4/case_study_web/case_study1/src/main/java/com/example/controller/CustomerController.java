@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -21,7 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(value = {"/customers", "/"})
+@RequestMapping(value = {"/customers","/"})
 public class CustomerController {
     @Autowired
     private ICustomerService customerService;
@@ -33,7 +34,7 @@ public class CustomerController {
         return customerTypeService.findAll();
     }
 
-
+    @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping(value = {"/create-customer"})
     public ModelAndView showCreateCustomer() {
         CustomerDto customerDto = new CustomerDto();
@@ -59,7 +60,7 @@ public class CustomerController {
             return modelAndView;
         }
     }
-
+//    @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping(value = "/customers")
     public ModelAndView listCustomer(@RequestParam("search") Optional<String> search, @PageableDefault(value = 2) Pageable pageable) {
         Page<Customer> customers;
