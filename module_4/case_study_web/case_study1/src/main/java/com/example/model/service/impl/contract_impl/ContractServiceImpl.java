@@ -8,6 +8,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 @Service
 public class ContractServiceImpl implements IContractService {
@@ -15,7 +18,18 @@ public class ContractServiceImpl implements IContractService {
     private IContractRepository contractRepository;
     @Override
     public Iterable<Contract> findAll() {
-        return contractRepository.findAll();
+        Page<Contract> contractPage= (Page<Contract>) contractRepository.findAll();
+        for(Contract c : contractPage){
+            try {
+                Date startDate = new SimpleDateFormat("yyyy-MM-dd").parse(c.getContractStartDay());
+                Date endDate = new SimpleDateFormat("yyyy-MM-dd").parse(c.getContractEndDay());
+                Double totalMoney = endDate.compareTo(startDate)*c.getService().getServiceCost();
+                c.setContractTotal(totalMoney);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return contractPage;
     }
 
     @Override

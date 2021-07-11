@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "App_Role", //
-        uniqueConstraints = { //
+        uniqueConstraints = {
                 @UniqueConstraint(name = "APP_ROLE_UK", columnNames = "Role_Name") })
 public class AppRole {
 

@@ -8,16 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/")
 public class HomeController {
     @GetMapping(value = {"/home"})
-    public String goToHome(){
+    public String goToHome() {
         return "/home";
     }
-    @GetMapping(value = {"/after_home"})
-    public String goToAfterHome(){
-        return "/after_home";
-    }
-//    @GetMapping(value = "not_login")
-//    public  String goToHomeNotLogin(){
-//        return "/not_login.404";
-//    }
+
+
 
 }
