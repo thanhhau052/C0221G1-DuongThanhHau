@@ -1,1 +1,25 @@
-<p>calculator works!</p>
+<div class="wrapper">
+  <h1 class="title">{{title}}</h1>
+  <div>
+    <p>The first     :
+    <input type="number" #first></p>
+    <br>
+    <button>
+      <select #select>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select></button>
+
+    <p>The Second :
+    <input type="number" #second></p>
+    <br>
+
+    <p><input type="button" (click)="calculate(first.value,second.value,select.value)" value="Enter"></p>
+    <hr>
+    <p>Result : {{result}}</p>
+  </div>
+
+
+</div>
