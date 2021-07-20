@@ -23,13 +23,16 @@
 //
 // }
 // console.log(sum);
+
+
+
+// de quy
 function isFibonacci(number:number):number {
     if (number<=1){
         return 1;
     }else {
         return isFibonacci(number-1) + isFibonacci(number-2)
     }
-
 }
 
 let  sum=0;

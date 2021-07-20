@@ -1,5 +1,3 @@
-//
-//
 // function checkNumberInFibonacci(number:number):boolean {
 //     let num = 0;
 //     let check = false;
@@ -25,6 +23,7 @@
 //
 // }
 // console.log(sum);
+// de quy
 function isFibonacci(number) {
     if (number <= 1) {
         return 1;
@@ -34,8 +33,9 @@ function isFibonacci(number) {
     }
 }
 var sum = 0;
+var n = 10;
 console.log("Day so fibonacci la : ");
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < n; i++) {
     console.log(isFibonacci(i));
     sum += isFibonacci(i);
 }
