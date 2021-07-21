@@ -1,11 +1,11 @@
-<div class="wrapper">
+
   <h1 class="title">{{title}}</h1>
   <div>
-    <p>The first     :
-    <input type="number" #first></p>
+    <p>The first :
+    <input type="number" #first1></p>
     <br>
     <button>
-      <select #select>
+      <select #select1>
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
@@ -13,13 +13,13 @@
       </select></button>
 
     <p>The Second :
-    <input type="number" #second></p>
+    <input type="number" #second1></p>
     <br>
 
-    <p><input type="button" (click)="calculate(first.value,second.value,select.value)" value="Enter"></p>
+    <p><input type="button" (click)="calculate(first1.value,second1.value,select1.value)" value="Enter"></p>
     <hr>
     <p>Result : {{result}}</p>
   </div>
 
 
-</div>
+

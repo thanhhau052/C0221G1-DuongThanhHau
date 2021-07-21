@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
   public title = 'Calculator';
-  public result: any;
+  public result: number;
 
   constructor() {
   }
@@ -15,12 +15,12 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-  public calculate(first: number, second: number, operator: string): number{
+// viet phuong thuc
+  public calculate(first: string, second: string, operator: string): number {
     // tslint:disable-next-line:radix
-    const firstNumber: number = parseInt(first.toLocaleString());
+    const firstNumber: number = parseInt(first);
     // tslint:disable-next-line:radix
-    const secondNumber: number = parseInt(second.toLocaleString()) ;
+    const secondNumber: number = parseInt(second);
     switch (operator) {
       case '+':
         return this.result = firstNumber + secondNumber;
@@ -32,6 +32,4 @@ export class CalculatorComponent implements OnInit {
         return this.result = firstNumber / secondNumber;
     }
   }
-
-
 }

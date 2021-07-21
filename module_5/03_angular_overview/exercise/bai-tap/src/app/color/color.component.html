@@ -1,0 +1,13 @@
+<center>
+  <label>Chọn màu </label>
+  <select [(ngModel)]="color">
+    <option value="blue">blue</option>
+    <option value="red">red</option>
+    <option value="black">black</option>
+  </select>
+  <br>
+  <label>Nhập kích thước</label>
+  <input type="range" min="10" max="1000" [(ngModel)]="size">
+  <div [ngStyle]="{height: size +'px', width: size +'px', background: color}" ></div>
+</center>
+<!--borderRadius: size/2 + 'px'-->
