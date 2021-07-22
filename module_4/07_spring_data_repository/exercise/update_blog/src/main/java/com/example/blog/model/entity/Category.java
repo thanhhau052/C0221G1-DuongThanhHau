@@ -7,11 +7,11 @@ import java.util.List;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Integer id;
+    private Integer id;
     private String name;
 
 
-     @OneToMany(targetEntity = Blog.class)
+    @OneToMany(targetEntity = Blog.class)
     private List<Blog> blogs;
 
     public Category(Integer id, String name, List<Blog> blogs) {

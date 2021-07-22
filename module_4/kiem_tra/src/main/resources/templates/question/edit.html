@@ -109,115 +109,107 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-  <style>
-    p {
-      color: red;
-    }
+    <style>
+        p {
+            color: red;
+        }
 
-    footer{
-      position:fixed;
-      bottom:0px;
-      left:0px;
-      right:0px;
-      margin-bottom:0px;
-    }
-    hr{
-      color: #00cccc;
-    }
-  </style>
+        footer {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin-bottom: 0px;
+        }
+
+        hr {
+            color: #00cccc;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-  <form  th:object="${productDto}" class="well form-horizontal" action="/products/create-product" method="post">
-    <a href="/products/products"><button type="button" class="btn btn-warning" ><span class="glyphicon glyphicon-chevron-left"></span> Back to list</button></a>
+    <form th:object="${questionDto}" class="well form-horizontal" action="/questions/edit-question" method="post">
+        <a href="/questions/questions">
+            <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-chevron-left"></span> Back to
+                list
+            </button>
+        </a>
 
-    <fieldset>
-      <!-- Form Name -->
-      <legend><center><h2><b>Create Form <br> <span th:text="${mes}"></span> </b></h2></center></legend><br>
-
-      <div class="form-group">
-        <label class="col-md-4 control-label">Category</label>
-        <div class="col-md-4 selectContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-            <select th:field="*{category}" class="form-control selectpicker">
-              <option th:each="c : ${categories}"
-                      th:value="${c.id}"
-                      th:text="${c.categoryName}">
-              </option>
-            </select>
-          </div>
-          <p th:errors="*{category}"></p>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-md-4 control-label ">Name</label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input  th:field="*{productName}" placeholder="Name" class="form-control"  type="text">
-          </div>
-          <p th:errors="*{productName}"></p>
-        </div>
-      </div>
+        <fieldset>
+            <!-- Form Name -->
+            <legend>
+                <center><h2><b>Create Form <br> <span th:text="${mes}"></span> </b></h2></center>
+            </legend>
+            <br>
 
 
-      <div class="form-group">
-        <label class="col-md-4 control-label">Cost</label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input  th:field="*{cost}" placeholder="Birthday" class="form-control"  type="number">
-          </div>
-          <p th:errors="*{cost}"></p>
-        </div>
-      </div>
-  <input th:field="*{id}" hidden>
-      <div class="form-group">
-        <label class="col-md-4 control-label">color</label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input th:field="*{color}"  class="form-control" type="text">
-          </div>
-          <p th:errors="*{color}"></p>
-        </div>
-      </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label ">Title</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input th:field="*{title}" placeholder="title" class="form-control" type="text">
+                    </div>
+                    <p th:errors="*{title}"></p>
+                </div>
+            </div>
 
-      <div class="form-group">
-        <label class="col-md-4 control-label">Quantity</label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-            <input th:field="*{quantity}"  class="form-control" type="number">
-          </div>
-          <p th:errors="*{quantity}"></p>
-        </div>
-      </div>
+            <input th:field="*{id}" hidden>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label ">Question</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <textarea th:field="*{question}"  class="form-control" type="text"></textarea>
+                    </div>
+                    <p th:errors="*{question}"></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Question type </label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select th:field="*{questionType}" class="form-control selectpicker">
+                            <option th:each="c : ${questionTypes}"
+                                    th:value="${c.id}"
+                                    th:text="${c.questionTypeName}">
+                            </option>
+                        </select>
+                    </div>
+                    <p th:errors="*{questionType}"></p>
+                </div>
+            </div>
+
+            <!--                        <div class="form-group">-->
+            <!--                            <label class="col-md-4 control-label">Status</label>-->
+            <!--                            <div class="col-md-4 selectContainer">-->
+            <!--                                <div class="input-group">-->
+            <!--                                    <span class="input-group-addon"><i class="glyphicon glyphicon-heart"></i></span>-->
+            <!--                                    <select th:field="*{status}" class="form-control selectpicker">-->
+            <!--                                        <option value="false">Cho phan hoi</option>-->
+            <!--                                        <option value="true">Da phan hoi</option>-->
+            <!--                                    </select>-->
+            <!--                                </div>-->
+            <!--                                <p th:errors="*{status}"></p>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
 
 
-      <div class="form-group">
-        <label class="col-md-4 control-label">Describe</label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input th:field="*{describes}" class="form-control"  type="text">
-          </div>
-          <p th:errors="*{describes}"></p>
-        </div>
-      </div>
 
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-      <button type="submit" class="btn btn-warning" ><span class="glyphicon glyphicon-send"></span>Submit</button>
-    </fieldset>
-  </form>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-send"></span>Submit</button>
+        </fieldset>
+    </form>
 </div>
 </div>
 </body>

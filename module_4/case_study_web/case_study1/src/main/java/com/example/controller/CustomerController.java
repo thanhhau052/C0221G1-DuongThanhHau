@@ -21,8 +21,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 import java.util.Optional;
 
+
 @Controller
-@RequestMapping(value = {"/customers","/"})
+@RequestMapping(value = {"/customers", ""})
 public class CustomerController {
     @Autowired
     private ICustomerService customerService;
@@ -34,7 +35,7 @@ public class CustomerController {
         return customerTypeService.findAll();
     }
 
-    @PreAuthorize("hasRole('ROLE_USER')")
+//    @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping(value = {"/create-customer"})
     public ModelAndView showCreateCustomer() {
         CustomerDto customerDto = new CustomerDto();
@@ -60,13 +61,19 @@ public class CustomerController {
             return modelAndView;
         }
     }
-//    @PreAuthorize("hasRole('ROLE_USER')")
+
+    //    @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping(value = "/customers")
-    public ModelAndView listCustomer(@RequestParam("search") Optional<String> search, @PageableDefault(value = 2) Pageable pageable) {
+    public ModelAndView listCustomer(@RequestParam("search") Optional<String> search,
+                                     @RequestParam("birthday") Optional<String> birthday,
+                                     @RequestParam("idCard") Optional<String> idCard,
+                                     @PageableDefault(value = 2) Pageable pageable) {
         Page<Customer> customers;
         ModelAndView modelAndView = new ModelAndView("/customer/list");
-        customers = customerService.findByCustomerNameContaining(search.orElse(""), pageable);
+        customers = customerService.findByCustomerNameContaining(search.orElse(""), birthday.orElse(""), idCard.orElse(""), pageable);
         modelAndView.addObject("search", search.orElse(""));
+        modelAndView.addObject("birthday", birthday.orElse(""));
+        modelAndView.addObject("idCard", idCard.orElse(""));
         modelAndView.addObject("customers", customers);
         return modelAndView;
     }
@@ -86,6 +93,7 @@ public class CustomerController {
             return modelAndView;
         }
     }
+
     @PostMapping(value = "/edit-customer")
     public ModelAndView updateCustomer(@Validated @ModelAttribute CustomerDto customerDto,
                                        BindingResult bindingResult) {
@@ -104,16 +112,31 @@ public class CustomerController {
 
     }
 
+//    @GetMapping(value = "/delete-customer")
+//    public String deleteCustomer(@RequestParam Integer id, RedirectAttributes redirectAttributes) {
+//        Optional<Customer> customer = customerService.findById(id);
+//        if (customer.get() == null) {
+//            return "/error";
+//        }
+//        customer.get().setFlag(true);
+//        customerService.save(customer.get());
+//        redirectAttributes.addFlashAttribute("mes", "deleted successfully! ");
+//        return "redirect:customers";
+//    }
     @GetMapping(value = "/delete-customer")
-    public String deleteCustomer(@RequestParam Integer id, RedirectAttributes redirectAttributes) {
-        Optional<Customer> customer = customerService.findById(id);
-        if (customer.get() == null) {
-            return "/error";
+    public ModelAndView delete(@RequestParam Optional<List<Integer>> listId, RedirectAttributes redirectAttributes) {
+        if (listId.isPresent()) {
+            for (Integer id : listId.get()) {
+                Optional<Customer> customer = customerService.findById(id);
+                if (!customer.isPresent()) {
+                    return new ModelAndView("error");
+                }
+                customer.get().setFlag(true);
+                customerService.save(customer.get());
+            }
+            redirectAttributes.addFlashAttribute("mes", "Delete is successful!!");
+            return new ModelAndView("redirect:/customers");
         }
-        customer.get().setFlag(true);
-        customerService.save(customer.get());
-        redirectAttributes.addFlashAttribute("mes", "deleted successfully! ");
-        return "redirect:customers";
+        return new ModelAndView("redirect:/customers");
     }
-
 }

@@ -1,4 +1,4 @@
-package com.example.model.service.interface_service;
+package com.example.model.service;
 
 import java.util.Optional;
 

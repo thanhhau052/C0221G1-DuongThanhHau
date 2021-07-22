@@ -9,7 +9,6 @@ public class CustomerType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String customerTypeName;
-
     @OneToMany(targetEntity = Customer.class)
     private List<Customer> customers;
 

@@ -16,20 +16,25 @@ import java.util.Optional;
 public class ContractServiceImpl implements IContractService {
     @Autowired
     private IContractRepository contractRepository;
+//    @Override
+//    public Iterable<Contract> findAll() {
+//        Page<Contract> contracts= (Page<Contract>) contractRepository.findAll();
+//        for(Contract c : contracts){
+//            try {
+//                Date startDate = new SimpleDateFormat("yyyy-MM-dd").parse(c.getContractStartDay());
+//                Date endDate = new SimpleDateFormat("yyyy-MM-dd").parse(c.getContractEndDay());
+//                Double totalMoney = endDate.compareTo(startDate)*c.getService().getServiceCost();
+//                c.setContractTotal(totalMoney);
+//            } catch (ParseException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        return contracts;
+//    }
+
     @Override
     public Iterable<Contract> findAll() {
-        Page<Contract> contractPage= (Page<Contract>) contractRepository.findAll();
-        for(Contract c : contractPage){
-            try {
-                Date startDate = new SimpleDateFormat("yyyy-MM-dd").parse(c.getContractStartDay());
-                Date endDate = new SimpleDateFormat("yyyy-MM-dd").parse(c.getContractEndDay());
-                Double totalMoney = endDate.compareTo(startDate)*c.getService().getServiceCost();
-                c.setContractTotal(totalMoney);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }
-        return contractPage;
+        return contractRepository.findAll();
     }
 
     @Override

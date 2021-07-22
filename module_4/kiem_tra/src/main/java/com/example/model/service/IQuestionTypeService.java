@@ -1,2 +1,6 @@
-package com.example.model.service;public interface IQuestionTypeRepository {
+package com.example.model.service;
+
+import com.example.model.entity.QuestionType;
+
+public interface IQuestionTypeService extends IGeneralService<QuestionType> {
 }
