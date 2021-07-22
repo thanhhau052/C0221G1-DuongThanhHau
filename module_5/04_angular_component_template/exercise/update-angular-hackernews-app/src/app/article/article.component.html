@@ -2,7 +2,8 @@
 <hr>
 <div>
   <div *ngFor="let art of articles">
-    <a href="{{art.url}}" target="_blank">{{art.title}}</a>: <app-like></app-like>
+    <a href="{{art.url}}" target="_blank">{{art.title}}</a>:
+    <app-like></app-like>
   </div>
 </div>
 <hr>
@@ -21,7 +22,9 @@
     </tr>
     <tr>
       <td></td>
-      <td><button style="float: right" (click)="addNewArticle()">Add</button></td>
+      <td>
+        <button style="float: right" (click)="addNewArticle()">Add</button>
+      </td>
     </tr>
   </table>
 </div>
