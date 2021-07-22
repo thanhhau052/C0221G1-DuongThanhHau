@@ -7,7 +7,7 @@ function isFibonacci(number) {
     }
 }
 let sum = 0;
-let n = 10;
+let n = 15;
 console.log("Day so fibonacci la : ");
 for (let i = 0; i < n; i++) {
     console.log(isFibonacci(i));
