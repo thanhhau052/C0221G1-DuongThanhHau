@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-name-card": {
+    "countdown-timer": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-name-card",
+            "outputPath": "dist/countdown-timer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": []
           },
@@ -62,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-name-card:build"
+            "browserTarget": "countdown-timer:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-name-card:build:production"
+              "browserTarget": "countdown-timer:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-name-card:build"
+            "browserTarget": "countdown-timer:build"
           }
         },
         "test": {
@@ -110,19 +111,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-name-card:serve"
+            "devServerTarget": "countdown-timer:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-name-card:serve:production"
+              "devServerTarget": "countdown-timer:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-name-card",
+  "defaultProject": "countdown-timer",
   "cli": {
-    "analytics": "588a2ef0-66b5-44f5-9558-0ef5bc1383a3"
+    "analytics": "264befaf-2f8f-4e4b-9946-1b6fcdd07cdc"
   }
 }

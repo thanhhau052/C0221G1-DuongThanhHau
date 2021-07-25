@@ -1,0 +1,4 @@
+how to get index ngFor in angular :  lấy số thứ tự
+ngx-pagingation: phân trang angular
+json -server : tạo db ảo 
+https://material.angular.io/components/datepicker/overview : link anh khánh

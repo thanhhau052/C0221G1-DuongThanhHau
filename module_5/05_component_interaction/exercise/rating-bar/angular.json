@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-name-card": {
+    "rating-bar": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-name-card",
+            "outputPath": "dist/rating-bar",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-name-card:build"
+            "browserTarget": "rating-bar:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-name-card:build:production"
+              "browserTarget": "rating-bar:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-name-card:build"
+            "browserTarget": "rating-bar:build"
           }
         },
         "test": {
@@ -110,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-name-card:serve"
+            "devServerTarget": "rating-bar:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-name-card:serve:production"
+              "devServerTarget": "rating-bar:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-name-card",
+  "defaultProject": "rating-bar",
   "cli": {
-    "analytics": "588a2ef0-66b5-44f5-9558-0ef5bc1383a3"
+    "analytics": "bb8b1fb6-cdf7-4db9-952b-9c7145348a83"
   }
 }
