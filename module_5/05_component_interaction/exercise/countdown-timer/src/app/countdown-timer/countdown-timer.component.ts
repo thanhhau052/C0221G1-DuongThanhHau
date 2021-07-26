@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, OnDestroy} from '@angular/core';
+import {Component, OnInit, Input, OnDestroy, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-countdown-timer',
@@ -14,6 +14,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
   message = '';
   remainingTime: number;
   @Input() seconds = 11;
+  @Output() finish = new EventEmitter<string []>();
 
   ngOnDestroy(): void {
     this.clearTime();
@@ -32,7 +33,6 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
     this.countDown();
     if (this.remainingTime <= 0) {
       this.remainingTime = this.seconds;
-
     }
   }
 
@@ -50,7 +50,8 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
   countDown(): void {
     this.clearTime();
     this.interValid = window.setInterval(() => {
-      this.remainingTime -= 1;
+      this.finish.emit([this.message, this.remainingTime + '']);
+      this.remainingTime--;
       if (this.remainingTime === 0) {
         this.message = 'Hết giờ';
         this.clearTime();

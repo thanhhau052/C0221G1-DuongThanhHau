@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'countdown-timer';
+
+  @Input() times = 11;
+  timeLuonGiaKhanh = '';
+  msgLuonGiaKhanh = '';
+
+  khanhLuon(e: string[]) {
+    this.timeLuonGiaKhanh = e[0];
+    this.msgLuonGiaKhanh = 'con lai: ' + e[1] + 's';
+  }
 }
