@@ -16,11 +16,11 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
   @Input() seconds = 11;
   @Output() finish = new EventEmitter<string []>();
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.clearTime();
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.reset();
     this.start();
   }
@@ -29,7 +29,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
     clearInterval(this.interValid);
   }
 
-  start(): void {
+  start() {
     this.countDown();
     if (this.remainingTime <= 0) {
       this.remainingTime = this.seconds;
@@ -45,6 +45,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
     this.clearTime();
     this.remainingTime = this.seconds;
     this.message = `Click start để bắt đầu đếm ngược thời gian`;
+    this.finish.emit([this.message, this.remainingTime + '']);
   }
 
   countDown(): void {
@@ -59,6 +60,6 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
       } else {
         this.message = `Còn lại : ${this.remainingTime} s`;
       }
-    }, 1500);
+    }, 1000);
   }
 }

@@ -1,16 +1,20 @@
 <h2 class="text-center">User registration</h2>
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
+
   <div class="form-group row">
     <label class="col">
       Email
       <input type="email" class="form-control" formControlName="email">
     </label>
   </div>
+
   <div class="alert alert-danger" role="alert"
        *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">
     Invalid email!
   </div>
-  <fieldset formGroupName="pwGroup">
+
+
+  <div formGroupName="pwGroup">
     <div class="form-group row">
       <label class="col">
         Password
@@ -23,18 +27,22 @@
         <input type="password" class="form-control" formControlName="confirmPassword">
       </label>
     </div>
-  </fieldset>
+  </div>
+
+
   <div class="alert alert-danger" role="alert" *ngIf="registerForm.hasError('passwordNotMatch', ['pwGroup']) &&
       registerForm.get('pwGroup').touched">
     Password does not match!
   </div>
+
+
   <div class="form-group row">
     <label class="col">
       Country
       <select formControlName="country" class="form-control">
         <option value="">Chọn</option>
         <option value="vn">Việt Nam</option>
-        <option value="us">US</option>
+        <option value="us">Lao</option>
       </select>
     </label>
   </div>
@@ -73,7 +81,7 @@
        *ngIf="registerForm.get('phone').invalid && registerForm.get('phone').touched">
     <span *ngIf="registerForm.get('phone').hasError('required')">Phone is required</span>
     <span
-      *ngIf="registerForm.get('phone').hasError('pattern')">Phone must start with +84 followed by 9 or 10 digits.</span>
+      *ngIf="registerForm.get('phone').hasError('pattern')">số điện thoại bắt đầu +84 và có 9-10 số</span>
   </div>
   <div class="form-group">
     <button class="btn btn-info" type="submit">Submit</button>
