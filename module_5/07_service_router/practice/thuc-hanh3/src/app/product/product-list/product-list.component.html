@@ -10,7 +10,7 @@
     <td>Giá</td>
     <td>Mô tả</td>
   </tr>
-  <tr *ngFor="let product of products  | paginate: config | filter:searchedKeyword ; index as i">
+  <tr *ngFor="let product of products | filter:searchedKeyword   | paginate: config; index as i">
     <td>{{config.currentPage*2+i-1}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>

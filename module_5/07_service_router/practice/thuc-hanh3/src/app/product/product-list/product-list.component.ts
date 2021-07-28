@@ -13,14 +13,6 @@ export class ProductListComponent implements OnInit {
   config: any;
 
   constructor(private productService: ProductService) {
-    for (let i = 0; i < this.products.length; i++) {
-      this.products.push(
-        {
-          id: i + 1
-        }
-      );
-    }
-
     this.config = {
       itemsPerPage: 2,
       currentPage: 1,
@@ -31,7 +23,6 @@ export class ProductListComponent implements OnInit {
   pageChanged(event) {
     this.config.currentPage = event;
   }
-
 
   ngOnInit() {
     this.getAll();
