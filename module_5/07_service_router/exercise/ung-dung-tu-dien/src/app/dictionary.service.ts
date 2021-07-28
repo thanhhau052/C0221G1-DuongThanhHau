@@ -32,6 +32,7 @@ export class DictionaryService {
       return '';
     }
     const w = this.words.find(item => item.key === word);
+
     if (w) {
       return w.meaning;
     }
