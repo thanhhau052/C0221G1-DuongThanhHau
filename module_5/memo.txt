@@ -1,3 +1,4 @@
+chrome://flags/#enable-force-dark ; backgruond
 how to get index ngFor in angular :  lấy số thứ tự
 ngx-pagingation: phân trang angular
 json -server : tạo db ảo 
