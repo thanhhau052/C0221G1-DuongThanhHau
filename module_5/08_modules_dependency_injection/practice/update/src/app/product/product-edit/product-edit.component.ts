@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {Product} from '../../model/product';
@@ -32,7 +33,7 @@ export class ProductEditComponent implements OnInit {
 
   submit(editForm: FormGroup) {
     const product = editForm.value ;
-    alert(product.id);
+    alert(product.id)
     this.productService.editProduct(product);
     this.message = 'Success full' ;
     this.backtolist();
