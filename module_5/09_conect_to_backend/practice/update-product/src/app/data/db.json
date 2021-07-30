@@ -1,0 +1,12 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "json-server"
+    },
+    {
+      "name": "nam",
+      "id": 2
+    }
+  ]
+}
