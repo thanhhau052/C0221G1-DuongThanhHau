@@ -26,3 +26,13 @@ material dialog : anh khánh cho delete
 
 
 npm install -g @angular/cli@9.0 tai file
+
+
+Phương Nam08:25
+npm install -g json-server  (connect to server)
+json-server db.json (create || run )
+
+json-server db.json --watch
+
+https://github.com/angular-vietnam/100-days-of-angular
+

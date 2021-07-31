@@ -41,13 +41,6 @@
       }
     },
     {
-      "id": 6,
-      "name": "1",
-      "price": 1,
-      "description": "1",
-      "category": "[object Object]"
-    },
-    {
       "id": 7,
       "name": "2",
       "price": 2,
@@ -66,13 +59,6 @@
         "id": 1,
         "name": "Iphone"
       }
-    },
-    {
-      "id": 9,
-      "name": null,
-      "price": null,
-      "description": null,
-      "category": null
     }
   ]
 }

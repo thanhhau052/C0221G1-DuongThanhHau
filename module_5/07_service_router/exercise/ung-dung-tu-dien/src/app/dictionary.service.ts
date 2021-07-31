@@ -4,7 +4,6 @@ export interface IWord {
   key: string;
   meaning: string;
 }
-
 @Injectable()
 export class DictionaryService {
   private words: IWord[] = [
